@@ -271,7 +271,7 @@ function Services() {
   const items = [
     { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-focused, brand-true storefronts." },
     { i: Code2, t: "Shopify Development", d: "Custom themes, sections and apps built right." },
-    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JS, API — anything off-the-shelf can't do." },
+    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JS, API anything off-the-shelf can't do." },
     { i: Gauge, t: "Speed Optimization", d: "Real Core Web Vitals wins, not just Lighthouse." },
     { i: TrendingUp, t: "Conversion Rate Optimization", d: "Research-led testing roadmap that lifts revenue." },
     { i: Palette, t: "Wix Website Design", d: "Polished Wix sites for service-led businesses." },
