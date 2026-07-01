@@ -552,7 +552,7 @@ function Testimonials() {
     { n: "Daniel R.", r: "Marketing Lead, Apparel", q: "Best speed optimization investment we've made. Pages went from sluggish to instant and our ad ROAS jumped." },
     { n: "Priya M.", r: "Owner, Wellness Brand", q: "Our SEO traffic 5x'd over six months. Clear plan, clean execution, honest reporting every step." },
     { n: "Tomás L.", r: "Co-founder, F&B Subscription", q: "We were stuck. Mubash built the entire subscription stack and our MRR finally took off." },
-    { n: "Aisha B.", r: "CMO, Beauty Startup", q: "The Klaviyo setup alone paid for the project in the first month. Total pro to work with." },
+    { n: "Nathan B.", r: "CMO, Beauty Startup", q: "The Klaviyo setup alone paid for the project in the first month. Total pro to work with." },
     { n: "Henrik S.", r: "Founder, Electronics Brand", q: "Custom Liquid work other devs said was impossible. Shipped clean, on time, no drama." },
   ];
   const [i, setI] = useState(0);
