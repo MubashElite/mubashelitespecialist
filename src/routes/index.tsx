@@ -204,7 +204,7 @@ function About() {
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I started in eCommerce the long way — as a small store owner trying to fix my own conversion problems. Seven years and a couple hundred projects later, I do that for brands every day: Shopify and Wix builds, SEO, CRO, and the AI automation that ties it all together.
+              I started in eCommerce the long way as a small store owner trying to fix my own conversion problems. Seven years and a couple hundred projects later, I do that for brands every day: Shopify and Wix builds, SEO, CRO, and the AI automation that ties it all together.
             </p>
             <p>
               My approach is simple. I learn the business first, then design and build around what actually moves revenue. No template copy-paste, no inflated retainers, no vague reports. Just clear strategy, clean execution, and numbers I'm willing to be measured by.
