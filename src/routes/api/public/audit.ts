@@ -76,12 +76,16 @@ export const Route = createFileRoute("/api/public/audit")({
           }
           return Response.json({ url: normalized, ...parsed });
         } catch (err) {
-          const msg = err instanceof Error ? err.message : "Unknown error";
+          console.error("[api/public/audit] error:", err);
+          const msg = err instanceof Error ? err.message : "";
           const status = msg.includes("aborted") ? 504
             : msg.includes("429") ? 429
             : msg.includes("402") ? 402
             : 500;
-          return new Response(JSON.stringify({ error: msg }), { status });
+          return new Response(
+            JSON.stringify({ error: "Audit failed. Please try again." }),
+            { status },
+          );
         }
       },
     },

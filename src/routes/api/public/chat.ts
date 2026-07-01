@@ -30,13 +30,20 @@ export const Route = createFileRoute("/api/public/chat")({
           if (!Array.isArray(messages) || messages.length === 0) {
             return new Response(JSON.stringify({ error: "messages required" }), { status: 400 });
           }
-          const trimmed = messages.slice(-20).map((m) => ({
-            role: m.role,
-            content: String(m.content ?? "").slice(0, 2000),
-          }));
+          const ALLOWED_ROLES = new Set(["user", "assistant"]);
+          const trimmed = messages
+            .filter((m) => m && ALLOWED_ROLES.has(m.role))
+            .slice(-20)
+            .map((m) => ({
+              role: m.role,
+              content: String(m.content ?? "").slice(0, 2000),
+            }));
+          if (trimmed.length === 0) {
+            return new Response(JSON.stringify({ error: "messages required" }), { status: 400 });
+          }
 
           const key = process.env.LOVABLE_API_KEY;
-          if (!key) return new Response(JSON.stringify({ error: "Missing API key" }), { status: 500 });
+          if (!key) return new Response(JSON.stringify({ error: "Service unavailable" }), { status: 500 });
 
           const gateway = createLovableAiGatewayProvider(key);
           const { text } = await generateText({
@@ -46,9 +53,13 @@ export const Route = createFileRoute("/api/public/chat")({
           });
           return Response.json({ text });
         } catch (err) {
-          const msg = err instanceof Error ? err.message : "Unknown error";
+          console.error("[api/public/chat] error:", err);
+          const msg = err instanceof Error ? err.message : "";
           const status = msg.includes("429") ? 429 : msg.includes("402") ? 402 : 500;
-          return new Response(JSON.stringify({ error: msg }), { status });
+          return new Response(
+            JSON.stringify({ error: "Request failed. Please try again." }),
+            { status },
+          );
         }
       },
     },
