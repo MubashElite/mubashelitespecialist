@@ -125,7 +125,7 @@ function Hero() {
           experiences that convert.
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          I'm <span className="text-foreground font-medium">Mubash Elite Specialist</span> — an independent Shopify Expert, Wix Specialist, SEO Consultant, AI Automation Engineer and eCommerce growth partner. I work with founders who care about craft, speed, and revenue.
+          I'm <span className="text-foreground font-medium">Mubash Elite Specialist</span>&nbsp;an independent Shopify Expert, Wix Specialist, SEO Consultant, AI Automation Engineer and eCommerce growth partner. I work with founders who care about craft, speed, and revenue.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("portfolio")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
