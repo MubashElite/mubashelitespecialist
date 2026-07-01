@@ -93,6 +93,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "canonical", href: "https://mubashelitespecialist.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Mubash Elite Specialist",
+          url: "https://mubashelitespecialist.lovable.app/",
+          image: "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp",
+          jobTitle: "Shopify Expert, Wix Specialist, SEO Consultant & AI Automation Engineer",
+          email: "mailto:mubashelitespecialist@gmail.com",
+          sameAs: [
+            "https://www.fiverr.com/shopifybash",
+            "https://wa.me/17542504531",
+          ],
+          knowsAbout: [
+            "Shopify",
+            "Wix",
+            "SEO",
+            "eCommerce",
+            "AI Automation",
+            "Conversion Rate Optimization",
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
