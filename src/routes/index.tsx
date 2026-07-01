@@ -117,7 +117,7 @@ function Hero() {
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Now booking — Q3 2026 consulting slots</span>
+          <span className="text-muted-foreground">Now booking Q3 2026 consulting slots</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
           Helping eCommerce brands build{" "}
@@ -125,7 +125,7 @@ function Hero() {
           experiences that convert.
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          I'm <span className="text-foreground font-medium">Mubash Elite Specialist</span> — an independent Shopify Expert, Wix Specialist, SEO Consultant, AI Automation Engineer and eCommerce growth partner. I work with founders who care about craft, speed, and revenue.
+          I'm <span className="text-foreground font-medium">Mubash Elite Specialist</span>&nbsp;an independent Shopify Expert, Wix Specialist, SEO Consultant, AI Automation Engineer and eCommerce growth partner. I work with founders who care about craft, speed, and revenue.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("portfolio")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
@@ -204,7 +204,7 @@ function About() {
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I started in eCommerce the long way — as a small store owner trying to fix my own conversion problems. Seven years and a couple hundred projects later, I do that for brands every day: Shopify and Wix builds, SEO, CRO, and the AI automation that ties it all together.
+              I started in eCommerce the long way as a small store owner trying to fix my own conversion problems. Seven years and a couple hundred projects later, I do that for brands every day: Shopify and Wix builds, SEO, CRO, and the AI automation that ties it all together.
             </p>
             <p>
               My approach is simple. I learn the business first, then design and build around what actually moves revenue. No template copy-paste, no inflated retainers, no vague reports. Just clear strategy, clean execution, and numbers I'm willing to be measured by.
@@ -216,7 +216,7 @@ function About() {
           <div className="md:col-span-2 space-y-3">
             {[
               { t: "Direct access", d: "You work with me, not a junior account manager." },
-              { t: "Honest scoping", d: "Realistic timelines and pricing — no surprises." },
+              { t: "Honest scoping", d: "Realistic timelines and pricing no surprises." },
               { t: "Performance-first", d: "Every change is measured against revenue impact." },
               { t: "Long horizon", d: "I optimize for what your brand looks like in a year." },
             ].map((x) => (
@@ -271,7 +271,7 @@ function Services() {
   const items = [
     { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-focused, brand-true storefronts." },
     { i: Code2, t: "Shopify Development", d: "Custom themes, sections and apps built right." },
-    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JS, API — anything off-the-shelf can't do." },
+    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JS, API anything off-the-shelf can't do." },
     { i: Gauge, t: "Speed Optimization", d: "Real Core Web Vitals wins, not just Lighthouse." },
     { i: TrendingUp, t: "Conversion Rate Optimization", d: "Research-led testing roadmap that lifts revenue." },
     { i: Palette, t: "Wix Website Design", d: "Polished Wix sites for service-led businesses." },
@@ -552,7 +552,7 @@ function Testimonials() {
     { n: "Daniel R.", r: "Marketing Lead, Apparel", q: "Best speed optimization investment we've made. Pages went from sluggish to instant and our ad ROAS jumped." },
     { n: "Priya M.", r: "Owner, Wellness Brand", q: "Our SEO traffic 5x'd over six months. Clear plan, clean execution, honest reporting every step." },
     { n: "Tomás L.", r: "Co-founder, F&B Subscription", q: "We were stuck. Mubash built the entire subscription stack and our MRR finally took off." },
-    { n: "Aisha B.", r: "CMO, Beauty Startup", q: "The Klaviyo setup alone paid for the project in the first month. Total pro to work with." },
+    { n: "Nathan B.", r: "CMO, Beauty Startup", q: "The Klaviyo setup alone paid for the project in the first month. Total pro to work with." },
     { n: "Henrik S.", r: "Founder, Electronics Brand", q: "Custom Liquid work other devs said was impossible. Shipped clean, on time, no drama." },
   ];
   const [i, setI] = useState(0);
