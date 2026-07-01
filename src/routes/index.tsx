@@ -11,6 +11,7 @@ import { AuditTool } from "@/components/site/AuditTool";
 import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
+import portraitAsset from "@/assets/portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
