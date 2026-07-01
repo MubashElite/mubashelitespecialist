@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "https://wa.me/17542504531";
 const EMAIL = "mailto:mubashelitespecialist@gmail.com";
-const FIVERR = "https://www.fiverr.com/users/shopifybash";
+const FIVERR = "https://www.fiverr.com/shopifybash";
 
 function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
