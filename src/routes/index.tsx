@@ -216,7 +216,7 @@ function About() {
           <div className="md:col-span-2 space-y-3">
             {[
               { t: "Direct access", d: "You work with me, not a junior account manager." },
-              { t: "Honest scoping", d: "Realistic timelines and pricing — no surprises." },
+              { t: "Honest scoping", d: "Realistic timelines and pricing no surprises." },
               { t: "Performance-first", d: "Every change is measured against revenue impact." },
               { t: "Long horizon", d: "I optimize for what your brand looks like in a year." },
             ].map((x) => (
