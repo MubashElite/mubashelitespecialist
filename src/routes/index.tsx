@@ -106,6 +106,15 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
+        <div className="mx-auto mb-6 w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 gradient-primary animate-fade-up">
+          <img
+            src={portraitAsset.url}
+            alt="Mubash Elite Specialist"
+            width={128}
+            height={128}
+            className="w-full h-full rounded-full object-cover border-2 border-background"
+          />
+        </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
           <span className="text-muted-foreground">Now booking — Q3 2026 consulting slots</span>
@@ -122,6 +131,9 @@ function Hero() {
           <button onClick={() => scrollToId("portfolio")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
             View Portfolio <ArrowRight className="h-4 w-4" />
           </button>
+          <a href={FIVERR} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
+            Hire me on Fiverr <ExternalLink className="h-4 w-4" />
+          </a>
           <button onClick={() => scrollToId("pricing")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
             View Pricing
           </button>
