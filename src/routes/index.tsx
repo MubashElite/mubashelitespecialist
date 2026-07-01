@@ -117,7 +117,7 @@ function Hero() {
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Now booking — Q3 2026 consulting slots</span>
+          <span className="text-muted-foreground">Now booking Q3 2026 consulting slots</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
           Helping eCommerce brands build{" "}
