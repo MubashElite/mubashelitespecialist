@@ -597,13 +597,33 @@ function Blog() {
     { t: "Technical SEO checklist for Shopify in 2026", c: "SEO", e: "Schema, canonicals, sitemaps and the Core Web Vitals reality check your dev team is avoiding.", time: "9 min" },
     { t: "Landing pages that convert paid traffic at 5%+", c: "CRO", e: "The framework I use to build single-product landers that don't waste ad spend.", time: "6 min" },
   ];
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: 1 | -1) => {
+    const el = ref.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: "smooth" });
+  };
   return (
     <section id="blog" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Blog" title={<>Notes from the field</>} />
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <SectionHeading eyebrow="Blog" title={<>Notes from the field</>} align="left" />
+          <div className="flex gap-2">
+            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={ref}
+          className="mt-10 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-4 scroll-smooth reveal"
+          style={{ scrollbarWidth: "thin" }}
+        >
           {posts.map((p) => (
-            <article key={p.t} className="glass rounded-2xl p-6 hover:shadow-glow transition group cursor-pointer" onClick={() => (window.location.href = EMAIL)}>
+            <article key={p.t} className="snap-start shrink-0 w-[280px] sm:w-[340px] lg:w-[380px] glass rounded-2xl p-6 hover:shadow-glow transition group cursor-pointer" onClick={() => (window.location.href = EMAIL)}>
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span className="px-2 py-0.5 rounded bg-royal/20 text-cyan">{p.c}</span>
                 <span>{p.time} read</span>
