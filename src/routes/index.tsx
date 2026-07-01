@@ -233,6 +233,40 @@ function About() {
 }
 
 /* ---------- SERVICES ---------- */
+function ServiceRow({ items }: { items: { i: any; t: string; d: string }[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: 1 | -1) => {
+    const el = ref.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: "smooth" });
+  };
+  return (
+    <div className="relative group/row">
+      <div
+        ref={ref}
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scroll-smooth"
+        style={{ scrollbarWidth: "thin" }}
+      >
+        {items.map(({ i: Icon, t, d }) => (
+          <div key={t} className="snap-start shrink-0 w-[260px] sm:w-[300px] group glass rounded-2xl p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
+            <div className="h-11 w-11 rounded-xl gradient-primary grid place-items-center text-white shadow-glow group-hover:scale-110 transition">
+              <Icon className="h-5 w-5" />
+            </div>
+            <h3 className="mt-4 font-display font-semibold">{t}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+          </div>
+        ))}
+      </div>
+      <button onClick={() => scroll(-1)} aria-label="Previous" className="hidden md:grid absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 h-10 w-10 place-items-center rounded-full glass hover:bg-white/10 opacity-0 group-hover/row:opacity-100 transition">
+        <ChevronLeft className="h-4 w-4" />
+      </button>
+      <button onClick={() => scroll(1)} aria-label="Next" className="hidden md:grid absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 h-10 w-10 place-items-center rounded-full glass hover:bg-white/10 opacity-0 group-hover/row:opacity-100 transition">
+        <ChevronRight className="h-4 w-4" />
+      </button>
+    </div>
+  );
+}
+
 function Services() {
   const items = [
     { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-focused, brand-true storefronts." },
@@ -254,20 +288,14 @@ function Services() {
     { i: ArrowLeftRight, t: "Store Migration", d: "Safe moves to Shopify with SEO preserved." },
     { i: Gauge, t: "Performance Optimization", d: "Frontend, theme and asset-level tuning." },
   ];
+  const half = Math.ceil(items.length / 2);
   return (
     <section id="services" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Services" title={<>What I build, fix and grow</>} />
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
-          {items.map(({ i: Icon, t, d }) => (
-            <div key={t} className="group glass rounded-2xl p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
-              <div className="h-11 w-11 rounded-xl gradient-primary grid place-items-center text-white shadow-glow group-hover:scale-110 transition">
-                <Icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display font-semibold">{t}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-            </div>
-          ))}
+        <div className="mt-12 space-y-5 reveal">
+          <ServiceRow items={items.slice(0, half)} />
+          <ServiceRow items={items.slice(half)} />
         </div>
       </div>
     </section>
@@ -277,27 +305,52 @@ function Services() {
 /* ---------- PROCESS ---------- */
 function Process() {
   const steps = ["Discovery","Planning","Research","Design","Development","Optimization","Testing","Launch","Growth"];
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: 1 | -1) => {
+    const el = ref.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
+  };
   return (
     <section id="process" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Process" title={<>A clear path from <span className="gradient-text">brief to growth</span></>} />
-        <div className="mt-14 relative reveal">
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-royal to-transparent" />
-          <div className="space-y-6">
-            {steps.map((s, i) => (
-              <div key={s} className={`relative flex sm:items-center gap-4 ${i % 2 ? "sm:flex-row-reverse" : ""}`}>
-                <div className="sm:w-1/2 flex sm:justify-end pl-12 sm:pl-0">
-                  <div className={`glass rounded-2xl px-5 py-4 max-w-md ${i % 2 ? "sm:ml-6" : "sm:mr-6"}`}>
-                    <div className="text-xs text-muted-foreground">Phase {i + 1}</div>
-                    <div className="font-display font-semibold">{s}</div>
-                  </div>
-                </div>
-                <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 h-8 w-8 rounded-full gradient-primary grid place-items-center text-white text-xs font-semibold shadow-glow">
-                  {i + 1}
-                </div>
-                <div className="hidden sm:block sm:w-1/2" />
-              </div>
-            ))}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <SectionHeading eyebrow="Process" title={<>A clear path from <span className="gradient-text">brief to growth</span></>} align="left" />
+          <div className="flex gap-2">
+            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div className="mt-12 relative reveal">
+          <div
+            ref={ref}
+            className="overflow-x-auto pb-6 -mx-4 px-4 scroll-smooth"
+            style={{ scrollbarWidth: "thin" }}
+          >
+            <div className="relative min-w-max">
+              <div className="absolute left-0 right-0 top-9 h-px bg-gradient-to-r from-transparent via-royal to-transparent" />
+              <ol className="relative flex gap-4 sm:gap-6">
+                {steps.map((s, i) => (
+                  <li key={s} className="shrink-0 w-[190px] sm:w-[210px] flex flex-col items-center text-center">
+                    <div className="h-[72px] flex items-center justify-center">
+                      <div className="h-[72px] w-[72px] rounded-full gradient-primary p-[2px] shadow-glow">
+                        <div className="h-full w-full rounded-full bg-background grid place-items-center">
+                          <span className="font-display text-lg font-bold gradient-text">{String(i + 1).padStart(2, "0")}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-5 glass rounded-2xl px-4 py-4 w-full">
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Phase {i + 1}</div>
+                      <div className="mt-1 font-display font-semibold">{s}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </div>
@@ -544,13 +597,33 @@ function Blog() {
     { t: "Technical SEO checklist for Shopify in 2026", c: "SEO", e: "Schema, canonicals, sitemaps and the Core Web Vitals reality check your dev team is avoiding.", time: "9 min" },
     { t: "Landing pages that convert paid traffic at 5%+", c: "CRO", e: "The framework I use to build single-product landers that don't waste ad spend.", time: "6 min" },
   ];
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: 1 | -1) => {
+    const el = ref.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: "smooth" });
+  };
   return (
     <section id="blog" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Blog" title={<>Notes from the field</>} />
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <SectionHeading eyebrow="Blog" title={<>Notes from the field</>} align="left" />
+          <div className="flex gap-2">
+            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={ref}
+          className="mt-10 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-4 scroll-smooth reveal"
+          style={{ scrollbarWidth: "thin" }}
+        >
           {posts.map((p) => (
-            <article key={p.t} className="glass rounded-2xl p-6 hover:shadow-glow transition group cursor-pointer" onClick={() => (window.location.href = EMAIL)}>
+            <article key={p.t} className="snap-start shrink-0 w-[280px] sm:w-[340px] lg:w-[380px] glass rounded-2xl p-6 hover:shadow-glow transition group cursor-pointer" onClick={() => (window.location.href = EMAIL)}>
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span className="px-2 py-0.5 rounded bg-royal/20 text-cyan">{p.c}</span>
                 <span>{p.time} read</span>
