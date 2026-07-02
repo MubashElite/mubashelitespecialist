@@ -72,51 +72,138 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://mubashelitespecialist.lovable.app";
+const LOGO_URL = `${SITE_URL}/favicon.png`;
+const SOCIAL_IMAGE =
+  "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mubash Elite Specialist — Shopify, Wix, SEO & AI Growth Partner" },
-      { name: "description", content: "Independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands build stores that convert." },
       { name: "author", content: "Mubash Elite Specialist" },
+      { name: "publisher", content: "Mubash Elite Specialist" },
       { name: "theme-color", content: "#0b1230" },
-      { property: "og:title", content: "Mubash Elite Specialist — Shopify, Wix, SEO & AI Growth Partner" },
-      { name: "twitter:title", content: "Mubash Elite Specialist — Shopify, Wix, SEO & AI Growth Partner" },
-      { property: "og:description", content: "Independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands build stores that convert." },
-      { name: "twitter:description", content: "Independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands build stores that convert." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "color-scheme", content: "dark light" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
+      { name: "format-detection", content: "telephone=no" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Mubash Elite Specialist" },
+      { property: "og:locale", content: "en_US" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:creator", content: "@shopifybash" },
+      { name: "twitter:site", content: "@shopifybash" },
+      { name: "application-name", content: "Mubash Elite Specialist" },
+      { name: "apple-mobile-web-app-title", content: "Mubash Elite Specialist" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "canonical", href: "https://mubashelitespecialist.lovable.app/" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "shortcut icon", href: "/favicon.png" },
+      { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
+      { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
     ],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Mubash Elite Specialist",
-          url: "https://mubashelitespecialist.lovable.app/",
-          image: "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp",
-          jobTitle: "Shopify Expert, Wix Specialist, SEO Consultant & AI Automation Engineer",
-          email: "mailto:mubashelitespecialist@gmail.com",
-          sameAs: [
-            "https://www.fiverr.com/shopifybash",
-            "https://wa.me/17542504531",
-          ],
-          knowsAbout: [
-            "Shopify",
-            "Wix",
-            "SEO",
-            "eCommerce",
-            "AI Automation",
-            "Conversion Rate Optimization",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: "Mubash Elite Specialist",
+              description:
+                "Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer building high-converting eCommerce stores.",
+              inLanguage: "en-US",
+              publisher: { "@id": `${SITE_URL}/#person` },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${SITE_URL}/?q={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            },
+            {
+              "@type": ["Person", "Brand"],
+              "@id": `${SITE_URL}/#person`,
+              name: "Mubash Elite Specialist",
+              alternateName: "Mubash",
+              url: SITE_URL,
+              image: SOCIAL_IMAGE,
+              logo: LOGO_URL,
+              email: "mailto:mubashelitespecialist@gmail.com",
+              telephone: "+1-754-250-4531",
+              jobTitle:
+                "Shopify Expert, Wix Specialist, SEO Consultant & AI Automation Engineer",
+              description:
+                "Independent eCommerce growth partner specializing in Shopify development, Wix design, technical SEO, conversion optimization and AI automation.",
+              sameAs: [
+                "https://www.fiverr.com/shopifybash",
+                "https://www.fiverr.com/users/shopifybash",
+                "https://wa.me/17542504531",
+              ],
+              knowsAbout: [
+                "Shopify Development",
+                "Shopify Plus",
+                "Shopify Theme Customization",
+                "Wix Website Design",
+                "Wix Studio",
+                "Technical SEO",
+                "On-Page SEO",
+                "eCommerce Growth",
+                "Conversion Rate Optimization",
+                "AI Automation",
+                "Website Performance Optimization",
+                "Core Web Vitals",
+              ],
+              knowsLanguage: ["English"],
+              worksFor: { "@id": `${SITE_URL}/#business` },
+            },
+            {
+              "@type": "ProfessionalService",
+              "@id": `${SITE_URL}/#business`,
+              name: "Mubash Elite Specialist — eCommerce Consulting",
+              url: SITE_URL,
+              image: LOGO_URL,
+              logo: LOGO_URL,
+              priceRange: "$$-$$$",
+              email: "mailto:mubashelitespecialist@gmail.com",
+              telephone: "+1-754-250-4531",
+              areaServed: {
+                "@type": "AdministrativeArea",
+                name: "Worldwide",
+              },
+              serviceType: [
+                "Shopify Store Development",
+                "Shopify Plus Development",
+                "Wix Website Design",
+                "SEO Consulting",
+                "Technical SEO Audits",
+                "Conversion Rate Optimization",
+                "AI Automation",
+                "eCommerce Consulting",
+              ],
+              founder: { "@id": `${SITE_URL}/#person` },
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Services",
+                itemListElement: [
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Shopify Store Development" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wix Website Design" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Technical SEO & CRO" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Automation" } },
+                ],
+              },
+              sameAs: [
+                "https://www.fiverr.com/shopifybash",
+                "https://wa.me/17542504531",
+              ],
+            },
           ],
         }),
       },

@@ -13,21 +13,81 @@ import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
 import portraitAsset from "@/assets/portrait.jpg.asset.json";
 
+const HOME_URL = "https://mubashelitespecialist.lovable.app/";
+const HOME_TITLE =
+  "Shopify Expert, Wix Specialist & SEO Consultant | Mubash Elite Specialist";
+const HOME_DESCRIPTION =
+  "Mubash Elite Specialist — independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands, entrepreneurs and small businesses build high-converting stores that rank on Google.";
+const HOME_KEYWORDS =
+  "Shopify expert, Shopify developer, Shopify Plus expert, Wix specialist, Wix designer, SEO consultant, technical SEO, eCommerce consultant, conversion rate optimization, AI automation expert, website optimization specialist, Mubash Elite Specialist";
+const HOME_OG_IMAGE =
+  "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp";
+
+const FAQ_ITEMS = [
+  { q: "What's your typical turnaround?", a: "Most fixes ship in 48–72 hours. Full Shopify builds take 2–4 weeks depending on scope. I'll always give you a clear timeline upfront." },
+  { q: "Do you work with Shopify Plus?", a: "Yes. I work across Shopify, Shopify Plus, Wix and Wix Studio. The same playbook applies — just at different scales." },
+  { q: "How do you price ongoing work?", a: "Either fixed-scope projects or monthly retainers for performance, SEO and CRO partnerships. No hourly billing — outcomes only." },
+  { q: "Can you take over an existing store?", a: "Always. I'll start with an audit, document everything, then ship improvements in clear sprints." },
+  { q: "Will I work with you directly?", a: "Yes. You always work with me — no junior account managers, no agency middle layer." },
+  { q: "What if I'm not happy with the work?", a: "Every project includes revision rounds and a satisfaction guarantee. If something's off, we fix it." },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mubash Elite Specialist — Shopify, Wix, SEO & AI Growth Partner" },
-      { name: "description", content: "Independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands ship better stores that actually convert." },
-      { property: "og:title", content: "Mubash Elite Specialist — Premium eCommerce Consulting" },
-      { property: "og:description", content: "Shopify, Wix, SEO, CRO and AI automation done right." },
+      { title: HOME_TITLE },
+      { name: "description", content: HOME_DESCRIPTION },
+      { name: "keywords", content: HOME_KEYWORDS },
+      { name: "subject", content: "Shopify, Wix, SEO and AI automation consulting" },
+      { name: "rating", content: "General" },
+      { name: "geo.region", content: "US" },
+      { name: "geo.placename", content: "Worldwide" },
+      { property: "og:title", content: HOME_TITLE },
+      { property: "og:description", content: HOME_DESCRIPTION },
+      { property: "og:url", content: HOME_URL },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: HOME_OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Mubash Elite Specialist — Shopify, Wix, SEO & AI Growth Partner" },
+      { name: "twitter:title", content: HOME_TITLE },
+      { name: "twitter:description", content: HOME_DESCRIPTION },
+      { name: "twitter:image", content: HOME_OG_IMAGE },
+      { name: "twitter:image:alt", content: "Mubash Elite Specialist portrait" },
     ],
     links: [
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "canonical", href: HOME_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ_ITEMS.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: HOME_URL },
+            { "@type": "ListItem", position: 2, name: "Services", item: `${HOME_URL}#services` },
+            { "@type": "ListItem", position: 3, name: "Portfolio", item: `${HOME_URL}#portfolio` },
+            { "@type": "ListItem", position: 4, name: "Pricing", item: `${HOME_URL}#pricing` },
+            { "@type": "ListItem", position: 5, name: "Contact", item: `${HOME_URL}#contact` },
+          ],
+        }),
+      },
     ],
   }),
   component: Home,
