@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SalesProofRouteImport } from './routes/sales-proof'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiPublicChatRouteImport } from './routes/api/public/chat'
 import { Route as ApiPublicAuditRouteImport } from './routes/api/public/audit'
@@ -17,6 +18,11 @@ import { Route as ApiPublicAuditRouteImport } from './routes/api/public/audit'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SalesProofRoute = SalesProofRouteImport.update({
+  id: '/sales-proof',
+  path: '/sales-proof',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,12 +43,14 @@ const ApiPublicAuditRoute = ApiPublicAuditRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sales-proof': typeof SalesProofRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/public/audit': typeof ApiPublicAuditRoute
   '/api/public/chat': typeof ApiPublicChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sales-proof': typeof SalesProofRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/public/audit': typeof ApiPublicAuditRoute
   '/api/public/chat': typeof ApiPublicChatRoute
@@ -50,18 +58,30 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sales-proof': typeof SalesProofRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/public/audit': typeof ApiPublicAuditRoute
   '/api/public/chat': typeof ApiPublicChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/api/public/audit' | '/api/public/chat'
+  fullPaths:
+    | '/'
+    | '/sales-proof'
+    | '/sitemap.xml'
+    | '/api/public/audit'
+    | '/api/public/chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/api/public/audit' | '/api/public/chat'
+  to:
+    | '/'
+    | '/sales-proof'
+    | '/sitemap.xml'
+    | '/api/public/audit'
+    | '/api/public/chat'
   id:
     | '__root__'
     | '/'
+    | '/sales-proof'
     | '/sitemap.xml'
     | '/api/public/audit'
     | '/api/public/chat'
@@ -69,6 +89,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SalesProofRoute: typeof SalesProofRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiPublicAuditRoute: typeof ApiPublicAuditRoute
   ApiPublicChatRoute: typeof ApiPublicChatRoute
@@ -81,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sales-proof': {
+      id: '/sales-proof'
+      path: '/sales-proof'
+      fullPath: '/sales-proof'
+      preLoaderRoute: typeof SalesProofRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -109,6 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SalesProofRoute: SalesProofRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiPublicAuditRoute: ApiPublicAuditRoute,
   ApiPublicChatRoute: ApiPublicChatRoute,
