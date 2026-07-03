@@ -83,18 +83,21 @@ const SEO_FIXES = [
 const OPTIMIZATION = [
   {
     title: "Product page redesign",
+    image: port5.url,
     before: "Cluttered PDP, no trust signals, hidden reviews, weak CTA hierarchy.",
     after: "Sticky ATC, above-fold reviews, size guide modal, benefit-led copy.",
     result: "+62% conversion rate, +18% AOV",
   },
   {
     title: "Mobile checkout rebuild",
+    image: port6.url,
     before: "5-step form, no autofill, cart abandonment 78%.",
     after: "One-page express checkout, Shop Pay, Apple Pay, guest flow.",
     result: "-34% abandonment, +41% mobile revenue",
   },
   {
     title: "Homepage UX overhaul",
+    image: port7.url,
     before: "Generic hero, no clear value prop, 12s LCP, high bounce.",
     after: "Editorial hero, curated collections, 1.8s LCP, category shortcuts.",
     result: "-41% bounce, +2.4x pages/session",
