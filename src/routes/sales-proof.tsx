@@ -41,18 +41,21 @@ export const Route = createFileRoute("/sales-proof")({
 const PERFORMANCE = [
   {
     name: "Skincare DTC — Shopify Plus",
+    image: port1.url,
     before: { speed: 38, lcp: "6.4s", cvr: "1.1%" },
     after: { speed: 96, lcp: "1.4s", cvr: "3.2%" },
     notes: "Theme rebuild, image pipeline, third-party script audit, critical CSS.",
   },
   {
     name: "Apparel Brand — Shopify 2.0",
+    image: port2.url,
     before: { speed: 44, lcp: "5.2s", cvr: "1.6%" },
     after: { speed: 98, lcp: "1.6s", cvr: "3.9%" },
     notes: "Section-based rebuild, deferred JS, WebP + AVIF, PDP CRO sprint.",
   },
   {
     name: "Wellness Store — Wix Studio",
+    image: port3.url,
     before: { speed: 41, lcp: "7.1s", cvr: "0.9%" },
     after: { speed: 92, lcp: "2.1s", cvr: "2.8%" },
     notes: "Wix Studio migration, media optimization, checkout friction removal.",
