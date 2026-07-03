@@ -486,14 +486,6 @@ function Portfolio() {
             </article>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
-          <a
-            href="/sales-proof"
-            className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-6 py-3 text-sm font-semibold shadow-glow hover:opacity-95 transition"
-          >
-            View More Results <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
