@@ -313,6 +313,9 @@ function OptimizationResults() {
               <div className="flex items-center gap-2 text-xs text-cyan">
                 <Smartphone className="h-4 w-4" /> {o.title}
               </div>
+              <div className="mt-5 rounded-xl overflow-hidden border border-white/5">
+                <img src={o.image} alt={`${o.title} dashboard result`} loading="lazy" className="w-full h-auto block" />
+              </div>
               <div className="mt-5 grid md:grid-cols-2 gap-4">
                 <div className="rounded-xl border border-white/5 bg-background/40 p-5">
                   <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Before</div>
