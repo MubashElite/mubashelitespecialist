@@ -5,6 +5,14 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { useReveal } from "@/components/site/useReveal";
+import port1 from "@/assets/port1.jpg.asset.json";
+import port2 from "@/assets/port2.jpg.asset.json";
+import port3 from "@/assets/port3.jpg.asset.json";
+import port4 from "@/assets/port4.jpg.asset.json";
+import port5 from "@/assets/port5.jpg.asset.json";
+import port6 from "@/assets/port6.jpg.asset.json";
+import port7 from "@/assets/port7.jpg.asset.json";
+import port8 from "@/assets/port8.jpg.asset.json";
 
 const PAGE_URL = "https://mubashelitespecialist.lovable.app/sales-proof";
 const PAGE_TITLE = "Results & Proof | Mubash Elite Specialist";
@@ -33,18 +41,21 @@ export const Route = createFileRoute("/sales-proof")({
 const PERFORMANCE = [
   {
     name: "Skincare DTC — Shopify Plus",
+    image: port1.url,
     before: { speed: 38, lcp: "6.4s", cvr: "1.1%" },
     after: { speed: 96, lcp: "1.4s", cvr: "3.2%" },
     notes: "Theme rebuild, image pipeline, third-party script audit, critical CSS.",
   },
   {
     name: "Apparel Brand — Shopify 2.0",
+    image: port2.url,
     before: { speed: 44, lcp: "5.2s", cvr: "1.6%" },
     after: { speed: 98, lcp: "1.6s", cvr: "3.9%" },
     notes: "Section-based rebuild, deferred JS, WebP + AVIF, PDP CRO sprint.",
   },
   {
     name: "Wellness Store — Wix Studio",
+    image: port3.url,
     before: { speed: 41, lcp: "7.1s", cvr: "0.9%" },
     after: { speed: 92, lcp: "2.1s", cvr: "2.8%" },
     notes: "Wix Studio migration, media optimization, checkout friction removal.",
@@ -72,18 +83,21 @@ const SEO_FIXES = [
 const OPTIMIZATION = [
   {
     title: "Product page redesign",
+    image: port5.url,
     before: "Cluttered PDP, no trust signals, hidden reviews, weak CTA hierarchy.",
     after: "Sticky ATC, above-fold reviews, size guide modal, benefit-led copy.",
     result: "+62% conversion rate, +18% AOV",
   },
   {
     title: "Mobile checkout rebuild",
+    image: port6.url,
     before: "5-step form, no autofill, cart abandonment 78%.",
     after: "One-page express checkout, Shop Pay, Apple Pay, guest flow.",
     result: "-34% abandonment, +41% mobile revenue",
   },
   {
     title: "Homepage UX overhaul",
+    image: port7.url,
     before: "Generic hero, no clear value prop, 12s LCP, high bounce.",
     after: "Editorial hero, curated collections, 1.8s LCP, category shortcuts.",
     result: "-41% bounce, +2.4x pages/session",
@@ -201,6 +215,9 @@ function PerformanceShowcase() {
                 <Gauge className="h-4 w-4" /> Optimization report
               </div>
               <h3 className="mt-2 font-display text-lg font-semibold">{p.name}</h3>
+              <div className="mt-4 rounded-xl overflow-hidden border border-white/5">
+                <img src={p.image} alt={`${p.name} analytics dashboard`} loading="lazy" className="w-full h-auto block" />
+              </div>
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {[
                   { l: "PageSpeed", b: p.before.speed, a: p.after.speed },
@@ -267,6 +284,14 @@ function SeoProof() {
             </ul>
           </div>
         </div>
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <div className="reveal glass rounded-2xl p-3 overflow-hidden">
+            <img src={port4.url} alt="Shopify analytics dashboard with +340% growth" loading="lazy" className="w-full h-auto rounded-xl block" />
+          </div>
+          <div className="reveal glass rounded-2xl p-3 overflow-hidden">
+            <img src={port8.url} alt="Shopify overview dashboard with sales and conversion metrics" loading="lazy" className="w-full h-auto rounded-xl block" />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -287,6 +312,9 @@ function OptimizationResults() {
             <div key={o.title} className="reveal glass rounded-2xl p-6 lg:p-8">
               <div className="flex items-center gap-2 text-xs text-cyan">
                 <Smartphone className="h-4 w-4" /> {o.title}
+              </div>
+              <div className="mt-5 rounded-xl overflow-hidden border border-white/5">
+                <img src={o.image} alt={`${o.title} dashboard result`} loading="lazy" className="w-full h-auto block" />
               </div>
               <div className="mt-5 grid md:grid-cols-2 gap-4">
                 <div className="rounded-xl border border-white/5 bg-background/40 p-5">
