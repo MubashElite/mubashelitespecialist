@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
@@ -665,14 +666,6 @@ function Testimonials() {
 
 /* ---------- BLOG ---------- */
 function Blog() {
-  const posts = [
-    { t: "Why your Shopify store is slow (and the fix nobody talks about)", c: "Performance", e: "App bloat and unoptimized themes silently kill conversion. Here's the audit I run on every new client store.", time: "6 min" },
-    { t: "The Klaviyo flow stack every DTC brand should have", c: "Email", e: "Welcome, abandoned cart, browse abandonment, post-purchase. The exact setup I deploy to lift revenue 20%+.", time: "8 min" },
-    { t: "Wix Studio for serious eCommerce: when it actually works", c: "Wix", e: "Wix isn't just for portfolios anymore. Here's where Wix Studio beats Shopify — and where it doesn't.", time: "5 min" },
-    { t: "AI automation for store owners who hate spreadsheets", c: "AI", e: "Three workflows I build for almost every client to claw back 10+ hours a week.", time: "7 min" },
-    { t: "Technical SEO checklist for Shopify in 2026", c: "SEO", e: "Schema, canonicals, sitemaps and the Core Web Vitals reality check your dev team is avoiding.", time: "9 min" },
-    { t: "Landing pages that convert paid traffic at 5%+", c: "CRO", e: "The framework I use to build single-product landers that don't waste ad spend.", time: "6 min" },
-  ];
   const ref = useRef<HTMLDivElement>(null);
   const scroll = (dir: 1 | -1) => {
     const el = ref.current;
@@ -698,18 +691,36 @@ function Blog() {
           className="mt-10 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-4 scroll-smooth reveal"
           style={{ scrollbarWidth: "thin" }}
         >
-          {posts.map((p) => (
-            <article key={p.t} className="snap-start shrink-0 w-[280px] sm:w-[340px] lg:w-[380px] glass rounded-2xl p-6 hover:shadow-glow transition group cursor-pointer" onClick={() => (window.location.href = EMAIL)}>
-              <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <span className="px-2 py-0.5 rounded bg-royal/20 text-cyan">{p.c}</span>
-                <span>{p.time} read</span>
+          {BLOG_POSTS.map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
+              className="snap-start shrink-0 w-[280px] sm:w-[340px] lg:w-[380px] glass rounded-2xl overflow-hidden hover:shadow-glow transition group flex flex-col"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden bg-royal/20">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  width={1024}
+                  height={640}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-medium bg-royal/60 backdrop-blur text-cyan border border-cyan/20">
+                  {p.category}
+                </span>
               </div>
-              <h3 className="mt-4 font-display font-semibold leading-snug group-hover:gradient-text transition">{p.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{p.e}</p>
-              <div className="mt-4 text-sm font-medium text-cyan inline-flex items-center gap-1.5">
-                Talk to me about this <ArrowRight className="h-3.5 w-3.5" />
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="text-xs text-muted-foreground">{p.readTime} read</div>
+                <h3 className="mt-2 font-display font-semibold leading-snug group-hover:gradient-text transition">{p.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{p.excerpt}</p>
+                <div className="mt-auto pt-4 text-sm font-medium text-cyan inline-flex items-center gap-1.5">
+                  Read the full breakdown <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
