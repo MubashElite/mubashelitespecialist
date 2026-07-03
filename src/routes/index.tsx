@@ -12,6 +12,9 @@ import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
 import portraitAsset from "@/assets/portrait.jpg.asset.json";
+import proofPort1 from "@/assets/port1.jpg.asset.json";
+import proofPort4 from "@/assets/port4.jpg.asset.json";
+import proofPort6 from "@/assets/port6.jpg.asset.json";
 
 const HOME_URL = "https://mubashelitespecialist.lovable.app/";
 const HOME_TITLE =
@@ -486,46 +489,51 @@ function Portfolio() {
             </article>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
-          <a
-            href="/sales-proof"
-            className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-6 py-3 text-sm font-semibold shadow-glow hover:opacity-95 transition"
-          >
-            View More Results <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
 }
 
-/* ---------- CASE STUDIES ---------- */
+/* ---------- CASE STUDIES (Sales Proof Preview) ---------- */
 function CaseStudies() {
-  const cases = [
-    { t: "+184% revenue in 90 days", d: "Skincare DTC brand. Replatform to Shopify 2.0, full CRO sprint, Klaviyo flows rebuilt.", m: [{ l: "Conv. rate", v: "+62%" }, { l: "AOV", v: "+18%" }, { l: "LCP", v: "1.4s" }] },
-    { t: "From 12s to 1.8s load time", d: "Apparel store on Shopify Plus, theme rebuild, image pipeline, third-party script audit.", m: [{ l: "Speed score", v: "98" }, { l: "Bounce", v: "-41%" }, { l: "CLS", v: "0.01" }] },
-    { t: "5x organic traffic in 6 months", d: "Wellness brand. Technical SEO overhaul, content cluster strategy, schema rollout.", m: [{ l: "Clicks", v: "+412%" }, { l: "Top 10 KW", v: "+187" }, { l: "Pages indexed", v: "+96%" }] },
-    { t: "$0 to $40k MRR subscription", d: "Coffee brand. Built subscription stack, onboarding flow, lifecycle email and CRO.", m: [{ l: "Subs", v: "1,240" }, { l: "Churn", v: "3.1%" }, { l: "LTV", v: "+58%" }] },
+  const previews = [
+    { src: proofPort1.url, alt: "Shopify Plus optimization dashboard — before/after speed & CVR", tag: "Performance", title: "Skincare DTC — +184% revenue" },
+    { src: proofPort4.url, alt: "Search Console growth dashboard — +340% impressions", tag: "Technical SEO", title: "SEO overhaul — +2163% impressions" },
+    { src: proofPort6.url, alt: "Mobile checkout rebuild dashboard result", tag: "CRO", title: "Mobile checkout — -34% abandonment" },
   ];
   return (
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Case Studies" title={<>Real numbers from real projects</>} />
-        <div className="mt-12 grid md:grid-cols-2 gap-5 reveal">
-          {cases.map((c) => (
-            <div key={c.t} className="glass rounded-2xl p-7 hover:shadow-glow transition">
-              <div className="font-display text-2xl font-bold gradient-text">{c.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{c.d}</p>
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                {c.m.map((mm) => (
-                  <div key={mm.l} className="rounded-xl bg-background/30 border border-white/10 p-3 text-center">
-                    <div className="font-display font-semibold">{mm.v}</div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">{mm.l}</div>
-                  </div>
-                ))}
+        <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
+          {previews.map((p) => (
+            <a
+              key={p.title}
+              href="/sales-proof"
+              className="group glass rounded-2xl overflow-hidden hover:shadow-glow transition"
+            >
+              <div className="aspect-[16/10] overflow-hidden border-b border-white/5">
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-            </div>
+              <div className="p-5">
+                <span className="text-[10px] uppercase tracking-widest text-cyan">{p.tag}</span>
+                <div className="mt-1.5 font-display font-semibold">{p.title}</div>
+              </div>
+            </a>
           ))}
+        </div>
+        <div className="mt-10 flex justify-center">
+          <a
+            href="/sales-proof"
+            className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-6 py-3 text-sm font-semibold shadow-glow hover:opacity-95 transition"
+          >
+            View All Results <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
