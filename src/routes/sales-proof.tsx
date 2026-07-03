@@ -215,6 +215,9 @@ function PerformanceShowcase() {
                 <Gauge className="h-4 w-4" /> Optimization report
               </div>
               <h3 className="mt-2 font-display text-lg font-semibold">{p.name}</h3>
+              <div className="mt-4 rounded-xl overflow-hidden border border-white/5">
+                <img src={p.image} alt={`${p.name} analytics dashboard`} loading="lazy" className="w-full h-auto block" />
+              </div>
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {[
                   { l: "PageSpeed", b: p.before.speed, a: p.after.speed },
