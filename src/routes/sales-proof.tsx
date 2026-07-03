@@ -5,6 +5,14 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { useReveal } from "@/components/site/useReveal";
+import port1 from "@/assets/port1.jpg.asset.json";
+import port2 from "@/assets/port2.jpg.asset.json";
+import port3 from "@/assets/port3.jpg.asset.json";
+import port4 from "@/assets/port4.jpg.asset.json";
+import port5 from "@/assets/port5.jpg.asset.json";
+import port6 from "@/assets/port6.jpg.asset.json";
+import port7 from "@/assets/port7.jpg.asset.json";
+import port8 from "@/assets/port8.jpg.asset.json";
 
 const PAGE_URL = "https://mubashelitespecialist.lovable.app/sales-proof";
 const PAGE_TITLE = "Results & Proof | Mubash Elite Specialist";
