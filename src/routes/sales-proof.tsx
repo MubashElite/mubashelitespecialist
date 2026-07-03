@@ -284,6 +284,14 @@ function SeoProof() {
             </ul>
           </div>
         </div>
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <div className="reveal glass rounded-2xl p-3 overflow-hidden">
+            <img src={port4.url} alt="Shopify analytics dashboard with +340% growth" loading="lazy" className="w-full h-auto rounded-xl block" />
+          </div>
+          <div className="reveal glass rounded-2xl p-3 overflow-hidden">
+            <img src={port8.url} alt="Shopify overview dashboard with sales and conversion metrics" loading="lazy" className="w-full h-auto rounded-xl block" />
+          </div>
+        </div>
       </div>
     </section>
   );
