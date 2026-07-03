@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check, Mail, MessageSquare, ExternalLink, Calendar, Clock } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
-import { BLOG_POSTS, getPostBySlug } from "@/lib/blog-posts";
+import { BLOG_POSTS, getPostBySlug, type BlogPost } from "@/lib/blog-posts";
 
 const SITE = "https://mubashelitespecialist.lovable.app";
 const EMAIL = "mailto:mubashelitespecialist@gmail.com";
@@ -80,7 +80,7 @@ function PostNotFound() {
 }
 
 function BlogPostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: BlogPost };
   const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
   const publishedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
     year: "numeric", month: "long", day: "numeric",
