@@ -188,32 +188,28 @@ function Hero() {
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Now booking Q3 2026 consulting slots</span>
+          <span className="text-muted-foreground">Shopify Optimization Specialist · Now booking</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          Helping eCommerce brands build{" "}
-          <span className="gradient-text">better Shopify & Wix</span>{" "}
-          experiences that convert.
+          I fix Shopify stores that are{" "}
+          <span className="gradient-text">losing sales</span>{" "}
+          due to technical & conversion issues.
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          I'm <span className="text-foreground font-medium">Mubash Elite Specialist</span>&nbsp;an independent Shopify Expert, Wix Specialist, SEO Consultant, AI Automation Engineer and eCommerce growth partner. I work with founders who care about craft, speed, and revenue.
+          Shopify SEO, tracking, speed, and conversion optimization for real eCommerce businesses. Real store fixes, revenue-focused improvements — no fluff.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <button onClick={() => scrollToId("portfolio")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
-            View Portfolio <ArrowRight className="h-4 w-4" />
+          <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
+            Get Free Store Diagnosis <ArrowRight className="h-4 w-4" />
           </button>
-          <a href={FIVERR} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            Hire me on Fiverr <ExternalLink className="h-4 w-4" />
-          </a>
-          <button onClick={() => scrollToId("pricing")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            View Pricing
+          <button onClick={() => scrollToId("case-studies")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
+            View Case Studies
           </button>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            Book a Consultation
-          </a>
-          <a href={EMAIL} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            Contact Me
-          </a>
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground animate-fade-up" style={{ animationDelay: "0.28s" }}>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Shopify Optimization Specialist</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Real Store Fixes & Case Studies</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Revenue-Focused Improvements</span>
         </div>
       </div>
     </section>
