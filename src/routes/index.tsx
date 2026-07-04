@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
   TrendingUp, Globe, Search, Mailbox, Bot, Wrench, ArrowLeftRight, Palette,
-  ChevronLeft, ChevronRight, Check, Star, ArrowUp, Quote, Sparkles
+  ChevronLeft, ChevronRight, Check, Star, ArrowUp, Quote, Sparkles,
+  Play, X, ShieldCheck, Zap, Target, LineChart, DollarSign
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { ChatWidget } from "@/components/site/ChatWidget";
