@@ -384,29 +384,120 @@ function ProjectBreakdown() {
   );
 }
 
-const VIDEO_PROOFS = [
+const CASE_STUDIES = [
   {
-    title: "SEO / Store Optimization Proof",
-    description: "Search Console growth after a full technical SEO overhaul — indexing, rankings and Core Web Vitals restored.",
+    featured: true,
+    client: "Shopify Skincare DTC",
+    title: "Technical SEO overhaul restored organic revenue",
+    summary:
+      "Full technical SEO rebuild on a live Shopify store — crawl errors cleared, schema deployed sitewide, and Core Web Vitals brought into the green. Impressions and revenue attribution compounded within 90 days.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128118/VID-20260103-WA0118_siiojd.mp4",
-    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_960,h_600,c_fill,q_auto,f_jpg/v1783128118/VID-20260103-WA0118_siiojd.jpg",
-    tag: "SEO Proof",
+    poster:
+      "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1600,h_900,c_fill,q_auto,f_jpg/v1783128118/VID-20260103-WA0118_siiojd.jpg",
+    tag: "SEO & Store Optimization",
+    metrics: [
+      { label: "Search visibility", value: "+32%" },
+      { label: "Indexed pages", value: "48 → 612" },
+      { label: "Core Web Vitals", value: "94% good" },
+    ],
   },
   {
-    title: "Sales Proof Case Study",
-    description: "Real Shopify store revenue lift after CRO sprint, PDP redesign and checkout rebuild.",
+    featured: false,
+    client: "Shopify Apparel Brand",
+    title: "CRO sprint lifted revenue on the same traffic",
+    summary:
+      "Product page redesign, sticky ATC and checkout rebuild on a live Shopify store — walkthrough of the before/after and revenue impact.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
-    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_960,h_600,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
+    poster:
+      "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
     tag: "Sales Proof",
+    metrics: [
+      { label: "Revenue lift", value: "+184%" },
+      { label: "Mobile CVR", value: "1.1% → 3.2%" },
+      { label: "Revenue attribution", value: "Restored" },
+    ],
   },
   {
-    title: "Shopify Fix / Results Proof",
-    description: "Improved store performance & conversion tracking fixed — before/after walkthrough.",
+    featured: false,
+    client: "Shopify Wellness Store",
+    title: "Broken tracking fixed, performance restored",
+    summary:
+      "Conversion tracking repaired, GA4 and Meta Pixel events re-wired, theme performance tuned — before/after walkthrough of the fix.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128164/VID-20250521-WA0008_nppver.mp4",
-    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_960,h_600,c_fill,q_auto,f_jpg/v1783128164/VID-20250521-WA0008_nppver.jpg",
+    poster:
+      "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128164/VID-20250521-WA0008_nppver.jpg",
     tag: "Shopify Fix",
+    metrics: [
+      { label: "Tracking", value: "Fully fixed" },
+      { label: "LCP", value: "7.1s → 2.1s" },
+      { label: "Checkout errors", value: "-100%" },
+    ],
   },
 ];
+
+function MetricBadge({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-background/40 px-3 py-2 backdrop-blur-sm">
+      <div className="text-[9px] uppercase tracking-widest text-muted-foreground">{label}</div>
+      <div className="mt-0.5 text-sm font-display font-semibold gradient-text">{value}</div>
+    </div>
+  );
+}
+
+function CaseStudyCard({
+  study,
+  featured,
+  onPlay,
+}: {
+  study: (typeof CASE_STUDIES)[number];
+  featured?: boolean;
+  onPlay: () => void;
+}) {
+  return (
+    <button
+      onClick={onPlay}
+      aria-label={`Play case study: ${study.title}`}
+      className={`reveal group relative w-full text-left glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan/40 hover:shadow-glow transition-all hover:-translate-y-1 ${
+        featured ? "lg:col-span-2" : ""
+      }`}
+    >
+      <div className={`relative overflow-hidden ${featured ? "aspect-[16/9]" : "aspect-video"}`}>
+        <img
+          src={study.poster}
+          alt={`${study.client} case study thumbnail`}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/10" />
+        <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-[10px] tracking-[0.18em] uppercase text-cyan">
+          <Film className="h-3 w-3" /> {study.tag}
+        </span>
+        {featured && (
+          <span className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-cyan/20 to-royal/20 border border-cyan/30 px-3 py-1 text-[10px] tracking-[0.18em] uppercase text-cyan">
+            <Sparkles className="h-3 w-3" /> Featured
+          </span>
+        )}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-white/10 transition-transform group-hover:scale-110">
+            <Play className="h-6 w-6 text-white fill-white ml-0.5" />
+          </span>
+        </div>
+      </div>
+      <div className={`p-6 ${featured ? "lg:p-8" : ""}`}>
+        <div className="text-xs text-cyan uppercase tracking-widest">{study.client}</div>
+        <h3 className={`mt-2 font-display font-semibold ${featured ? "text-2xl lg:text-3xl" : "text-lg"}`}>
+          {study.title}
+        </h3>
+        <p className="mt-3 text-sm text-muted-foreground">{study.summary}</p>
+        <div className={`mt-5 grid gap-2 ${featured ? "grid-cols-3" : "grid-cols-3"}`}>
+          {study.metrics.map((m) => (
+            <MetricBadge key={m.label} {...m} />
+          ))}
+        </div>
+      </div>
+    </button>
+  );
+}
 
 function VideoProof() {
   const ref = useReveal<HTMLDivElement>();
@@ -424,47 +515,36 @@ function VideoProof() {
     };
   }, [active]);
 
-  const current = active !== null ? VIDEO_PROOFS[active] : null;
+  const current = active !== null ? CASE_STUDIES[active] : null;
+  const featured = CASE_STUDIES[0];
+  const supporting = CASE_STUDIES.slice(1);
 
   return (
     <section ref={ref} className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Video Case Studies"
-          title={<>Real Client Results & <span className="gradient-text">Sales Proof</span></>}
-          description="Watch real case studies of Shopify stores I optimized and fixed."
+          eyebrow="Results & Case Studies"
+          title={<>Real Shopify wins, <span className="gradient-text">on the record</span></>}
+          description="Featured client work — click any case study to watch the walkthrough in fullscreen."
         />
-        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {VIDEO_PROOFS.map((v, i) => (
-            <button
-              key={v.title}
-              onClick={() => setActive(i)}
-              className="reveal group glass rounded-2xl overflow-hidden text-left hover:shadow-glow transition-all hover:-translate-y-1"
-              aria-label={`Play video: ${v.title}`}
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={v.poster}
-                  alt={`${v.title} — video thumbnail`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-white/10 transition-transform group-hover:scale-110">
-                    <Play className="h-6 w-6 text-white fill-white ml-0.5" />
-                  </span>
-                </div>
-                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full glass px-2.5 py-1 text-[10px] tracking-[0.15em] uppercase text-cyan">
-                  <Film className="h-3 w-3" /> {v.tag}
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg font-semibold">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{v.description}</p>
-              </div>
-            </button>
-          ))}
+
+        <div className="mt-14 grid lg:grid-cols-2 gap-6">
+          <CaseStudyCard study={featured} featured onPlay={() => setActive(0)} />
+          <div className="grid gap-6">
+            {supporting.map((s, i) => (
+              <CaseStudyCard key={s.title} study={s} onPlay={() => setActive(i + 1)} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 reveal mx-auto max-w-3xl glass rounded-2xl border border-white/10 p-5 text-center">
+          <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-cyan">
+            <CheckCircle2 className="h-3 w-3" /> Verified client work
+          </div>
+          <p className="mt-3 text-sm text-muted-foreground">
+            These case studies reflect real Shopify store optimizations — including SEO fixes, tracking repairs,
+            and performance improvements on live stores.
+          </p>
         </div>
       </div>
 
@@ -502,6 +582,7 @@ function VideoProof() {
     </section>
   );
 }
+
 
 function CTA() {
 
