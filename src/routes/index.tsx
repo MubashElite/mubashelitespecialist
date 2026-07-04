@@ -115,17 +115,23 @@ function Home() {
       <Metrics />
       <Platforms />
       <About />
+      <Authority />
       <Services />
+      <ServiceTiers />
       <Process />
       <Portfolio />
       <CaseStudies />
+      <Diagnosis />
       <Skills />
       <Audit />
       <Pricing />
+      <PricingAnchor />
+      <TrustStrip />
       <Testimonials />
       <Blog />
       <FAQ />
       <Contact />
+      <FinalCTA />
       <Footer />
       <ChatWidget />
       <BackToTop />
