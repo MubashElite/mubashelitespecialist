@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
   TrendingUp, Globe, Search, Mailbox, Bot, Wrench, ArrowLeftRight, Palette,
-  ChevronLeft, ChevronRight, Check, Star, ArrowUp, Quote, Sparkles
+  ChevronLeft, ChevronRight, Check, Star, ArrowUp, Quote, Sparkles,
+  Play, X, ShieldCheck, Zap, Target, LineChart, DollarSign
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { ChatWidget } from "@/components/site/ChatWidget";
@@ -13,9 +14,6 @@ import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
 import portraitAsset from "@/assets/portrait.jpg.asset.json";
-import proofPort1 from "@/assets/port1.jpg.asset.json";
-import proofPort4 from "@/assets/port4.jpg.asset.json";
-import proofPort6 from "@/assets/port6.jpg.asset.json";
 
 const HOME_URL = "https://mubashelitespecialist.lovable.app/";
 const HOME_TITLE =
@@ -114,17 +112,23 @@ function Home() {
       <Metrics />
       <Platforms />
       <About />
+      <Authority />
       <Services />
+      <ServiceTiers />
       <Process />
       <Portfolio />
       <CaseStudies />
+      <Diagnosis />
       <Skills />
       <Audit />
       <Pricing />
+      <PricingAnchor />
+      <TrustStrip />
       <Testimonials />
       <Blog />
       <FAQ />
       <Contact />
+      <FinalCTA />
       <Footer />
       <ChatWidget />
       <BackToTop />
@@ -181,32 +185,28 @@ function Hero() {
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Now booking Q3 2026 consulting slots</span>
+          <span className="text-muted-foreground">Shopify Optimization Specialist · Now booking</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          Helping eCommerce brands build{" "}
-          <span className="gradient-text">better Shopify & Wix</span>{" "}
-          experiences that convert.
+          I fix Shopify stores that are{" "}
+          <span className="gradient-text">losing sales</span>{" "}
+          due to technical & conversion issues.
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          I'm <span className="text-foreground font-medium">Mubash Elite Specialist</span>&nbsp;an independent Shopify Expert, Wix Specialist, SEO Consultant, AI Automation Engineer and eCommerce growth partner. I work with founders who care about craft, speed, and revenue.
+          Shopify SEO, tracking, speed, and conversion optimization for real eCommerce businesses. Real store fixes, revenue-focused improvements — no fluff.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <button onClick={() => scrollToId("portfolio")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
-            View Portfolio <ArrowRight className="h-4 w-4" />
+          <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
+            Get Free Store Diagnosis <ArrowRight className="h-4 w-4" />
           </button>
-          <a href={FIVERR} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            Hire me on Fiverr <ExternalLink className="h-4 w-4" />
-          </a>
-          <button onClick={() => scrollToId("pricing")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            View Pricing
+          <button onClick={() => scrollToId("case-studies")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
+            View Case Studies
           </button>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            Book a Consultation
-          </a>
-          <a href={EMAIL} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
-            Contact Me
-          </a>
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground animate-fade-up" style={{ animationDelay: "0.28s" }}>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Shopify Optimization Specialist</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Real Store Fixes & Case Studies</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Revenue-Focused Improvements</span>
         </div>
       </div>
     </section>
@@ -495,51 +495,319 @@ function Portfolio() {
   );
 }
 
-/* ---------- CASE STUDIES (Sales Proof Preview) ---------- */
+/* ---------- CASE STUDIES (Video Proof) ---------- */
+const HOME_CASE_STUDIES = [
+  {
+    featured: true,
+    title: "Shopify SEO Recovery & Indexing Fix",
+    problem: "Store not properly indexed and losing organic visibility.",
+    solution: "Fixed SEO structure, indexing, and crawl issues.",
+    impact: "SEO performance restored",
+    icon: "📈",
+    tag: "SEO Optimization",
+    src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128118/VID-20260103-WA0118_siiojd.mp4",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1600,h_900,c_fill,q_auto,f_jpg/v1783128118/VID-20260103-WA0118_siiojd.jpg",
+  },
+  {
+    featured: false,
+    title: "Conversion Tracking & Sales Attribution Fix",
+    problem: "Broken purchase tracking affecting analytics.",
+    solution: "Rebuilt tracking structure across GA4 & pixels.",
+    impact: "Accurate sales tracking restored",
+    icon: "💰",
+    tag: "Tracking Fix",
+    src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
+  },
+  {
+    featured: false,
+    title: "Shopify Store Performance Optimization",
+    problem: "Slow and inefficient store experience.",
+    solution: "UX and performance improvements across the theme.",
+    impact: "Faster store experience & improved flow",
+    icon: "⚡",
+    tag: "Performance",
+    src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128164/VID-20250521-WA0008_nppver.mp4",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128164/VID-20250521-WA0008_nppver.jpg",
+  },
+];
+
 function CaseStudies() {
-  const previews = [
-    { src: proofPort1.url, alt: "Shopify Plus optimization dashboard — before/after speed & CVR", tag: "Performance", title: "Skincare DTC — +184% revenue" },
-    { src: proofPort4.url, alt: "Search Console growth dashboard — +340% impressions", tag: "Technical SEO", title: "SEO overhaul — +2163% impressions" },
-    { src: proofPort6.url, alt: "Mobile checkout rebuild dashboard result", tag: "CRO", title: "Mobile checkout — -34% abandonment" },
-  ];
+  const [active, setActive] = useState<number | null>(null);
+  useEffect(() => {
+    if (active === null) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [active]);
+  const current = active !== null ? HOME_CASE_STUDIES[active] : null;
+  const featured = HOME_CASE_STUDIES[0];
+  const supporting = HOME_CASE_STUDIES.slice(1);
+
+  const Card = ({ s, index, big }: { s: (typeof HOME_CASE_STUDIES)[number]; index: number; big?: boolean }) => (
+    <button
+      onClick={() => setActive(index)}
+      aria-label={`Play case study: ${s.title}`}
+      className="group relative w-full text-left glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan/40 hover:shadow-glow transition-all hover:-translate-y-1"
+    >
+      <div className={`relative overflow-hidden ${big ? "aspect-[16/9]" : "aspect-video"}`}>
+        <img src={s.poster} alt={`${s.title} thumbnail`} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
+        <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-[10px] tracking-[0.18em] uppercase text-cyan">{s.tag}</span>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-white/10 transition-transform group-hover:scale-110">
+            <Play className="h-6 w-6 text-white fill-white ml-0.5" />
+          </span>
+        </div>
+      </div>
+      <div className={`p-6 ${big ? "lg:p-8" : ""}`}>
+        <h3 className={`font-display font-semibold ${big ? "text-2xl lg:text-3xl" : "text-lg"}`}>{s.title}</h3>
+        <div className="mt-4 space-y-2 text-sm">
+          <p><span className="text-[10px] uppercase tracking-widest text-muted-foreground mr-2">Problem</span>{s.problem}</p>
+          <p><span className="text-[10px] uppercase tracking-widest text-muted-foreground mr-2">Solution</span>{s.solution}</p>
+        </div>
+        <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-royal/10 px-3 py-1.5 text-xs font-semibold text-cyan">
+          <span>{s.icon}</span> {s.impact}
+        </div>
+      </div>
+    </button>
+  );
+
   return (
-    <section className="py-20 sm:py-28">
+    <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Case Studies" title={<>Real numbers from real projects</>} />
-        <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
-          {previews.map((p) => (
-            <a
-              key={p.title}
-              href="/sales-proof"
-              className="group glass rounded-2xl overflow-hidden hover:shadow-glow transition"
-            >
-              <div className="aspect-[16/10] overflow-hidden border-b border-white/5">
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-5">
-                <span className="text-[10px] uppercase tracking-widest text-cyan">{p.tag}</span>
-                <div className="mt-1.5 font-display font-semibold">{p.title}</div>
-              </div>
-            </a>
-          ))}
+        <SectionHeading eyebrow="Case Studies" title={<>Real Shopify Results & <span className="gradient-text">Case Studies</span></>} subtitle="Real client work — click any case study to watch the walkthrough in fullscreen. No external redirects." />
+        <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
+          <Card s={featured} index={0} big />
+          <div className="grid gap-6">
+            {supporting.map((s, i) => <Card key={s.title} s={s} index={i + 1} />)}
+          </div>
         </div>
         <div className="mt-10 flex justify-center">
-          <a
-            href="/sales-proof"
-            className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-6 py-3 text-sm font-semibold shadow-glow hover:opacity-95 transition"
-          >
-            View All Results <ArrowRight className="h-4 w-4" />
-          </a>
+          <Link to="/sales-proof" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-6 py-3 text-sm font-semibold transition">
+            View all results & proof <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+
+      {current && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 backdrop-blur-md p-4 animate-fade-up"
+          onClick={() => setActive(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button onClick={() => setActive(null)} aria-label="Close video" className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-white/10 transition">
+            <X className="h-5 w-5" />
+          </button>
+          <div className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-elegant border border-white/10 bg-black" onClick={(e) => e.stopPropagation()}>
+            <video key={current.src} src={current.src} poster={current.poster} controls autoPlay playsInline className="w-full h-full" />
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/* ---------- AUTHORITY ---------- */
+function Authority() {
+  const items = [
+    { i: Target, t: "Shopify-focused specialist", d: "Deep focus on Shopify optimization — not a generalist agency." },
+    { i: DollarSign, t: "Revenue-impacting fixes", d: "Every fix is scoped around what moves the store's numbers." },
+    { i: ShieldCheck, t: "Real live-store experience", d: "Hands-on work on real stores, not sandboxes or theory." },
+    { i: LineChart, t: "Conversion + performance driven", d: "Speed, tracking and CRO wired together — not in silos." },
+    { i: Zap, t: "Fast issue identification", d: "Quick to find the exact thing killing your sales." },
+    { i: TrendingUp, t: "Compounding, long-term impact", d: "Fixes that keep paying you back month after month." },
+  ];
+  return (
+    <section id="authority" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeading eyebrow="Authority" title={<>Why businesses <span className="gradient-text">work with me</span></>} subtitle="Positioning matters. Here's what makes this different from hiring a generalist freelancer or a bloated agency." />
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+          {items.map(({ i: Icon, t, d }) => (
+            <div key={t} className="glass rounded-2xl p-6 hover:shadow-glow transition hover:-translate-y-1">
+              <div className="h-11 w-11 rounded-xl gradient-primary grid place-items-center text-white shadow-glow">
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display font-semibold">{t}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+/* ---------- SERVICE TIERS ---------- */
+function ServiceTiers() {
+  const tiers = [
+    { dot: "bg-emerald-400", name: "Basic Fix", desc: "Small store issues — tracking or SEO fixes.", items: ["Tracking / pixel repairs", "On-page SEO cleanup", "Small UX fixes"] },
+    { dot: "bg-cyan", name: "Growth Optimization", desc: "SEO + tracking + speed + conversion improvements.", items: ["Technical SEO", "Speed & Core Web Vitals", "Conversion improvements", "Analytics rebuild"] },
+    { dot: "bg-rose-400", name: "Full Store Optimization", desc: "Full audit + end-to-end, revenue-focused overhaul.", items: ["Full store audit", "End-to-end optimization", "SEO + CRO + tracking", "Revenue-focused roadmap"] },
+  ];
+  return (
+    <section id="service-tiers" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeading eyebrow="Service Tiers" title={<>Shopify <span className="gradient-text">Optimization Services</span></>} subtitle="Three focused engagement tiers — matched to the depth of the problem." />
+        <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
+          {tiers.map((t) => (
+            <div key={t.name} className="glass rounded-2xl p-7 flex flex-col hover:shadow-glow transition">
+              <div className="flex items-center gap-2">
+                <span className={`h-2.5 w-2.5 rounded-full ${t.dot}`} />
+                <span className="text-sm font-semibold">{t.name}</span>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">{t.desc}</p>
+              <ul className="mt-5 space-y-2 flex-1">
+                {t.items.map((i) => (
+                  <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                    <Check className="h-4 w-4 text-cyan mt-0.5 shrink-0" /> {i}
+                  </li>
+                ))}
+              </ul>
+              <button onClick={() => scrollToId("diagnosis")} className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl gradient-primary text-white px-5 py-3 text-sm font-semibold shadow-glow hover:opacity-95 transition">
+                Request diagnosis <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- DIAGNOSIS FORM ---------- */
+function Diagnosis() {
+  const [form, setForm] = useState({ name: "", url: "", issue: "Low sales" });
+  const [sent, setSent] = useState(false);
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    const name = form.name.trim().slice(0, 80);
+    const url = form.url.trim().slice(0, 200);
+    if (!name || !url) return;
+    const msg = `Hi Mubash, I'd like a free Shopify store diagnosis.%0A%0AName: ${encodeURIComponent(name)}%0AStore URL: ${encodeURIComponent(url)}%0AMain Issue: ${encodeURIComponent(form.issue)}`;
+    window.open(`https://wa.me/17542504531?text=${msg}`, "_blank", "noopener,noreferrer");
+    setSent(true);
+  }
+  return (
+    <section id="diagnosis" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <SectionHeading eyebrow="Free Diagnosis" title={<>Get a <span className="gradient-text">Free Shopify Store Diagnosis</span></>} subtitle="I'll review your store and identify what is stopping your sales." />
+        <form onSubmit={submit} className="mt-12 glass rounded-3xl p-8 sm:p-10 space-y-5 reveal">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs text-muted-foreground">Your name</label>
+              <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={80} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+            </div>
+            <div>
+              <label className="text-xs text-muted-foreground">Store URL</label>
+              <input type="url" placeholder="https://yourstore.com" value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} required maxLength={200} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+            </div>
+          </div>
+          <div>
+            <label className="text-xs text-muted-foreground">Main issue</label>
+            <select value={form.issue} onChange={(e) => setForm({ ...form, issue: e.target.value })} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+              {["Low sales", "Tracking issues", "SEO problems", "Slow store", "Not sure"].map((o) => (
+                <option key={o} value={o} className="bg-background">{o}</option>
+              ))}
+            </select>
+          </div>
+          <button type="submit" className="w-full inline-flex items-center justify-center gap-2 rounded-xl gradient-primary text-white px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
+            👉 {sent ? "Opening WhatsApp…" : "Request Free Diagnosis"} <ArrowRight className="h-4 w-4" />
+          </button>
+          <p className="text-center text-xs text-muted-foreground">Sends directly to WhatsApp. No spam, no sales pitch — just a real review.</p>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- PRICING ANCHOR ---------- */
+function PricingAnchor() {
+  const rows = [
+    { r: "$150 – $800", w: "Basic fixes" },
+    { r: "$800 – $2,500", w: "Growth optimization" },
+    { r: "$2,500+", w: "Full store optimization systems" },
+  ];
+  return (
+    <section className="py-16">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="glass rounded-3xl p-8 sm:p-10 reveal">
+          <div className="text-xs uppercase tracking-widest text-cyan text-center">Typical Project Range</div>
+          <div className="mt-6 grid sm:grid-cols-3 gap-4">
+            {rows.map((r) => (
+              <div key={r.r} className="rounded-2xl border border-white/10 bg-background/30 p-5 text-center">
+                <div className="font-display text-xl sm:text-2xl font-bold gradient-text">{r.r}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{r.w}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- TRUST STRIP ---------- */
+function TrustStrip() {
+  const bullets = [
+    "Real Shopify store optimizations",
+    "No stock content",
+    "Live store fixes",
+    "Revenue-focused approach",
+    "Technical + conversion expertise",
+  ];
+  return (
+    <section className="py-12">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="glass rounded-2xl px-6 py-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 reveal">
+          {bullets.map((b) => (
+            <span key={b} className="inline-flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+              <Check className="h-4 w-4 text-cyan" /> {b}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- FINAL CTA ---------- */
+function FinalCTA() {
+  return (
+    <section className="py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="relative glass rounded-3xl p-10 sm:p-14 text-center overflow-hidden reveal">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-royal/25 via-transparent to-cyan/15" />
+          <div className="absolute -top-40 -right-40 h-[400px] w-[400px] rounded-full bg-cyan/10 blur-[120px]" />
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-[11px] tracking-[0.18em] uppercase text-cyan">
+            <Sparkles className="h-3 w-3" /> Ready to fix your store?
+          </span>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Ready to Fix Your <span className="gradient-text">Shopify Store?</span>
+          </h2>
+          <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
+            If your store has traffic but low sales, there is usually a fixable technical or conversion issue. Let's find it.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
+              👉 Get Free Store Review <ArrowRight className="h-4 w-4" />
+            </button>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-7 py-3.5 text-sm font-semibold transition">
+              WhatsApp me directly
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 /* ---------- SKILLS ---------- */
 function Skills() {

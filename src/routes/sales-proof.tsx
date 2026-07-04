@@ -387,53 +387,54 @@ function ProjectBreakdown() {
 const CASE_STUDIES = [
   {
     featured: true,
-    client: "Shopify Skincare DTC",
-    title: "Technical SEO overhaul restored organic revenue",
+    client: "Shopify Store — SEO Recovery",
+    title: "Shopify SEO Recovery & Indexing Fix",
     summary:
-      "Full technical SEO rebuild on a live Shopify store — crawl errors cleared, schema deployed sitewide, and Core Web Vitals brought into the green. Impressions and revenue attribution compounded within 90 days.",
+      "Problem: store not properly indexed and losing organic visibility. Solution: fixed SEO structure, indexing, and crawl issues. Result: restored search visibility and improved discoverability.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128118/VID-20260103-WA0118_siiojd.mp4",
     poster:
       "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1600,h_900,c_fill,q_auto,f_jpg/v1783128118/VID-20260103-WA0118_siiojd.jpg",
     tag: "SEO & Store Optimization",
     metrics: [
-      { label: "Search visibility", value: "+32%" },
-      { label: "Indexed pages", value: "48 → 612" },
-      { label: "Core Web Vitals", value: "94% good" },
+      { label: "Search visibility", value: "Restored" },
+      { label: "Indexing issues", value: "Fixed" },
+      { label: "Impact", value: "📈 SEO restored" },
     ],
   },
   {
     featured: false,
-    client: "Shopify Apparel Brand",
-    title: "CRO sprint lifted revenue on the same traffic",
+    client: "Shopify Store — Tracking Fix",
+    title: "Conversion Tracking & Sales Attribution Fix",
     summary:
-      "Product page redesign, sticky ATC and checkout rebuild on a live Shopify store — walkthrough of the before/after and revenue impact.",
+      "Problem: broken purchase tracking affecting analytics. Solution: rebuilt tracking structure across GA4 and ad pixels. Result: accurate sales tracking restored.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
     poster:
       "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
-    tag: "Sales Proof",
+    tag: "Tracking Fix",
     metrics: [
-      { label: "Revenue lift", value: "+184%" },
-      { label: "Mobile CVR", value: "1.1% → 3.2%" },
-      { label: "Revenue attribution", value: "Restored" },
+      { label: "Purchase tracking", value: "Fixed" },
+      { label: "Attribution", value: "Restored" },
+      { label: "Impact", value: "💰 Accurate" },
     ],
   },
   {
     featured: false,
-    client: "Shopify Wellness Store",
-    title: "Broken tracking fixed, performance restored",
+    client: "Shopify Store — Performance",
+    title: "Shopify Store Performance Optimization",
     summary:
-      "Conversion tracking repaired, GA4 and Meta Pixel events re-wired, theme performance tuned — before/after walkthrough of the fix.",
+      "Problem: slow and inefficient store experience. Solution: UX and performance improvements across the theme. Result: faster store experience and smoother user flow.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128164/VID-20250521-WA0008_nppver.mp4",
     poster:
       "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128164/VID-20250521-WA0008_nppver.jpg",
-    tag: "Shopify Fix",
+    tag: "Performance",
     metrics: [
-      { label: "Tracking", value: "Fully fixed" },
-      { label: "LCP", value: "7.1s → 2.1s" },
-      { label: "Checkout errors", value: "-100%" },
+      { label: "Store speed", value: "Improved" },
+      { label: "UX flow", value: "Smoother" },
+      { label: "Impact", value: "⚡ Faster" },
     ],
   },
 ];
+
 
 function MetricBadge({ label, value }: { label: string; value: string }) {
   return (
