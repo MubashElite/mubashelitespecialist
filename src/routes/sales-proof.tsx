@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
   ArrowRight, ArrowLeft, Gauge, TrendingUp, Search, Smartphone,
   CheckCircle2, Zap, BarChart3, Globe, Layers, Sparkles, MessageSquare,
+  Play, X, Film,
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
+
 import { useReveal } from "@/components/site/useReveal";
 import port1 from "@/assets/port1.jpg.asset.json";
 import port2 from "@/assets/port2.jpg.asset.json";
