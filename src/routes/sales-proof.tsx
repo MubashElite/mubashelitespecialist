@@ -546,11 +546,13 @@ function SalesProofPage() {
       <Navbar />
       <main>
         <Hero />
+        <VideoProof />
         <PerformanceShowcase />
         <SeoProof />
         <OptimizationResults />
         <ProjectBreakdown />
         <CTA />
+
       </main>
       <footer className="border-t border-white/5 py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Mubash Elite Specialist — All rights reserved.
