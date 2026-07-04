@@ -384,7 +384,127 @@ function ProjectBreakdown() {
   );
 }
 
+const VIDEO_PROOFS = [
+  {
+    title: "SEO / Store Optimization Proof",
+    description: "Search Console growth after a full technical SEO overhaul — indexing, rankings and Core Web Vitals restored.",
+    src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128118/VID-20260103-WA0118_siiojd.mp4",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_960,h_600,c_fill,q_auto,f_jpg/v1783128118/VID-20260103-WA0118_siiojd.jpg",
+    tag: "SEO Proof",
+  },
+  {
+    title: "Sales Proof Case Study",
+    description: "Real Shopify store revenue lift after CRO sprint, PDP redesign and checkout rebuild.",
+    src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_960,h_600,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
+    tag: "Sales Proof",
+  },
+  {
+    title: "Shopify Fix / Results Proof",
+    description: "Improved store performance & conversion tracking fixed — before/after walkthrough.",
+    src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128164/VID-20250521-WA0008_nppver.mp4",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_960,h_600,c_fill,q_auto,f_jpg/v1783128164/VID-20250521-WA0008_nppver.jpg",
+    tag: "Shopify Fix",
+  },
+];
+
+function VideoProof() {
+  const ref = useReveal<HTMLDivElement>();
+  const [active, setActive] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (active === null) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [active]);
+
+  const current = active !== null ? VIDEO_PROOFS[active] : null;
+
+  return (
+    <section ref={ref} className="py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeading
+          eyebrow="Video Case Studies"
+          title={<>Real Client Results & <span className="gradient-text">Sales Proof</span></>}
+          description="Watch real case studies of Shopify stores I optimized and fixed."
+        />
+        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {VIDEO_PROOFS.map((v, i) => (
+            <button
+              key={v.title}
+              onClick={() => setActive(i)}
+              className="reveal group glass rounded-2xl overflow-hidden text-left hover:shadow-glow transition-all hover:-translate-y-1"
+              aria-label={`Play video: ${v.title}`}
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={v.poster}
+                  alt={`${v.title} — video thumbnail`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-white/10 transition-transform group-hover:scale-110">
+                    <Play className="h-6 w-6 text-white fill-white ml-0.5" />
+                  </span>
+                </div>
+                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full glass px-2.5 py-1 text-[10px] tracking-[0.15em] uppercase text-cyan">
+                  <Film className="h-3 w-3" /> {v.tag}
+                </span>
+              </div>
+              <div className="p-5">
+                <h3 className="font-display text-lg font-semibold">{v.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{v.description}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {current && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 backdrop-blur-md p-4 animate-fade-up"
+          onClick={() => setActive(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={current.title}
+        >
+          <button
+            onClick={() => setActive(null)}
+            aria-label="Close video"
+            className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-white/10 transition"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div
+            className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-elegant border border-white/10 bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              key={current.src}
+              src={current.src}
+              poster={current.poster}
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function CTA() {
+
   return (
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
