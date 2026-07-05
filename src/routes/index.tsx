@@ -706,7 +706,7 @@ function Diagnosis() {
   return (
     <section id="diagnosis" className="py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Free Diagnosis" title={<>Get a <span className="gradient-text">Free Shopify Store Diagnosis</span></>} subtitle="I'll review your store and identify what is stopping your sales." />
+        <SectionHeading eyebrow="Free Diagnosis" title={<>Get a <span className="gradient-text">Free Shopify Store Diagnosis</span></>} subtitle="I will analyze your store and identify what is stopping your sales or scaling performance. Works for Shopify stores and dropshipping businesses." />
         <form onSubmit={submit} className="mt-12 glass rounded-3xl p-8 sm:p-10 space-y-5 reveal">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
