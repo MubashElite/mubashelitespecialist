@@ -17,11 +17,11 @@ import portraitAsset from "@/assets/portrait.jpg.asset.json";
 
 const HOME_URL = "https://mubashelitespecialist.lovable.app/";
 const HOME_TITLE =
-  "Shopify Expert, Wix Specialist & SEO Consultant | Mubash Elite Specialist";
+  "Shopify & Dropshipping Store Optimization Specialist | Mubash Elite Specialist";
 const HOME_DESCRIPTION =
-  "Mubash Elite Specialist — independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands, entrepreneurs and small businesses build high-converting stores that rank on Google.";
+  "I help Shopify and dropshipping store owners increase sales by fixing hidden conversion, SEO, tracking and performance issues that silently kill revenue.";
 const HOME_KEYWORDS =
-  "Shopify expert, Shopify developer, Shopify Plus expert, Wix specialist, Wix designer, SEO consultant, technical SEO, eCommerce consultant, conversion rate optimization, AI automation expert, website optimization specialist, Mubash Elite Specialist";
+  "Shopify optimization specialist, dropshipping store optimization, Shopify conversion rate optimization, Shopify SEO expert, Shopify tracking fix, Shopify speed optimization, eCommerce revenue optimization, Shopify store audit, Mubash Elite Specialist";
 const HOME_OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp";
 
