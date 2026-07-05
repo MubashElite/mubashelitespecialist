@@ -17,11 +17,11 @@ import portraitAsset from "@/assets/portrait.jpg.asset.json";
 
 const HOME_URL = "https://mubashelitespecialist.lovable.app/";
 const HOME_TITLE =
-  "Shopify Expert, Wix Specialist & SEO Consultant | Mubash Elite Specialist";
+  "Shopify & Dropshipping Store Optimization Specialist | Mubash Elite Specialist";
 const HOME_DESCRIPTION =
-  "Mubash Elite Specialist — independent Shopify Expert, Wix Specialist, SEO Consultant and AI Automation Engineer helping eCommerce brands, entrepreneurs and small businesses build high-converting stores that rank on Google.";
+  "I help Shopify and dropshipping store owners increase sales by fixing hidden conversion, SEO, tracking and performance issues that silently kill revenue.";
 const HOME_KEYWORDS =
-  "Shopify expert, Shopify developer, Shopify Plus expert, Wix specialist, Wix designer, SEO consultant, technical SEO, eCommerce consultant, conversion rate optimization, AI automation expert, website optimization specialist, Mubash Elite Specialist";
+  "Shopify optimization specialist, dropshipping store optimization, Shopify conversion rate optimization, Shopify SEO expert, Shopify tracking fix, Shopify speed optimization, eCommerce revenue optimization, Shopify store audit, Mubash Elite Specialist";
 const HOME_OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp";
 
@@ -185,15 +185,15 @@ function Hero() {
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Shopify Optimization Specialist · Now booking</span>
+          <span className="text-muted-foreground">Shopify & Dropshipping Optimization Specialist · Now booking</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          I fix Shopify stores that are{" "}
-          <span className="gradient-text">losing sales</span>{" "}
-          due to technical & conversion issues.
+          I Help Shopify & Dropshipping Stores{" "}
+          <span className="gradient-text">Increase Sales</span>{" "}
+          by Fixing Hidden Conversion & Technical Issues
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          Shopify SEO, tracking, speed, and conversion optimization for real eCommerce businesses. Real store fixes, revenue-focused improvements — no fluff.
+          I identify and fix the issues that silently reduce revenue in Shopify stores — including SEO, tracking, speed, and conversion problems.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
@@ -204,9 +204,18 @@ function Hero() {
           </button>
         </div>
         <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground animate-fade-up" style={{ animationDelay: "0.28s" }}>
-          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Shopify Optimization Specialist</span>
-          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Real Store Fixes & Case Studies</span>
-          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Revenue-Focused Improvements</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Shopify & Dropshipping Optimization Specialist</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Revenue-Focused Store Fixes</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Real Case Studies Below</span>
+        </div>
+        <div className="mt-8 mx-auto max-w-3xl glass rounded-2xl px-5 py-4 animate-fade-up" style={{ animationDelay: "0.34s" }}>
+          <div className="text-[10px] uppercase tracking-[0.2em] text-cyan text-center">Works For</div>
+          <div className="mt-2 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> Shopify store owners</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> Dropshipping businesses</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> eCommerce brands</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> Growing online stores</span>
+          </div>
         </div>
       </div>
     </section>
@@ -499,23 +508,23 @@ function Portfolio() {
 const HOME_CASE_STUDIES = [
   {
     featured: true,
-    title: "Shopify SEO Recovery & Indexing Fix",
-    problem: "Store not properly indexed and losing organic visibility.",
-    solution: "Fixed SEO structure, indexing, and crawl issues.",
-    impact: "SEO performance restored",
+    title: "Shopify SEO & Visibility Recovery",
+    problem: "Store not properly indexed, losing organic traffic.",
+    solution: "Fixed SEO structure, crawling, and indexing issues.",
+    impact: "📈 Restored organic reach potential",
     icon: "📈",
-    tag: "SEO Optimization",
+    tag: "SEO & Visibility",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128118/VID-20260103-WA0118_siiojd.mp4",
     poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1600,h_900,c_fill,q_auto,f_jpg/v1783128118/VID-20260103-WA0118_siiojd.jpg",
   },
   {
     featured: false,
     title: "Conversion Tracking & Sales Attribution Fix",
-    problem: "Broken purchase tracking affecting analytics.",
-    solution: "Rebuilt tracking structure across GA4 & pixels.",
-    impact: "Accurate sales tracking restored",
+    problem: "Broken tracking affecting sales data.",
+    solution: "Rebuilt analytics and tracking setup.",
+    impact: "💰 Reliable revenue tracking",
     icon: "💰",
-    tag: "Tracking Fix",
+    tag: "Tracking & Attribution",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
     poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
   },
@@ -524,9 +533,9 @@ const HOME_CASE_STUDIES = [
     title: "Shopify Store Performance Optimization",
     problem: "Slow and inefficient store experience.",
     solution: "UX and performance improvements across the theme.",
-    impact: "Faster store experience & improved flow",
+    impact: "⚡ Improved customer experience",
     icon: "⚡",
-    tag: "Performance",
+    tag: "Performance & UX",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128164/VID-20250521-WA0008_nppver.mp4",
     poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128164/VID-20250521-WA0008_nppver.jpg",
   },
@@ -581,7 +590,7 @@ function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Case Studies" title={<>Real Shopify Results & <span className="gradient-text">Case Studies</span></>} subtitle="Real client work — click any case study to watch the walkthrough in fullscreen. No external redirects." />
+        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Real Shopify and dropshipping store optimizations — click any case study to watch the walkthrough in fullscreen. No external redirects." />
         <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
           <Card s={featured} index={0} big />
           <div className="grid gap-6">
@@ -617,17 +626,17 @@ function CaseStudies() {
 /* ---------- AUTHORITY ---------- */
 function Authority() {
   const items = [
-    { i: Target, t: "Shopify-focused specialist", d: "Deep focus on Shopify optimization — not a generalist agency." },
-    { i: DollarSign, t: "Revenue-impacting fixes", d: "Every fix is scoped around what moves the store's numbers." },
-    { i: ShieldCheck, t: "Real live-store experience", d: "Hands-on work on real stores, not sandboxes or theory." },
-    { i: LineChart, t: "Conversion + performance driven", d: "Speed, tracking and CRO wired together — not in silos." },
-    { i: Zap, t: "Fast issue identification", d: "Quick to find the exact thing killing your sales." },
+    { i: Target, t: "Revenue-impacting Shopify focus", d: "I focus on the Shopify issues that actually move sales — not surface-level tweaks." },
+    { i: ShoppingBag, t: "Shopify & dropshipping expertise", d: "I help both Shopify brands and dropshipping stores scale conversions." },
+    { i: Wrench, t: "Hidden technical fixes", d: "I find and fix the technical problems quietly killing your store's sales." },
+    { i: LineChart, t: "Performance over design-only", d: "My work is focused on performance and revenue, not just design changes." },
+    { i: Zap, t: "Fast issue identification", d: "Quick diagnosis of the exact thing blocking your store's growth." },
     { i: TrendingUp, t: "Compounding, long-term impact", d: "Fixes that keep paying you back month after month." },
   ];
   return (
     <section id="authority" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Authority" title={<>Why businesses <span className="gradient-text">work with me</span></>} subtitle="Positioning matters. Here's what makes this different from hiring a generalist freelancer or a bloated agency." />
+        <SectionHeading eyebrow="Authority" title={<>Why Store Owners <span className="gradient-text">Work With Me</span></>} subtitle="Whether you run a Shopify brand or a dropshipping business, here's why founders trust me with their store." />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
           {items.map(({ i: Icon, t, d }) => (
             <div key={t} className="glass rounded-2xl p-6 hover:shadow-glow transition hover:-translate-y-1">
@@ -697,7 +706,7 @@ function Diagnosis() {
   return (
     <section id="diagnosis" className="py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Free Diagnosis" title={<>Get a <span className="gradient-text">Free Shopify Store Diagnosis</span></>} subtitle="I'll review your store and identify what is stopping your sales." />
+        <SectionHeading eyebrow="Free Diagnosis" title={<>Get a <span className="gradient-text">Free Shopify Store Diagnosis</span></>} subtitle="I will analyze your store and identify what is stopping your sales or scaling performance. Works for Shopify stores and dropshipping businesses." />
         <form onSubmit={submit} className="mt-12 glass rounded-3xl p-8 sm:p-10 space-y-5 reveal">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
@@ -789,14 +798,14 @@ function FinalCTA() {
             <Sparkles className="h-3 w-3" /> Ready to fix your store?
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Ready to Fix Your <span className="gradient-text">Shopify Store?</span>
+            Ready to Unlock More Sales From Your <span className="gradient-text">Store?</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            If your store has traffic but low sales, there is usually a fixable technical or conversion issue. Let's find it.
+            Whether you are a Shopify store owner or dropshipper, your store may have hidden issues affecting sales performance. Let's find them.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-              👉 Get Free Store Review <ArrowRight className="h-4 w-4" />
+              👉 Request Free Diagnosis <ArrowRight className="h-4 w-4" />
             </button>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-7 py-3.5 text-sm font-semibold transition">
               WhatsApp me directly
