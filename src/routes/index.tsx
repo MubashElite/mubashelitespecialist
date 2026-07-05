@@ -626,17 +626,17 @@ function CaseStudies() {
 /* ---------- AUTHORITY ---------- */
 function Authority() {
   const items = [
-    { i: Target, t: "Shopify-focused specialist", d: "Deep focus on Shopify optimization — not a generalist agency." },
-    { i: DollarSign, t: "Revenue-impacting fixes", d: "Every fix is scoped around what moves the store's numbers." },
-    { i: ShieldCheck, t: "Real live-store experience", d: "Hands-on work on real stores, not sandboxes or theory." },
-    { i: LineChart, t: "Conversion + performance driven", d: "Speed, tracking and CRO wired together — not in silos." },
-    { i: Zap, t: "Fast issue identification", d: "Quick to find the exact thing killing your sales." },
+    { i: Target, t: "Revenue-impacting Shopify focus", d: "I focus on the Shopify issues that actually move sales — not surface-level tweaks." },
+    { i: ShoppingBag, t: "Shopify & dropshipping expertise", d: "I help both Shopify brands and dropshipping stores scale conversions." },
+    { i: Wrench, t: "Hidden technical fixes", d: "I find and fix the technical problems quietly killing your store's sales." },
+    { i: LineChart, t: "Performance over design-only", d: "My work is focused on performance and revenue, not just design changes." },
+    { i: Zap, t: "Fast issue identification", d: "Quick diagnosis of the exact thing blocking your store's growth." },
     { i: TrendingUp, t: "Compounding, long-term impact", d: "Fixes that keep paying you back month after month." },
   ];
   return (
     <section id="authority" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Authority" title={<>Why businesses <span className="gradient-text">work with me</span></>} subtitle="Positioning matters. Here's what makes this different from hiring a generalist freelancer or a bloated agency." />
+        <SectionHeading eyebrow="Authority" title={<>Why Store Owners <span className="gradient-text">Work With Me</span></>} subtitle="Whether you run a Shopify brand or a dropshipping business, here's why founders trust me with their store." />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
           {items.map(({ i: Icon, t, d }) => (
             <div key={t} className="glass rounded-2xl p-6 hover:shadow-glow transition hover:-translate-y-1">
