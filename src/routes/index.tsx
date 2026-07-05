@@ -798,14 +798,14 @@ function FinalCTA() {
             <Sparkles className="h-3 w-3" /> Ready to fix your store?
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Ready to Fix Your <span className="gradient-text">Shopify Store?</span>
+            Ready to Unlock More Sales From Your <span className="gradient-text">Store?</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            If your store has traffic but low sales, there is usually a fixable technical or conversion issue. Let's find it.
+            Whether you are a Shopify store owner or dropshipper, your store may have hidden issues affecting sales performance. Let's find them.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-              👉 Get Free Store Review <ArrowRight className="h-4 w-4" />
+              👉 Request Free Diagnosis <ArrowRight className="h-4 w-4" />
             </button>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-7 py-3.5 text-sm font-semibold transition">
               WhatsApp me directly
