@@ -590,7 +590,7 @@ function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Case Studies" title={<>Real Shopify Results & <span className="gradient-text">Case Studies</span></>} subtitle="Real client work — click any case study to watch the walkthrough in fullscreen. No external redirects." />
+        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Real Shopify and dropshipping store optimizations — click any case study to watch the walkthrough in fullscreen. No external redirects." />
         <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
           <Card s={featured} index={0} big />
           <div className="grid gap-6">
