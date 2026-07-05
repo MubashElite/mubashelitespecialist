@@ -185,15 +185,15 @@ function Hero() {
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Shopify Optimization Specialist · Now booking</span>
+          <span className="text-muted-foreground">Shopify & Dropshipping Optimization Specialist · Now booking</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          I fix Shopify stores that are{" "}
-          <span className="gradient-text">losing sales</span>{" "}
-          due to technical & conversion issues.
+          I Help Shopify & Dropshipping Stores{" "}
+          <span className="gradient-text">Increase Sales</span>{" "}
+          by Fixing Hidden Conversion & Technical Issues
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          Shopify SEO, tracking, speed, and conversion optimization for real eCommerce businesses. Real store fixes, revenue-focused improvements — no fluff.
+          I identify and fix the issues that silently reduce revenue in Shopify stores — including SEO, tracking, speed, and conversion problems.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
@@ -204,9 +204,18 @@ function Hero() {
           </button>
         </div>
         <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground animate-fade-up" style={{ animationDelay: "0.28s" }}>
-          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Shopify Optimization Specialist</span>
-          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Real Store Fixes & Case Studies</span>
-          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Revenue-Focused Improvements</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Shopify & Dropshipping Optimization Specialist</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Revenue-Focused Store Fixes</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-cyan" /> Real Case Studies Below</span>
+        </div>
+        <div className="mt-8 mx-auto max-w-3xl glass rounded-2xl px-5 py-4 animate-fade-up" style={{ animationDelay: "0.34s" }}>
+          <div className="text-[10px] uppercase tracking-[0.2em] text-cyan text-center">Works For</div>
+          <div className="mt-2 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> Shopify store owners</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> Dropshipping businesses</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> eCommerce brands</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan" /> Growing online stores</span>
+          </div>
         </div>
       </div>
     </section>
