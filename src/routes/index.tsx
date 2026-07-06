@@ -590,7 +590,7 @@ function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Real Shopify and dropshipping store optimizations — click any case study to watch the walkthrough in fullscreen. No external redirects." />
+        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Watch walkthroughs of actual Shopify and dropshipping store fixes — SEO recovery, tracking repairs, and performance gains." />
         <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
           <Card s={featured} index={0} big />
           <div className="grid gap-6">
@@ -765,11 +765,11 @@ function PricingAnchor() {
 /* ---------- TRUST STRIP ---------- */
 function TrustStrip() {
   const bullets = [
-    "Real Shopify store optimizations",
-    "No stock content",
-    "Live store fixes",
-    "Revenue-focused approach",
-    "Technical + conversion expertise",
+    "Proven Shopify revenue fixes",
+    "Real store audits, not templates",
+    "Live optimization walkthroughs",
+    "Conversion + technical expertise",
+    "Direct specialist access",
   ];
   return (
     <section className="py-12">
@@ -798,10 +798,10 @@ function FinalCTA() {
             <Sparkles className="h-3 w-3" /> Ready to fix your store?
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Ready to Unlock More Sales From Your <span className="gradient-text">Store?</span>
+            Fix the Issues Silently <span className="gradient-text">Killing Your Sales</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            Whether you are a Shopify store owner or dropshipper, your store may have hidden issues affecting sales performance. Let's find them.
+            Most Shopify and dropshipping stores have hidden technical, SEO, or conversion problems that cost revenue every day. Get a free diagnosis and a clear fix plan.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
@@ -824,7 +824,7 @@ function Skills() {
   return (
     <section id="skills" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Skills" title={<>The stack I work in every day</>} />
+        <SectionHeading eyebrow="Skills" title={<>The Technical <span className="gradient-text">Stack</span></>} />
         <div className="mt-12 flex flex-wrap gap-3 justify-center reveal">
           {skills.map((s, i) => (
             <div
@@ -953,7 +953,7 @@ function Blog() {
     <section id="blog" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeading eyebrow="Blog" title={<>Notes from the field</>} align="left" />
+          <SectionHeading eyebrow="Blog" title={<>Insights From <span className="gradient-text">The Field</span></>} align="left" />
           <div className="flex gap-2">
             <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
               <ChevronLeft className="h-4 w-4" />
