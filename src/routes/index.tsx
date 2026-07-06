@@ -273,17 +273,17 @@ function About() {
   return (
     <section id="about" className="py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <SectionHeading eyebrow="About" title={<>The story behind <span className="gradient-text">Mubash Elite Specialist</span></>} />
+        <SectionHeading eyebrow="About" title={<>The Specialist Behind <span className="gradient-text">The Results</span></>} />
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I started in eCommerce the long way as a small store owner trying to fix my own conversion problems. Seven years and a couple hundred projects later, I do that for brands every day: Shopify and Wix builds, SEO, CRO, and the AI automation that ties it all together.
+              I started as a store owner struggling with the same conversion, speed, and SEO issues that plague most Shopify businesses. Seven years and hundreds of projects later, I fix those problems at scale — for Shopify and Wix brands, dropshipping stores, and scaling eCommerce businesses.
             </p>
             <p>
-              My approach is simple. I learn the business first, then design and build around what actually moves revenue. No template copy-paste, no inflated retainers, no vague reports. Just clear strategy, clean execution, and numbers I'm willing to be measured by.
+              My process is built around revenue impact, not vanity metrics. I audit first, identify the highest-leverage fixes, and execute with clear timelines and measurable outcomes. No templates, no inflated retainers, no vague reports — just execution that moves the numbers.
             </p>
             <p>
-              Most clients work with me as their long-term partner because the work compounds. A faster store today becomes higher rankings next quarter and lower acquisition cost the one after that. That's the loop I'm here to build with you.
+              Clients tend to stay because the results compound. A speed fix this month becomes higher organic rankings next quarter and lower ad costs the one after. That is the system I build with every partner.
             </p>
           </div>
           <div className="md:col-span-2 space-y-3">
@@ -342,30 +342,30 @@ function ServiceRow({ items }: { items: { i: any; t: string; d: string }[] }) {
 
 function Services() {
   const items = [
-    { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-focused, brand-true storefronts." },
-    { i: Code2, t: "Shopify Development", d: "Custom themes, sections and apps built right." },
-    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JS, API anything off-the-shelf can't do." },
-    { i: Gauge, t: "Speed Optimization", d: "Real Core Web Vitals wins, not just Lighthouse." },
-    { i: TrendingUp, t: "Conversion Rate Optimization", d: "Research-led testing roadmap that lifts revenue." },
-    { i: Palette, t: "Wix Website Design", d: "Polished Wix sites for service-led businesses." },
-    { i: Code2, t: "Wix Studio Development", d: "Velo-powered builds with real backend logic." },
-    { i: Search, t: "SEO", d: "Strategy, on-page, content and authority building." },
-    { i: Search, t: "Technical SEO", d: "Crawl, index, schema and Core Web Vitals." },
-    { i: Globe, t: "Google Search Console Setup", d: "Clean setup and ongoing monitoring." },
-    { i: Mailbox, t: "Email Marketing", d: "Flows, campaigns and lifecycle marketing." },
-    { i: Mailbox, t: "Klaviyo Setup", d: "Account, flows, segments and reporting." },
-    { i: Bot, t: "AI Automation", d: "Workflows that save your team real hours." },
-    { i: Palette, t: "Landing Page Design", d: "High-intent pages built for paid traffic." },
-    { i: Palette, t: "Store Redesign", d: "Brand and UX refresh without the rebuild risk." },
-    { i: Wrench, t: "Website Maintenance", d: "Ongoing care, updates and small wins." },
-    { i: ArrowLeftRight, t: "Store Migration", d: "Safe moves to Shopify with SEO preserved." },
-    { i: Gauge, t: "Performance Optimization", d: "Frontend, theme and asset-level tuning." },
+    { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-first storefronts built to turn visitors into buyers." },
+    { i: Code2, t: "Shopify Development", d: "Custom themes, sections, and apps — no workarounds, no hacks." },
+    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JavaScript, and API integrations that off-the-shelf apps cannot handle." },
+    { i: Gauge, t: "Speed Optimization", d: "Core Web Vitals improvements that reduce bounce and lift rankings." },
+    { i: TrendingUp, t: "Conversion Rate Optimization", d: "Data-led testing and UX changes that directly increase revenue." },
+    { i: Palette, t: "Wix Website Design", d: "Professional Wix sites with strong visual identity and conversion structure." },
+    { i: Code2, t: "Wix Studio Development", d: "Velo-powered builds with custom backend logic and dynamic content." },
+    { i: Search, t: "SEO Strategy", d: "On-page, technical, and content SEO that drives qualified organic traffic." },
+    { i: Search, t: "Technical SEO", d: "Crawlability, indexing, schema markup, and Core Web Vitals compliance." },
+    { i: Globe, t: "Google Search Console Setup", d: "Proper configuration, error monitoring, and ongoing performance tracking." },
+    { i: Mailbox, t: "Email Marketing", d: "Lifecycle flows, campaigns, and segmentation that recover lost revenue." },
+    { i: Mailbox, t: "Klaviyo Setup", d: "Full account configuration: flows, segments, templates, and reporting." },
+    { i: Bot, t: "AI Automation", d: "Intelligent workflows that reduce manual work and improve customer experience." },
+    { i: Palette, t: "Landing Page Design", d: "High-intent landing pages engineered for paid traffic conversion." },
+    { i: Palette, t: "Store Redesign", d: "Full UX and visual refresh without rebuilding from scratch." },
+    { i: Wrench, t: "Website Maintenance", d: "Ongoing care, security updates, and continuous performance tuning." },
+    { i: ArrowLeftRight, t: "Store Migration", d: "Platform moves to Shopify with full SEO preservation and zero downtime." },
+    { i: Gauge, t: "Performance Optimization", d: "Theme, asset, and frontend tuning for faster load times and better UX." },
   ];
   const half = Math.ceil(items.length / 2);
   return (
     <section id="services" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Services" title={<>What I build, fix and grow</>} />
+        <SectionHeading eyebrow="Services" title={<>Full-Service Shopify <span className="gradient-text">Optimization</span></>} />
         <div className="mt-12 space-y-5 reveal">
           <ServiceRow items={items.slice(0, half)} />
           <ServiceRow items={items.slice(half)} />
@@ -388,7 +388,7 @@ function Process() {
     <section id="process" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeading eyebrow="Process" title={<>A clear path from <span className="gradient-text">brief to growth</span></>} align="left" />
+          <SectionHeading eyebrow="Process" title={<>From Audit to Launch — <span className="gradient-text">A Proven System</span></>} align="left" />
           <div className="flex gap-2">
             <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
               <ChevronLeft className="h-4 w-4" />
@@ -459,7 +459,7 @@ function Portfolio() {
     <section id="portfolio" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeading eyebrow="Portfolio" title={<>Twelve stores I'd be proud to ship</>} align="left" />
+          <SectionHeading eyebrow="Portfolio" title={<>Stores Built &amp; Optimized to This Standard</>} align="left" />
           <div className="flex gap-2">
             <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
               <ChevronLeft className="h-4 w-4" />
@@ -590,7 +590,7 @@ function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Real Shopify and dropshipping store optimizations — click any case study to watch the walkthrough in fullscreen. No external redirects." />
+        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Watch walkthroughs of actual Shopify and dropshipping store fixes — SEO recovery, tracking repairs, and performance gains." />
         <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
           <Card s={featured} index={0} big />
           <div className="grid gap-6">
@@ -663,7 +663,7 @@ function ServiceTiers() {
   return (
     <section id="service-tiers" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Service Tiers" title={<>Shopify <span className="gradient-text">Optimization Services</span></>} subtitle="Three focused engagement tiers — matched to the depth of the problem." />
+        <SectionHeading eyebrow="Service Tiers" title={<>Shopify <span className="gradient-text">Optimization Services</span></>} subtitle="Three engagement levels. One focus: fixing what is costing you sales." />
         <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
           {tiers.map((t) => (
             <div key={t.name} className="glass rounded-2xl p-7 flex flex-col hover:shadow-glow transition">
@@ -727,7 +727,7 @@ function Diagnosis() {
             </select>
           </div>
           <button type="submit" className="w-full inline-flex items-center justify-center gap-2 rounded-xl gradient-primary text-white px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-            👉 {sent ? "Opening WhatsApp…" : "Request Free Diagnosis"} <ArrowRight className="h-4 w-4" />
+            {sent ? "Opening WhatsApp…" : "Request Free Store Diagnosis"} <ArrowRight className="h-4 w-4" />
           </button>
           <p className="text-center text-xs text-muted-foreground">Sends directly to WhatsApp. No spam, no sales pitch — just a real review.</p>
         </form>
@@ -765,11 +765,11 @@ function PricingAnchor() {
 /* ---------- TRUST STRIP ---------- */
 function TrustStrip() {
   const bullets = [
-    "Real Shopify store optimizations",
-    "No stock content",
-    "Live store fixes",
-    "Revenue-focused approach",
-    "Technical + conversion expertise",
+    "Proven Shopify revenue fixes",
+    "Real store audits, not templates",
+    "Live optimization walkthroughs",
+    "Conversion + technical expertise",
+    "Direct specialist access",
   ];
   return (
     <section className="py-12">
@@ -798,14 +798,14 @@ function FinalCTA() {
             <Sparkles className="h-3 w-3" /> Ready to fix your store?
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Ready to Unlock More Sales From Your <span className="gradient-text">Store?</span>
+            Fix the Issues Silently <span className="gradient-text">Killing Your Sales</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            Whether you are a Shopify store owner or dropshipper, your store may have hidden issues affecting sales performance. Let's find them.
+            Most Shopify and dropshipping stores have hidden technical, SEO, or conversion problems that cost revenue every day. Get a free diagnosis and a clear fix plan.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-              👉 Request Free Diagnosis <ArrowRight className="h-4 w-4" />
+              Request Free Store Diagnosis <ArrowRight className="h-4 w-4" />
             </button>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-7 py-3.5 text-sm font-semibold transition">
               WhatsApp me directly
@@ -824,7 +824,7 @@ function Skills() {
   return (
     <section id="skills" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Skills" title={<>The stack I work in every day</>} />
+        <SectionHeading eyebrow="Skills" title={<>The Technical <span className="gradient-text">Stack</span></>} />
         <div className="mt-12 flex flex-wrap gap-3 justify-center reveal">
           {skills.map((s, i) => (
             <div
@@ -870,7 +870,7 @@ function Pricing() {
   return (
     <section id="pricing" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Pricing" title={<>Simple, scoped, honest</>} subtitle="Every package includes a kickoff call, clear deliverables and direct access to me." />
+        <SectionHeading eyebrow="Pricing" title={<>Transparent Pricing, <span className="gradient-text">No Surprises</span></>} subtitle="Every package includes a kickoff call, clear deliverables, and direct access to me." />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
           {tiers.map((t) => (
             <div key={t.name} className={`relative glass rounded-2xl p-7 flex flex-col ${t.best ? "ring-1 ring-cyan shadow-glow" : ""}`}>
@@ -953,7 +953,7 @@ function Blog() {
     <section id="blog" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeading eyebrow="Blog" title={<>Notes from the field</>} align="left" />
+          <SectionHeading eyebrow="Blog" title={<>Insights From <span className="gradient-text">The Field</span></>} align="left" />
           <div className="flex gap-2">
             <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
               <ChevronLeft className="h-4 w-4" />
@@ -1055,7 +1055,7 @@ function Contact() {
   return (
     <section id="contact" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Contact" title={<>Let's build something that converts</>} />
+        <SectionHeading eyebrow="Contact" title={<>Ready to Fix Your Store? <span className="gradient-text">Let's Talk</span></>} />
         <div className="mt-12 grid md:grid-cols-2 gap-6 reveal">
           <div className="glass rounded-3xl p-8 space-y-4">
             <a href={EMAIL} className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-white/10 hover:bg-white/5 transition">
