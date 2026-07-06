@@ -277,13 +277,13 @@ function About() {
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I started in eCommerce the long way as a small store owner trying to fix my own conversion problems. Seven years and a couple hundred projects later, I do that for brands every day: Shopify and Wix builds, SEO, CRO, and the AI automation that ties it all together.
+              I started as a store owner struggling with the same conversion, speed, and SEO issues that plague most Shopify businesses. Seven years and hundreds of projects later, I fix those problems at scale — for Shopify and Wix brands, dropshipping stores, and scaling eCommerce businesses.
             </p>
             <p>
-              My approach is simple. I learn the business first, then design and build around what actually moves revenue. No template copy-paste, no inflated retainers, no vague reports. Just clear strategy, clean execution, and numbers I'm willing to be measured by.
+              My process is built around revenue impact, not vanity metrics. I audit first, identify the highest-leverage fixes, and execute with clear timelines and measurable outcomes. No templates, no inflated retainers, no vague reports — just execution that moves the numbers.
             </p>
             <p>
-              Most clients work with me as their long-term partner because the work compounds. A faster store today becomes higher rankings next quarter and lower acquisition cost the one after that. That's the loop I'm here to build with you.
+              Clients tend to stay because the results compound. A speed fix this month becomes higher organic rankings next quarter and lower ad costs the one after. That is the system I build with every partner.
             </p>
           </div>
           <div className="md:col-span-2 space-y-3">
@@ -342,24 +342,24 @@ function ServiceRow({ items }: { items: { i: any; t: string; d: string }[] }) {
 
 function Services() {
   const items = [
-    { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-focused, brand-true storefronts." },
-    { i: Code2, t: "Shopify Development", d: "Custom themes, sections and apps built right." },
-    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JS, API anything off-the-shelf can't do." },
-    { i: Gauge, t: "Speed Optimization", d: "Real Core Web Vitals wins, not just Lighthouse." },
-    { i: TrendingUp, t: "Conversion Rate Optimization", d: "Research-led testing roadmap that lifts revenue." },
-    { i: Palette, t: "Wix Website Design", d: "Polished Wix sites for service-led businesses." },
-    { i: Code2, t: "Wix Studio Development", d: "Velo-powered builds with real backend logic." },
-    { i: Search, t: "SEO", d: "Strategy, on-page, content and authority building." },
-    { i: Search, t: "Technical SEO", d: "Crawl, index, schema and Core Web Vitals." },
-    { i: Globe, t: "Google Search Console Setup", d: "Clean setup and ongoing monitoring." },
-    { i: Mailbox, t: "Email Marketing", d: "Flows, campaigns and lifecycle marketing." },
-    { i: Mailbox, t: "Klaviyo Setup", d: "Account, flows, segments and reporting." },
-    { i: Bot, t: "AI Automation", d: "Workflows that save your team real hours." },
-    { i: Palette, t: "Landing Page Design", d: "High-intent pages built for paid traffic." },
-    { i: Palette, t: "Store Redesign", d: "Brand and UX refresh without the rebuild risk." },
-    { i: Wrench, t: "Website Maintenance", d: "Ongoing care, updates and small wins." },
-    { i: ArrowLeftRight, t: "Store Migration", d: "Safe moves to Shopify with SEO preserved." },
-    { i: Gauge, t: "Performance Optimization", d: "Frontend, theme and asset-level tuning." },
+    { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-first storefronts built to turn visitors into buyers." },
+    { i: Code2, t: "Shopify Development", d: "Custom themes, sections, and apps — no workarounds, no hacks." },
+    { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JavaScript, and API integrations that off-the-shelf apps cannot handle." },
+    { i: Gauge, t: "Speed Optimization", d: "Core Web Vitals improvements that reduce bounce and lift rankings." },
+    { i: TrendingUp, t: "Conversion Rate Optimization", d: "Data-led testing and UX changes that directly increase revenue." },
+    { i: Palette, t: "Wix Website Design", d: "Professional Wix sites with strong visual identity and conversion structure." },
+    { i: Code2, t: "Wix Studio Development", d: "Velo-powered builds with custom backend logic and dynamic content." },
+    { i: Search, t: "SEO Strategy", d: "On-page, technical, and content SEO that drives qualified organic traffic." },
+    { i: Search, t: "Technical SEO", d: "Crawlability, indexing, schema markup, and Core Web Vitals compliance." },
+    { i: Globe, t: "Google Search Console Setup", d: "Proper configuration, error monitoring, and ongoing performance tracking." },
+    { i: Mailbox, t: "Email Marketing", d: "Lifecycle flows, campaigns, and segmentation that recover lost revenue." },
+    { i: Mailbox, t: "Klaviyo Setup", d: "Full account configuration: flows, segments, templates, and reporting." },
+    { i: Bot, t: "AI Automation", d: "Intelligent workflows that reduce manual work and improve customer experience." },
+    { i: Palette, t: "Landing Page Design", d: "High-intent landing pages engineered for paid traffic conversion." },
+    { i: Palette, t: "Store Redesign", d: "Full UX and visual refresh without rebuilding from scratch." },
+    { i: Wrench, t: "Website Maintenance", d: "Ongoing care, security updates, and continuous performance tuning." },
+    { i: ArrowLeftRight, t: "Store Migration", d: "Platform moves to Shopify with full SEO preservation and zero downtime." },
+    { i: Gauge, t: "Performance Optimization", d: "Theme, asset, and frontend tuning for faster load times and better UX." },
   ];
   const half = Math.ceil(items.length / 2);
   return (
