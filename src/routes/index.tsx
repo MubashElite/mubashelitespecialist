@@ -388,7 +388,7 @@ function Process() {
     <section id="process" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeading eyebrow="Process" title={<>A clear path from <span className="gradient-text">brief to growth</span></>} align="left" />
+          <SectionHeading eyebrow="Process" title={<>From Audit to Launch — <span className="gradient-text">A Proven System</span></>} align="left" />
           <div className="flex gap-2">
             <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
               <ChevronLeft className="h-4 w-4" />
@@ -663,7 +663,7 @@ function ServiceTiers() {
   return (
     <section id="service-tiers" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Service Tiers" title={<>Shopify <span className="gradient-text">Optimization Services</span></>} subtitle="Three focused engagement tiers — matched to the depth of the problem." />
+        <SectionHeading eyebrow="Service Tiers" title={<>Shopify <span className="gradient-text">Optimization Services</span></>} subtitle="Three engagement levels. One focus: fixing what is costing you sales." />
         <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
           {tiers.map((t) => (
             <div key={t.name} className="glass rounded-2xl p-7 flex flex-col hover:shadow-glow transition">
@@ -870,7 +870,7 @@ function Pricing() {
   return (
     <section id="pricing" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Pricing" title={<>Simple, scoped, honest</>} subtitle="Every package includes a kickoff call, clear deliverables and direct access to me." />
+        <SectionHeading eyebrow="Pricing" title={<>Transparent Pricing, <span className="gradient-text">No Surprises</span></>} subtitle="Every package includes a kickoff call, clear deliverables, and direct access to me." />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
           {tiers.map((t) => (
             <div key={t.name} className={`relative glass rounded-2xl p-7 flex flex-col ${t.best ? "ring-1 ring-cyan shadow-glow" : ""}`}>
@@ -1055,7 +1055,7 @@ function Contact() {
   return (
     <section id="contact" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Contact" title={<>Let's build something that converts</>} />
+        <SectionHeading eyebrow="Contact" title={<>Ready to Fix Your Store? <span className="gradient-text">Let's Talk</span></>} />
         <div className="mt-12 grid md:grid-cols-2 gap-6 reveal">
           <div className="glass rounded-3xl p-8 space-y-4">
             <a href={EMAIL} className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-white/10 hover:bg-white/5 transition">
