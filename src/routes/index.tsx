@@ -273,7 +273,7 @@ function About() {
   return (
     <section id="about" className="py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <SectionHeading eyebrow="About" title={<>The story behind <span className="gradient-text">Mubash Elite Specialist</span></>} />
+        <SectionHeading eyebrow="About" title={<>The Specialist Behind <span className="gradient-text">The Results</span></>} />
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
@@ -365,7 +365,7 @@ function Services() {
   return (
     <section id="services" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Services" title={<>What I build, fix and grow</>} />
+        <SectionHeading eyebrow="Services" title={<>Full-Service Shopify <span className="gradient-text">Optimization</span></>} />
         <div className="mt-12 space-y-5 reveal">
           <ServiceRow items={items.slice(0, half)} />
           <ServiceRow items={items.slice(half)} />
@@ -459,7 +459,7 @@ function Portfolio() {
     <section id="portfolio" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeading eyebrow="Portfolio" title={<>Twelve stores I'd be proud to ship</>} align="left" />
+          <SectionHeading eyebrow="Portfolio" title={<>Stores Built &amp; Optimized to This Standard</>} align="left" />
           <div className="flex gap-2">
             <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
               <ChevronLeft className="h-4 w-4" />
@@ -727,7 +727,7 @@ function Diagnosis() {
             </select>
           </div>
           <button type="submit" className="w-full inline-flex items-center justify-center gap-2 rounded-xl gradient-primary text-white px-6 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-            👉 {sent ? "Opening WhatsApp…" : "Request Free Diagnosis"} <ArrowRight className="h-4 w-4" />
+            {sent ? "Opening WhatsApp…" : "Request Free Store Diagnosis"} <ArrowRight className="h-4 w-4" />
           </button>
           <p className="text-center text-xs text-muted-foreground">Sends directly to WhatsApp. No spam, no sales pitch — just a real review.</p>
         </form>
@@ -805,7 +805,7 @@ function FinalCTA() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-              👉 Request Free Diagnosis <ArrowRight className="h-4 w-4" />
+              Request Free Store Diagnosis <ArrowRight className="h-4 w-4" />
             </button>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-7 py-3.5 text-sm font-semibold transition">
               WhatsApp me directly
