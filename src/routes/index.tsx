@@ -188,12 +188,12 @@ function Hero() {
           <span className="text-muted-foreground">Shopify & Dropshipping Optimization Specialist · Now booking</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          I Help Shopify & Dropshipping Stores{" "}
-          <span className="gradient-text">Increase Sales</span>{" "}
-          by Fixing Hidden Conversion & Technical Issues
+          Unlock the{" "}
+          <span className="gradient-text">Hidden Revenue</span>{" "}
+          Trapped Inside Your Shopify Store
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          I identify and fix the issues that silently reduce revenue in Shopify stores — including SEO, tracking, speed, and conversion problems.
+          A specialist-led optimization system for Shopify and dropshipping brands — engineered to eliminate the conversion, SEO, tracking, and performance issues quietly costing you sales.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
