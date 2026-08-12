@@ -62,7 +62,7 @@ export function ChatWidget() {
       </button>
       {open && (
         <div className="fixed bottom-24 right-4 sm:right-5 z-50 w-[calc(100vw-2rem)] sm:w-[400px] h-[560px] max-h-[80vh] glass rounded-2xl shadow-elegant flex flex-col overflow-hidden animate-fade-up">
-          <div className="px-4 py-3 border-b border-white/10 flex items-center gap-3">
+          <div className="px-4 py-3 border-b border-border flex items-center gap-3">
             <div className="h-9 w-9 rounded-full gradient-primary grid place-items-center text-white font-semibold text-sm">M</div>
             <div>
               <div className="text-sm font-semibold">Mubash Assistant</div>
@@ -75,7 +75,7 @@ export function ChatWidget() {
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm whitespace-pre-wrap ${
-                  m.role === "user" ? "gradient-primary text-white" : "bg-white/5 border border-white/10 text-foreground"
+                  m.role === "user" ? "gradient-primary text-white" : "bg-foreground/5 border border-border text-foreground"
                 }`}>
                   {m.content}
                 </div>
@@ -83,14 +83,14 @@ export function ChatWidget() {
             ))}
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5 text-sm text-muted-foreground flex items-center gap-2">
+                <div className="bg-foreground/5 border border-border rounded-2xl px-4 py-2.5 text-sm text-muted-foreground flex items-center gap-2">
                   <Loader2 className="h-3.5 w-3.5 animate-spin" /> Thinking…
                 </div>
               </div>
             )}
             <div ref={endRef} />
           </div>
-          <div className="p-3 border-t border-white/10">
+          <div className="p-3 border-t border-border">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
@@ -101,7 +101,7 @@ export function ChatWidget() {
                   if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
                 }}
                 placeholder="Ask about services, pricing, process…"
-                className="flex-1 resize-none bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring max-h-32"
+                className="flex-1 resize-none bg-foreground/5 border border-border rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring max-h-32"
               />
               <button
                 onClick={send}

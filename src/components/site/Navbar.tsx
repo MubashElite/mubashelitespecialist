@@ -66,7 +66,7 @@ export function Navbar() {
                 <button
                   key={n.id}
                   onClick={() => scrollTo(n.id)}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
+                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-foreground/5"
                 >
                   {n.label}
                 </button>
@@ -76,7 +76,7 @@ export function Navbar() {
               <button
                 aria-label="Toggle theme"
                 onClick={() => setLight((v) => !v)}
-                className="h-9 w-9 grid place-items-center rounded-lg hover:bg-white/5 text-muted-foreground hover:text-foreground transition"
+                className="h-9 w-9 grid place-items-center rounded-lg hover:bg-foreground/5 text-muted-foreground hover:text-foreground transition"
               >
                 {light ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
               </button>
@@ -89,7 +89,7 @@ export function Navbar() {
               </a>
               <button
                 aria-label="Menu"
-                className="lg:hidden h-9 w-9 grid place-items-center rounded-lg hover:bg-white/5"
+                className="lg:hidden h-9 w-9 grid place-items-center rounded-lg hover:bg-foreground/5"
                 onClick={() => setOpen((v) => !v)}
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -102,7 +102,7 @@ export function Navbar() {
                 <button
                   key={n.id}
                   onClick={() => { scrollTo(n.id); setOpen(false); }}
-                  className="block w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm"
+                  className="block w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 text-sm"
                 >
                   {n.label}
                 </button>
