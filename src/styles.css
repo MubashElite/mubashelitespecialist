@@ -144,7 +144,8 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; color-scheme: light; }
+  html.dark { color-scheme: dark; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -153,13 +154,27 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  img { image-rendering: auto; }
+
+  /* Smooth, restrained theme transition */
+  body, header, section, footer, aside, nav, main, div, a, button, input, select, textarea, span, p, h1, h2, h3, h4, li {
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
 }
 
 @utility glass {
-  background: color-mix(in oklab, var(--card) 55%, transparent);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid color-mix(in oklab, white 10%, transparent);
+  border: 1px solid var(--glass-border);
 }
+
+@utility portrait-ring {
+  background: var(--gradient-portrait);
+}
+
 
 @utility gradient-text {
   background: var(--gradient-text);
