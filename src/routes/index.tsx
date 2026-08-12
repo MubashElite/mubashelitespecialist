@@ -174,15 +174,23 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
-        <div className="mx-auto mb-6 w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 gradient-primary animate-fade-up">
-          <img
-            src={portraitAsset.url}
-            alt="Mubash Elite Specialist"
-            width={128}
-            height={128}
-            className="w-full h-full rounded-full object-cover border-2 border-background"
-          />
+        <div className="mx-auto mb-6 w-32 h-32 sm:w-36 sm:h-36 rounded-full p-[3px] portrait-ring shadow-glow animate-fade-up">
+          <div className="w-full h-full rounded-full p-1 bg-background">
+            <img
+              src={portraitAsset.url}
+              alt="Portrait of Mubash, Shopify optimization specialist"
+              width={288}
+              height={288}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              draggable={false}
+              className="w-full h-full rounded-full object-cover object-top select-none [image-rendering:auto] [backface-visibility:hidden] [transform:translateZ(0)]"
+              style={{ filter: "contrast(1.06) saturate(1.05)" }}
+            />
+          </div>
         </div>
+
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
           <span className="text-muted-foreground">Shopify & Dropshipping Optimization Specialist · Now booking</span>
