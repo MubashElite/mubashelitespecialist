@@ -218,7 +218,7 @@ function PerformanceShowcase() {
                 <Gauge className="h-4 w-4" /> Optimization report
               </div>
               <h3 className="mt-2 font-display text-lg font-semibold">{p.name}</h3>
-              <div className="mt-4 rounded-xl overflow-hidden border border-white/5">
+              <div className="mt-4 rounded-xl overflow-hidden border border-border">
                 <img src={p.image} alt={`${p.name} analytics dashboard`} loading="lazy" className="w-full h-auto block" />
               </div>
               <div className="mt-5 grid grid-cols-3 gap-3">
@@ -227,7 +227,7 @@ function PerformanceShowcase() {
                   { l: "LCP", b: p.before.lcp, a: p.after.lcp },
                   { l: "CVR", b: p.before.cvr, a: p.after.cvr },
                 ].map((m) => (
-                  <div key={m.l} className="rounded-xl bg-background/40 border border-white/5 p-3 text-center">
+                  <div key={m.l} className="rounded-xl bg-background/40 border border-border p-3 text-center">
                     <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{m.l}</div>
                     <div className="mt-1 text-xs text-muted-foreground line-through">{m.b}</div>
                     <div className="text-lg font-display font-bold gradient-text">{m.a}</div>
@@ -261,7 +261,7 @@ function SeoProof() {
             <div className="flex items-center gap-2 text-xs text-cyan">
               <Search className="h-4 w-4" /> Search Console — 90 day
             </div>
-            <div className="mt-5 divide-y divide-white/5">
+            <div className="mt-5 divide-y divide-border">
               {SEO_PROOF.map((r) => (
                 <div key={r.metric} className="grid grid-cols-4 items-center py-3 text-sm">
                   <div className="col-span-2 text-muted-foreground">{r.metric}</div>
@@ -316,11 +316,11 @@ function OptimizationResults() {
               <div className="flex items-center gap-2 text-xs text-cyan">
                 <Smartphone className="h-4 w-4" /> {o.title}
               </div>
-              <div className="mt-5 rounded-xl overflow-hidden border border-white/5">
+              <div className="mt-5 rounded-xl overflow-hidden border border-border">
                 <img src={o.image} alt={`${o.title} dashboard result`} loading="lazy" className="w-full h-auto block" />
               </div>
               <div className="mt-5 grid md:grid-cols-2 gap-4">
-                <div className="rounded-xl border border-white/5 bg-background/40 p-5">
+                <div className="rounded-xl border border-border bg-background/40 p-5">
                   <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Before</div>
                   <p className="mt-2 text-sm">{o.before}</p>
                 </div>
@@ -636,7 +636,7 @@ function SalesProofPage() {
         <CTA />
 
       </main>
-      <footer className="border-t border-white/5 py-8 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Mubash Elite Specialist — All rights reserved.
       </footer>
     </div>

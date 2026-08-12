@@ -169,7 +169,7 @@ function BlogPostPage() {
       </article>
 
       {/* Related */}
-      <section className="py-16 border-t border-white/5">
+      <section className="py-16 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-display font-semibold">Keep reading</h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
