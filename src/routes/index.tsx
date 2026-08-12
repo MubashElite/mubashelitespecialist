@@ -95,7 +95,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHATSAPP = "https://wa.me/17542504531";
+const WHATSAPP = "https://wa.me/2347014449168";
 const EMAIL = "mailto:mubashelitespecialist@gmail.com";
 const FIVERR = "https://www.fiverr.com/shopifybash";
 
@@ -700,7 +700,7 @@ function Diagnosis() {
     const url = form.url.trim().slice(0, 200);
     if (!name || !url) return;
     const msg = `Hi Mubash, I'd like a free Shopify store diagnosis.%0A%0AName: ${encodeURIComponent(name)}%0AStore URL: ${encodeURIComponent(url)}%0AMain Issue: ${encodeURIComponent(form.issue)}`;
-    window.open(`https://wa.me/17542504531?text=${msg}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/2347014449168?text=${msg}`, "_blank", "noopener,noreferrer");
     setSent(true);
   }
   return (

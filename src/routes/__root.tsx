@@ -152,7 +152,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               sameAs: [
                 "https://www.fiverr.com/shopifybash",
                 "https://www.fiverr.com/users/shopifybash",
-                "https://wa.me/17542504531",
+                "https://wa.me/2347014449168",
               ],
               knowsAbout: [
                 "Shopify Development",
@@ -208,7 +208,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               },
               sameAs: [
                 "https://www.fiverr.com/shopifybash",
-                "https://wa.me/17542504531",
+                "https://wa.me/2347014449168",
               ],
             },
           ],

@@ -15,7 +15,7 @@ You can answer questions about:
 
 If asked to do something outside scope (write essays, do homework, generate code unrelated to consulting), politely redirect.
 
-When relevant, suggest the visitor book a free consultation on WhatsApp (https://wa.me/17542504531) or email mubashelitespecialist@gmail.com.
+When relevant, suggest the visitor book a free consultation on WhatsApp (https://wa.me/2347014449168) or email mubashelitespecialist@gmail.com.
 
 Keep replies under ~150 words unless the question genuinely needs more.`;
 

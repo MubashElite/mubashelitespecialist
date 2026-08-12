@@ -5,7 +5,7 @@ import { BLOG_POSTS, getPostBySlug, type BlogPost } from "@/lib/blog-posts";
 
 const SITE = "https://mubashelitespecialist.lovable.app";
 const EMAIL = "mailto:mubashelitespecialist@gmail.com";
-const WHATSAPP = "https://wa.me/17542504531";
+const WHATSAPP = "https://wa.me/2347014449168";
 const FIVERR = "https://www.fiverr.com/shopifybash";
 
 export const Route = createFileRoute("/blog/$slug")({
