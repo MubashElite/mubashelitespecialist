@@ -13,7 +13,7 @@ import { AuditTool } from "@/components/site/AuditTool";
 import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
-import portraitAsset from "@/assets/portrait.jpg.asset.json";
+import portraitCutout from "@/assets/portrait-cutout.png";
 
 const HOME_URL = "https://mubashelitespecialist.lovable.app/";
 const HOME_TITLE =
