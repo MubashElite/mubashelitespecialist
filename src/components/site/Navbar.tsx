@@ -89,12 +89,14 @@ export function Navbar() {
             </div>
             <div className="flex items-center gap-2">
               <button
-                aria-label="Toggle theme"
-                onClick={() => setLight((v) => !v)}
-                className="h-9 w-9 grid place-items-center rounded-lg hover:bg-foreground/5 text-muted-foreground hover:text-foreground transition"
+                aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+                title={dark ? "Light mode" : "Dark mode"}
+                onClick={toggleTheme}
+                className="h-9 w-9 grid place-items-center rounded-lg border border-border bg-card/60 hover:bg-foreground/5 text-muted-foreground hover:text-foreground transition"
               >
-                {light ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+                {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </button>
+
               <a
                 href="https://wa.me/2347014449168"
                 target="_blank" rel="noopener noreferrer"
