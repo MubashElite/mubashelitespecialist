@@ -81,7 +81,7 @@ export function Navbar() {
                 {light ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
               </button>
               <a
-                href="https://wa.me/17542504531"
+                href="https://wa.me/2347014449168"
                 target="_blank" rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center justify-center rounded-lg gradient-primary text-white px-4 py-2 text-sm font-medium shadow-glow hover:opacity-95 transition"
               >

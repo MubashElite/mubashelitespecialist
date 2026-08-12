@@ -21,7 +21,7 @@ const PAGE_URL = "https://mubashelitespecialist.lovable.app/sales-proof";
 const PAGE_TITLE = "Results & Proof | Mubash Elite Specialist";
 const PAGE_DESCRIPTION =
   "Detailed proof of eCommerce optimization, technical SEO, performance improvements and Shopify/Wix projects delivered by Mubash Elite Specialist.";
-const WHATSAPP = "https://wa.me/17542504531?text=Hi%20Mubash%2C%20I%27d%20like%20to%20start%20a%20project.";
+const WHATSAPP = "https://wa.me/2347014449168?text=Hi%20Mubash%2C%20I%27d%20like%20to%20start%20a%20project.";
 
 export const Route = createFileRoute("/sales-proof")({
   head: () => ({
