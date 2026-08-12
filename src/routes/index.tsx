@@ -174,22 +174,27 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
-        <div className="mx-auto mb-6 w-32 h-32 sm:w-36 sm:h-36 rounded-full p-[3px] portrait-ring shadow-glow animate-fade-up">
-          <div className="w-full h-full rounded-full p-1 bg-background">
+        <div className="mx-auto mb-6 w-36 h-36 sm:w-44 sm:h-44 rounded-full p-[3px] portrait-ring shadow-glow animate-fade-up">
+          <div
+            className="relative w-full h-full rounded-full overflow-hidden"
+            style={{ background: "var(--gradient-portrait)" }}
+          >
+            <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/25" />
             <img
-              src={portraitAsset.url}
+              src={portraitCutout}
               alt="Portrait of Mubash, Shopify optimization specialist"
-              width={288}
-              height={288}
+              width={352}
+              height={352}
               loading="eager"
               decoding="async"
               fetchPriority="high"
               draggable={false}
-              className="w-full h-full rounded-full object-cover object-top select-none [image-rendering:auto] [backface-visibility:hidden] [transform:translateZ(0)]"
-              style={{ filter: "contrast(1.06) saturate(1.05)" }}
+              className="relative w-full h-full rounded-full object-cover object-top select-none [backface-visibility:hidden] [transform:translateZ(0)]"
+              style={{ filter: "contrast(1.05) saturate(1.04)" }}
             />
           </div>
         </div>
+
 
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
