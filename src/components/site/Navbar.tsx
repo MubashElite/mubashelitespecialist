@@ -22,7 +22,7 @@ function scrollTo(id: string) {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [light, setLight] = useState(false);
+  const [dark, setDark] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
