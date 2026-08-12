@@ -43,11 +43,11 @@
   --font-display: "Sora", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, var(--royal) 60%, transparent);
-  --shadow-elegant: 0 30px 80px -20px color-mix(in oklab, var(--cyan) 25%, transparent);
-  --shadow-card: 0 1px 0 0 color-mix(in oklab, white 6%, transparent) inset,
-                 0 20px 60px -25px color-mix(in oklab, black 90%, transparent);
+  --shadow-glow: var(--glow);
+  --shadow-elegant: var(--elegant);
+  --shadow-card: var(--card-shadow);
 }
+
 
 :root {
   --radius: 0.875rem;
