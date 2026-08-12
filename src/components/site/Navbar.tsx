@@ -38,8 +38,23 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("light", light);
-  }, [light]);
+    const stored = localStorage.getItem("theme");
+    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setDark(stored ? stored === "dark" : prefers);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  const toggleTheme = () => {
+    setDark((v) => {
+      const next = !v;
+      localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
+
 
   return (
     <>
