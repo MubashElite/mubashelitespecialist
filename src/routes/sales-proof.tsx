@@ -191,7 +191,7 @@ function Hero() {
           </a>
           <a
             href="#performance"
-            className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-semibold hover:bg-white/10 transition"
+            className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-semibold hover:bg-foreground/10 transition"
           >
             See the numbers
           </a>
@@ -218,7 +218,7 @@ function PerformanceShowcase() {
                 <Gauge className="h-4 w-4" /> Optimization report
               </div>
               <h3 className="mt-2 font-display text-lg font-semibold">{p.name}</h3>
-              <div className="mt-4 rounded-xl overflow-hidden border border-white/5">
+              <div className="mt-4 rounded-xl overflow-hidden border border-border">
                 <img src={p.image} alt={`${p.name} analytics dashboard`} loading="lazy" className="w-full h-auto block" />
               </div>
               <div className="mt-5 grid grid-cols-3 gap-3">
@@ -227,7 +227,7 @@ function PerformanceShowcase() {
                   { l: "LCP", b: p.before.lcp, a: p.after.lcp },
                   { l: "CVR", b: p.before.cvr, a: p.after.cvr },
                 ].map((m) => (
-                  <div key={m.l} className="rounded-xl bg-background/40 border border-white/5 p-3 text-center">
+                  <div key={m.l} className="rounded-xl bg-background/40 border border-border p-3 text-center">
                     <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{m.l}</div>
                     <div className="mt-1 text-xs text-muted-foreground line-through">{m.b}</div>
                     <div className="text-lg font-display font-bold gradient-text">{m.a}</div>
@@ -261,7 +261,7 @@ function SeoProof() {
             <div className="flex items-center gap-2 text-xs text-cyan">
               <Search className="h-4 w-4" /> Search Console — 90 day
             </div>
-            <div className="mt-5 divide-y divide-white/5">
+            <div className="mt-5 divide-y divide-border">
               {SEO_PROOF.map((r) => (
                 <div key={r.metric} className="grid grid-cols-4 items-center py-3 text-sm">
                   <div className="col-span-2 text-muted-foreground">{r.metric}</div>
@@ -316,11 +316,11 @@ function OptimizationResults() {
               <div className="flex items-center gap-2 text-xs text-cyan">
                 <Smartphone className="h-4 w-4" /> {o.title}
               </div>
-              <div className="mt-5 rounded-xl overflow-hidden border border-white/5">
+              <div className="mt-5 rounded-xl overflow-hidden border border-border">
                 <img src={o.image} alt={`${o.title} dashboard result`} loading="lazy" className="w-full h-auto block" />
               </div>
               <div className="mt-5 grid md:grid-cols-2 gap-4">
-                <div className="rounded-xl border border-white/5 bg-background/40 p-5">
+                <div className="rounded-xl border border-border bg-background/40 p-5">
                   <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Before</div>
                   <p className="mt-2 text-sm">{o.before}</p>
                 </div>
@@ -438,7 +438,7 @@ const CASE_STUDIES = [
 
 function MetricBadge({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-background/40 px-3 py-2 backdrop-blur-sm">
+    <div className="rounded-xl border border-border bg-background/40 px-3 py-2 backdrop-blur-sm">
       <div className="text-[9px] uppercase tracking-widest text-muted-foreground">{label}</div>
       <div className="mt-0.5 text-sm font-display font-semibold gradient-text">{value}</div>
     </div>
@@ -458,7 +458,7 @@ function CaseStudyCard({
     <button
       onClick={onPlay}
       aria-label={`Play case study: ${study.title}`}
-      className={`reveal group relative w-full text-left glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan/40 hover:shadow-glow transition-all hover:-translate-y-1 ${
+      className={`reveal group relative w-full text-left glass rounded-3xl overflow-hidden border border-border hover:border-cyan/40 hover:shadow-glow transition-all hover:-translate-y-1 ${
         featured ? "lg:col-span-2" : ""
       }`}
     >
@@ -479,7 +479,7 @@ function CaseStudyCard({
           </span>
         )}
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-white/10 transition-transform group-hover:scale-110">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-foreground/10 transition-transform group-hover:scale-110">
             <Play className="h-6 w-6 text-white fill-white ml-0.5" />
           </span>
         </div>
@@ -538,7 +538,7 @@ function VideoProof() {
           </div>
         </div>
 
-        <div className="mt-10 reveal mx-auto max-w-3xl glass rounded-2xl border border-white/10 p-5 text-center">
+        <div className="mt-10 reveal mx-auto max-w-3xl glass rounded-2xl border border-border p-5 text-center">
           <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-cyan">
             <CheckCircle2 className="h-3 w-3" /> Verified client work
           </div>
@@ -560,12 +560,12 @@ function VideoProof() {
           <button
             onClick={() => setActive(null)}
             aria-label="Close video"
-            className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-white/10 transition"
+            className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-foreground/10 transition"
           >
             <X className="h-5 w-5" />
           </button>
           <div
-            className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-elegant border border-white/10 bg-black"
+            className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-elegant border border-border bg-black"
             onClick={(e) => e.stopPropagation()}
           >
             <video
@@ -592,7 +592,7 @@ function CTA() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="glass rounded-3xl p-10 sm:p-14 text-center relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-royal/20 via-transparent to-cyan/10" />
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-[11px] tracking-[0.18em] uppercase text-cyan">
+          <span className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-[11px] tracking-[0.18em] uppercase text-cyan">
             <MessageSquare className="h-3 w-3" /> Ready when you are
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
@@ -611,7 +611,7 @@ function CTA() {
             </a>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition"
+              className="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-semibold hover:bg-foreground/10 transition"
             >
               Back to home
             </Link>
@@ -636,7 +636,7 @@ function SalesProofPage() {
         <CTA />
 
       </main>
-      <footer className="border-t border-white/5 py-8 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Mubash Elite Specialist — All rights reserved.
       </footer>
     </div>

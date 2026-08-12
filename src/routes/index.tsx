@@ -13,7 +13,7 @@ import { AuditTool } from "@/components/site/AuditTool";
 import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
-import portraitAsset from "@/assets/portrait.jpg.asset.json";
+import portraitCutout from "@/assets/portrait-cutout.png";
 
 const HOME_URL = "https://mubashelitespecialist.lovable.app/";
 const HOME_TITLE =
@@ -174,15 +174,28 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
-        <div className="mx-auto mb-6 w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 gradient-primary animate-fade-up">
-          <img
-            src={portraitAsset.url}
-            alt="Mubash Elite Specialist"
-            width={128}
-            height={128}
-            className="w-full h-full rounded-full object-cover border-2 border-background"
-          />
+        <div className="mx-auto mb-6 w-36 h-36 sm:w-44 sm:h-44 rounded-full p-[3px] portrait-ring shadow-glow animate-fade-up">
+          <div
+            className="relative w-full h-full rounded-full overflow-hidden"
+            style={{ background: "var(--gradient-portrait)" }}
+          >
+            <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/25" />
+            <img
+              src={portraitCutout}
+              alt="Portrait of Mubash, Shopify optimization specialist"
+              width={352}
+              height={352}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              draggable={false}
+              className="relative w-full h-full rounded-full object-cover object-top select-none [backface-visibility:hidden] [transform:translateZ(0)]"
+              style={{ filter: "contrast(1.05) saturate(1.04)" }}
+            />
+          </div>
         </div>
+
+
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
           <span className="text-muted-foreground">Shopify & Dropshipping Optimization Specialist · Now booking</span>
@@ -199,7 +212,7 @@ function Hero() {
           <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
             Get Free Store Diagnosis <ArrowRight className="h-4 w-4" />
           </button>
-          <button onClick={() => scrollToId("case-studies")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-white/10 transition font-medium">
+          <button onClick={() => scrollToId("case-studies")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-foreground/10 transition font-medium">
             View Case Studies
           </button>
         </div>
@@ -330,10 +343,10 @@ function ServiceRow({ items }: { items: { i: any; t: string; d: string }[] }) {
           </div>
         ))}
       </div>
-      <button onClick={() => scroll(-1)} aria-label="Previous" className="hidden md:grid absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 h-10 w-10 place-items-center rounded-full glass hover:bg-white/10 opacity-0 group-hover/row:opacity-100 transition">
+      <button onClick={() => scroll(-1)} aria-label="Previous" className="hidden md:grid absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 h-10 w-10 place-items-center rounded-full glass hover:bg-foreground/10 opacity-0 group-hover/row:opacity-100 transition">
         <ChevronLeft className="h-4 w-4" />
       </button>
-      <button onClick={() => scroll(1)} aria-label="Next" className="hidden md:grid absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 h-10 w-10 place-items-center rounded-full glass hover:bg-white/10 opacity-0 group-hover/row:opacity-100 transition">
+      <button onClick={() => scroll(1)} aria-label="Next" className="hidden md:grid absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 h-10 w-10 place-items-center rounded-full glass hover:bg-foreground/10 opacity-0 group-hover/row:opacity-100 transition">
         <ChevronRight className="h-4 w-4" />
       </button>
     </div>
@@ -390,10 +403,10 @@ function Process() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <SectionHeading eyebrow="Process" title={<>From Audit to Launch — <span className="gradient-text">A Proven System</span></>} align="left" />
           <div className="flex gap-2">
-            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-foreground/10">
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-foreground/10">
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
@@ -461,10 +474,10 @@ function Portfolio() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <SectionHeading eyebrow="Portfolio" title={<>Stores Built &amp; Optimized to This Standard</>} align="left" />
           <div className="flex gap-2">
-            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-foreground/10">
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-foreground/10">
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
@@ -562,14 +575,14 @@ function CaseStudies() {
     <button
       onClick={() => setActive(index)}
       aria-label={`Play case study: ${s.title}`}
-      className="group relative w-full text-left glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan/40 hover:shadow-glow transition-all hover:-translate-y-1"
+      className="group relative w-full text-left glass rounded-3xl overflow-hidden border border-border hover:border-cyan/40 hover:shadow-glow transition-all hover:-translate-y-1"
     >
       <div className={`relative overflow-hidden ${big ? "aspect-[16/9]" : "aspect-video"}`}>
         <img src={s.poster} alt={`${s.title} thumbnail`} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
         <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-[10px] tracking-[0.18em] uppercase text-cyan">{s.tag}</span>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-white/10 transition-transform group-hover:scale-110">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-glow ring-4 ring-foreground/10 transition-transform group-hover:scale-110">
             <Play className="h-6 w-6 text-white fill-white ml-0.5" />
           </span>
         </div>
@@ -598,7 +611,7 @@ function CaseStudies() {
           </div>
         </div>
         <div className="mt-10 flex justify-center">
-          <Link to="/sales-proof" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-6 py-3 text-sm font-semibold transition">
+          <Link to="/sales-proof" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-foreground/10 px-6 py-3 text-sm font-semibold transition">
             View all results & proof <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -611,10 +624,10 @@ function CaseStudies() {
           role="dialog"
           aria-modal="true"
         >
-          <button onClick={() => setActive(null)} aria-label="Close video" className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-white/10 transition">
+          <button onClick={() => setActive(null)} aria-label="Close video" className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-foreground/10 transition">
             <X className="h-5 w-5" />
           </button>
-          <div className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-elegant border border-white/10 bg-black" onClick={(e) => e.stopPropagation()}>
+          <div className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-elegant border border-border bg-black" onClick={(e) => e.stopPropagation()}>
             <video key={current.src} src={current.src} poster={current.poster} controls autoPlay playsInline className="w-full h-full" />
           </div>
         </div>
@@ -711,16 +724,16 @@ function Diagnosis() {
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs text-muted-foreground">Your name</label>
-              <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={80} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+              <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={80} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
             <div>
               <label className="text-xs text-muted-foreground">Store URL</label>
-              <input type="url" placeholder="https://yourstore.com" value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} required maxLength={200} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+              <input type="url" placeholder="https://yourstore.com" value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} required maxLength={200} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
           </div>
           <div>
             <label className="text-xs text-muted-foreground">Main issue</label>
-            <select value={form.issue} onChange={(e) => setForm({ ...form, issue: e.target.value })} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+            <select value={form.issue} onChange={(e) => setForm({ ...form, issue: e.target.value })} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
               {["Low sales", "Tracking issues", "SEO problems", "Slow store", "Not sure"].map((o) => (
                 <option key={o} value={o} className="bg-background">{o}</option>
               ))}
@@ -750,7 +763,7 @@ function PricingAnchor() {
           <div className="text-xs uppercase tracking-widest text-cyan text-center">Typical Project Range</div>
           <div className="mt-6 grid sm:grid-cols-3 gap-4">
             {rows.map((r) => (
-              <div key={r.r} className="rounded-2xl border border-white/10 bg-background/30 p-5 text-center">
+              <div key={r.r} className="rounded-2xl border border-border bg-background/30 p-5 text-center">
                 <div className="font-display text-xl sm:text-2xl font-bold gradient-text">{r.r}</div>
                 <div className="mt-1 text-xs text-muted-foreground">{r.w}</div>
               </div>
@@ -794,7 +807,7 @@ function FinalCTA() {
         <div className="relative glass rounded-3xl p-10 sm:p-14 text-center overflow-hidden reveal">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-royal/25 via-transparent to-cyan/15" />
           <div className="absolute -top-40 -right-40 h-[400px] w-[400px] rounded-full bg-cyan/10 blur-[120px]" />
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-[11px] tracking-[0.18em] uppercase text-cyan">
+          <span className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-[11px] tracking-[0.18em] uppercase text-cyan">
             <Sparkles className="h-3 w-3" /> Ready to fix your store?
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
@@ -807,7 +820,7 @@ function FinalCTA() {
             <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 rounded-xl gradient-primary text-white px-7 py-3.5 text-sm font-semibold shadow-glow hover:opacity-95 transition">
               Request Free Store Diagnosis <ArrowRight className="h-4 w-4" />
             </button>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-white/10 px-7 py-3.5 text-sm font-semibold transition">
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl glass hover:bg-foreground/10 px-7 py-3.5 text-sm font-semibold transition">
               WhatsApp me directly
             </a>
           </div>
@@ -888,7 +901,7 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={`mt-7 inline-flex items-center justify-center px-5 py-3 rounded-xl font-medium transition ${t.best ? "gradient-primary text-white shadow-glow" : "glass hover:bg-white/10"}`}>
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={`mt-7 inline-flex items-center justify-center px-5 py-3 rounded-xl font-medium transition ${t.best ? "gradient-primary text-white shadow-glow" : "glass hover:bg-foreground/10"}`}>
                 Get started
               </a>
             </div>
@@ -955,10 +968,10 @@ function Blog() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <SectionHeading eyebrow="Blog" title={<>Insights From <span className="gradient-text">The Field</span></>} align="left" />
           <div className="flex gap-2">
-            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+            <button onClick={() => scroll(-1)} aria-label="Previous" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-foreground/10">
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-white/10">
+            <button onClick={() => scroll(1)} aria-label="Next" className="h-10 w-10 grid place-items-center rounded-xl glass hover:bg-foreground/10">
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
@@ -1025,7 +1038,7 @@ function FAQ() {
             <div key={i} className="glass rounded-2xl overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left">
                 <span className="font-medium">{it.q}</span>
-                <span className={`h-6 w-6 grid place-items-center rounded-full bg-white/5 transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
+                <span className={`h-6 w-6 grid place-items-center rounded-full bg-foreground/5 transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
               </button>
               <div className={`grid transition-all duration-300 ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                 <div className="overflow-hidden">
@@ -1058,21 +1071,21 @@ function Contact() {
         <SectionHeading eyebrow="Contact" title={<>Ready to Fix Your Store? <span className="gradient-text">Let's Talk</span></>} />
         <div className="mt-12 grid md:grid-cols-2 gap-6 reveal">
           <div className="glass rounded-3xl p-8 space-y-4">
-            <a href={EMAIL} className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-white/10 hover:bg-white/5 transition">
+            <a href={EMAIL} className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-border hover:bg-foreground/5 transition">
               <div className="h-11 w-11 rounded-xl gradient-primary grid place-items-center text-white"><Mail className="h-5 w-5" /></div>
               <div>
                 <div className="text-sm font-semibold">Email Me</div>
                 <div className="text-xs text-muted-foreground">mubashelitespecialist@gmail.com</div>
               </div>
             </a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-white/10 hover:bg-white/5 transition">
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-border hover:bg-foreground/5 transition">
               <div className="h-11 w-11 rounded-xl gradient-primary grid place-items-center text-white"><MessageSquare className="h-5 w-5" /></div>
               <div>
                 <div className="text-sm font-semibold">Chat on WhatsApp</div>
                 <div className="text-xs text-muted-foreground">Usually replies within an hour</div>
               </div>
             </a>
-            <a href={FIVERR} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-white/10 hover:bg-white/5 transition">
+            <a href={FIVERR} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-background/30 border border-border hover:bg-foreground/5 transition">
               <div className="h-11 w-11 rounded-xl gradient-primary grid place-items-center text-white"><ExternalLink className="h-5 w-5" /></div>
               <div>
                 <div className="text-sm font-semibold">Hire Me on Fiverr</div>
@@ -1083,15 +1096,15 @@ function Contact() {
           <form onSubmit={submit} className="glass rounded-3xl p-8 space-y-4">
             <div>
               <label className="text-xs text-muted-foreground">Your name</label>
-              <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={80} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+              <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={80} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
             <div>
               <label className="text-xs text-muted-foreground">Email</label>
-              <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required maxLength={120} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+              <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required maxLength={120} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
             <div>
               <label className="text-xs text-muted-foreground">What do you need?</label>
-              <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={1500} rows={5} className="mt-1 w-full bg-background/30 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
+              <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={1500} rows={5} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
             </div>
             <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow">
               {sent ? "Opening your email…" : "Send message"} <ArrowRight className="h-4 w-4" />
@@ -1106,7 +1119,7 @@ function Contact() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="border-t border-white/10 mt-20">
+    <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="font-display font-bold text-lg">Mubash <span className="gradient-text">Elite Specialist</span></div>
@@ -1135,7 +1148,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 py-6 text-center text-xs text-muted-foreground">
+      <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Mubash Elite Specialist. All rights reserved.
       </div>
     </footer>

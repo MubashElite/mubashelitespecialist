@@ -120,7 +120,7 @@ export function AuditTool() {
   return (
     <div className="glass rounded-3xl p-6 sm:p-10 shadow-elegant">
       <form onSubmit={run} className="flex flex-col sm:flex-row gap-3">
-        <div className="flex-1 flex items-center gap-2 bg-background/40 border border-white/10 rounded-xl px-4">
+        <div className="flex-1 flex items-center gap-2 bg-background/40 border border-border rounded-xl px-4">
           <Search className="h-4 w-4 text-muted-foreground shrink-0" />
           <input
             type="text"
@@ -148,21 +148,21 @@ export function AuditTool() {
       {loading && !report && (
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
           {[0,1,2].map((i) => (
-            <div key={i} className="h-32 rounded-2xl bg-white/5 animate-pulse" />
+            <div key={i} className="h-32 rounded-2xl bg-foreground/5 animate-pulse" />
           ))}
         </div>
       )}
 
       {report && (
         <div className="mt-8 space-y-8">
-          <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl bg-background/30 border border-white/10">
+          <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl bg-background/30 border border-border">
             <ScoreRing score={report.overallScore} />
             <div className="flex-1 text-center md:text-left">
               <div className="text-xs uppercase tracking-wider text-muted-foreground">Overall score for</div>
               <div className="font-display text-xl font-semibold break-all">{report.url}</div>
               <p className="mt-2 text-sm text-muted-foreground">{report.summary}</p>
               <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                <button onClick={() => downloadReport(report)} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm hover:bg-white/10 transition">
+                <button onClick={() => downloadReport(report)} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground/5 border border-border text-sm hover:bg-foreground/10 transition">
                   <Download className="h-4 w-4" /> Download report
                 </button>
                 <a href="mailto:mubashelitespecialist@gmail.com?subject=Request%20for%20Advanced%20Store%20Audit" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-primary text-white text-sm shadow-glow">
@@ -174,12 +174,12 @@ export function AuditTool() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {report.categories.map((c) => (
-              <div key={c.name} className="p-4 rounded-xl bg-background/30 border border-white/10">
+              <div key={c.name} className="p-4 rounded-xl bg-background/30 border border-border">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-sm font-medium">{c.name}</div>
                   <div className="text-sm font-semibold" style={{ color: scoreColor(c.score) }}>{c.score}</div>
                 </div>
-                <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                <div className="h-1.5 rounded-full bg-foreground/5 overflow-hidden">
                   <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${c.score}%`, background: scoreColor(c.score) }} />
                 </div>
                 <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{c.comment}</p>
@@ -203,7 +203,7 @@ export function AuditTool() {
 function Group({ title, items, color, icon, wide }: { title: string; items: string[]; color: string; icon?: React.ReactNode; wide?: boolean }) {
   if (!items?.length) return null;
   return (
-    <div className={`p-5 rounded-2xl bg-background/30 border border-white/10 ${wide ? "md:col-span-2" : ""}`}>
+    <div className={`p-5 rounded-2xl bg-background/30 border border-border ${wide ? "md:col-span-2" : ""}`}>
       <div className="flex items-center gap-2 mb-3 text-sm font-semibold" style={{ color: `var(--${color})` }}>
         {icon} {title}
       </div>

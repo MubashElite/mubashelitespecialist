@@ -22,7 +22,7 @@ function scrollTo(id: string) {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [light, setLight] = useState(false);
+  const [dark, setDark] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -38,8 +38,23 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("light", light);
-  }, [light]);
+    const stored = localStorage.getItem("theme");
+    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setDark(stored ? stored === "dark" : prefers);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  const toggleTheme = () => {
+    setDark((v) => {
+      const next = !v;
+      localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
+
 
   return (
     <>
@@ -66,7 +81,7 @@ export function Navbar() {
                 <button
                   key={n.id}
                   onClick={() => scrollTo(n.id)}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
+                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-foreground/5"
                 >
                   {n.label}
                 </button>
@@ -74,12 +89,14 @@ export function Navbar() {
             </div>
             <div className="flex items-center gap-2">
               <button
-                aria-label="Toggle theme"
-                onClick={() => setLight((v) => !v)}
-                className="h-9 w-9 grid place-items-center rounded-lg hover:bg-white/5 text-muted-foreground hover:text-foreground transition"
+                aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+                title={dark ? "Light mode" : "Dark mode"}
+                onClick={toggleTheme}
+                className="h-9 w-9 grid place-items-center rounded-lg border border-border bg-card/60 hover:bg-foreground/5 text-muted-foreground hover:text-foreground transition"
               >
-                {light ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+                {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </button>
+
               <a
                 href="https://wa.me/2347014449168"
                 target="_blank" rel="noopener noreferrer"
@@ -89,7 +106,7 @@ export function Navbar() {
               </a>
               <button
                 aria-label="Menu"
-                className="lg:hidden h-9 w-9 grid place-items-center rounded-lg hover:bg-white/5"
+                className="lg:hidden h-9 w-9 grid place-items-center rounded-lg hover:bg-foreground/5"
                 onClick={() => setOpen((v) => !v)}
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -102,7 +119,7 @@ export function Navbar() {
                 <button
                   key={n.id}
                   onClick={() => { scrollTo(n.id); setOpen(false); }}
-                  className="block w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm"
+                  className="block w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 text-sm"
                 >
                   {n.label}
                 </button>

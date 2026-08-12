@@ -108,7 +108,7 @@ function BlogPostPage() {
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-3xl">{post.excerpt}</p>
 
-          <div className="mt-8 rounded-3xl overflow-hidden glass border border-white/10">
+          <div className="mt-8 rounded-3xl overflow-hidden glass border border-border">
             <img
               src={post.image}
               alt={post.title}
@@ -156,10 +156,10 @@ function BlogPostPage() {
                 <a href={FIVERR} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-navy font-semibold px-5 py-3 rounded-xl hover:bg-white/90 transition">
                   Hire me on Fiverr <ExternalLink className="h-4 w-4" />
                 </a>
-                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition">
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-foreground/10 backdrop-blur border border-border text-white font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition">
                   <MessageSquare className="h-4 w-4" /> WhatsApp me
                 </a>
-                <a href={EMAIL} className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition">
+                <a href={EMAIL} className="inline-flex items-center gap-2 bg-foreground/10 backdrop-blur border border-border text-white font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition">
                   <Mail className="h-4 w-4" /> Email
                 </a>
               </div>
@@ -169,7 +169,7 @@ function BlogPostPage() {
       </article>
 
       {/* Related */}
-      <section className="py-16 border-t border-white/5">
+      <section className="py-16 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-display font-semibold">Keep reading</h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
