@@ -170,9 +170,22 @@
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
+      repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
+      var(--grid-tint);
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
   img { image-rendering: auto; }
+
 
   /* Smooth, restrained theme transition */
   body, header, section, footer, aside, nav, main, div, a, button, input, select, textarea, span, p, h1, h2, h3, h4, li {
