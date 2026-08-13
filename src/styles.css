@@ -90,7 +90,7 @@
 
   /* Grid background system */
   --grid-size: 64px;
-  --grid-line: color-mix(in oklab, oklch(0.45 0.06 58) 12%, transparent);
+  --grid-line: color-mix(in oklab, oklch(0.45 0.06 58) 20%, transparent);
   --grid-tint:
     radial-gradient(ellipse 80% 60% at 15% 0%, color-mix(in oklab, oklch(0.75 0.06 65) 22%, transparent), transparent 60%),
     radial-gradient(ellipse 70% 60% at 85% 100%, color-mix(in oklab, oklch(0.7 0.05 55) 18%, transparent), transparent 60%),
@@ -144,7 +144,7 @@
 
   /* Grid background system */
   --grid-size: 64px;
-  --grid-line: color-mix(in oklab, oklch(0.72 0.08 66) 9%, transparent);
+  --grid-line: color-mix(in oklab, oklch(0.78 0.08 70) 22%, transparent);
   --grid-tint:
     radial-gradient(ellipse 80% 60% at 15% 0%, color-mix(in oklab, oklch(0.45 0.07 55) 45%, transparent), transparent 62%),
     radial-gradient(ellipse 70% 60% at 85% 100%, color-mix(in oklab, oklch(0.4 0.06 62) 38%, transparent), transparent 60%),
