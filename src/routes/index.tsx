@@ -114,7 +114,7 @@ function Home() {
       <About />
       <Authority />
       <Services />
-      <ServiceTiers />
+      
       <Process />
       <Portfolio />
       <CaseStudies />
@@ -666,41 +666,6 @@ function Authority() {
 }
 
 /* ---------- SERVICE TIERS ---------- */
-function ServiceTiers() {
-  const tiers = [
-    { dot: "bg-emerald-400", name: "Basic Fix", desc: "Small store issues — tracking or SEO fixes.", items: ["Tracking / pixel repairs", "On-page SEO cleanup", "Small UX fixes"] },
-    { dot: "bg-cyan", name: "Growth Optimization", desc: "SEO + tracking + speed + conversion improvements.", items: ["Technical SEO", "Speed & Core Web Vitals", "Conversion improvements", "Analytics rebuild"] },
-    { dot: "bg-rose-400", name: "Full Store Optimization", desc: "Full audit + end-to-end, revenue-focused overhaul.", items: ["Full store audit", "End-to-end optimization", "SEO + CRO + tracking", "Revenue-focused roadmap"] },
-  ];
-  return (
-    <section id="service-tiers" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Service Tiers" title={<>Shopify <span className="gradient-text">Optimization Services</span></>} subtitle="Three engagement levels. One focus: fixing what is costing you sales." />
-        <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
-          {tiers.map((t) => (
-            <div key={t.name} className="glass rounded-2xl p-7 flex flex-col hover:shadow-glow transition">
-              <div className="flex items-center gap-2">
-                <span className={`h-2.5 w-2.5 rounded-full ${t.dot}`} />
-                <span className="text-sm font-semibold">{t.name}</span>
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">{t.desc}</p>
-              <ul className="mt-5 space-y-2 flex-1">
-                {t.items.map((i) => (
-                  <li key={i} className="flex gap-2 text-sm text-muted-foreground">
-                    <Check className="h-4 w-4 text-cyan mt-0.5 shrink-0" /> {i}
-                  </li>
-                ))}
-              </ul>
-              <button onClick={() => scrollToId("diagnosis")} className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl gradient-primary text-white px-5 py-3 text-sm font-semibold shadow-glow hover:opacity-95 transition">
-                Request diagnosis <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------- DIAGNOSIS FORM ---------- */
 function Diagnosis() {
