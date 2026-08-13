@@ -219,8 +219,12 @@
 }
 
 @utility hero-bg {
-  background: var(--gradient-hero);
+  background-image:
+    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
+    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
+    var(--gradient-hero);
 }
+
 
 @utility shadow-glow { box-shadow: var(--shadow-glow); }
 @utility shadow-elegant { box-shadow: var(--shadow-elegant); }
