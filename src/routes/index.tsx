@@ -120,7 +120,6 @@ function Home() {
       <CaseStudies />
       <Diagnosis />
       <Audit />
-      <Pricing />
       <PricingAnchor />
       <TrustStrip />
       <Testimonials />
@@ -813,45 +812,6 @@ function Audit() {
   );
 }
 
-/* ---------- PRICING ---------- */
-function Pricing() {
-  const tiers = [
-    { name: "Starter", price: "$150", best: false, features: ["Single page design or fix", "1 round of revisions", "Mobile responsive", "Basic SEO setup", "48–72h turnaround"] },
-    { name: "Growth", price: "$450", best: false, features: ["Up to 5 page Shopify/Wix build", "Theme customization", "Basic CRO setup", "Klaviyo welcome flow", "On-page SEO", "2 weeks delivery"] },
-    { name: "Professional", price: "$900", best: true, features: ["Full custom Shopify build", "Brand-true design system", "Advanced CRO + analytics", "Email marketing setup", "Technical SEO audit", "30-day post-launch support"] },
-    { name: "Elite", price: "$1500+", best: false, features: ["End-to-end consulting partner", "Custom Liquid / Velo dev", "AI automation workflows", "Full SEO + content strategy", "Monthly performance reports", "Direct WhatsApp access"] },
-  ];
-  return (
-    <section id="pricing" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Pricing" title={<>Transparent Pricing, <span className="gradient-text">No Surprises</span></>} subtitle="Every package includes a kickoff call, clear deliverables, and direct access to me." />
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
-          {tiers.map((t) => (
-            <div key={t.name} className={`relative glass rounded-2xl p-7 flex flex-col ${t.best ? "ring-1 ring-cyan shadow-glow" : ""}`}>
-              {t.best && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full gradient-primary text-white text-xs font-semibold">
-                  Most popular
-                </div>
-              )}
-              <div className="text-sm text-muted-foreground">{t.name}</div>
-              <div className="mt-2 font-display text-4xl font-bold">{t.price}</div>
-              <ul className="mt-6 space-y-3 flex-1">
-                {t.features.map((f) => (
-                  <li key={f} className="flex gap-2 text-sm">
-                    <Check className="h-4 w-4 text-cyan mt-0.5 shrink-0" /> <span className="text-muted-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={`mt-7 inline-flex items-center justify-center px-5 py-3 rounded-xl font-medium transition ${t.best ? "gradient-primary text-white shadow-glow" : "glass hover:bg-foreground/10"}`}>
-                Get started
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------- TESTIMONIALS ---------- */
 function Testimonials() {
