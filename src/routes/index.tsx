@@ -119,7 +119,6 @@ function Home() {
       <Portfolio />
       <CaseStudies />
       <Diagnosis />
-      <Skills />
       <Audit />
       <Pricing />
       <PricingAnchor />
@@ -830,29 +829,6 @@ function FinalCTA() {
   );
 }
 
-
-/* ---------- SKILLS ---------- */
-function Skills() {
-  const skills = ["Shopify","Liquid","HTML","CSS","JavaScript","React","Next.js","Wix Studio","Velo","SEO","Google Analytics","Search Console","Email Marketing","Klaviyo","OpenAI","Make","Zapier","n8n"];
-  return (
-    <section id="skills" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Skills" title={<>The Technical <span className="gradient-text">Stack</span></>} />
-        <div className="mt-12 flex flex-wrap gap-3 justify-center reveal">
-          {skills.map((s, i) => (
-            <div
-              key={s}
-              className="glass rounded-xl px-5 py-3 text-sm font-medium hover:gradient-primary hover:text-white transition cursor-default"
-              style={{ animationDelay: `${i * 30}ms` }}
-            >
-              {s}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------- AUDIT ---------- */
 function Audit() {
