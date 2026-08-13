@@ -9,7 +9,6 @@ const NAV = [
   { id: "services", label: "Services" },
   { id: "portfolio", label: "Portfolio" },
   { id: "audit", label: "AI Audit" },
-  { id: "pricing", label: "Pricing" },
   { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" },
 ];

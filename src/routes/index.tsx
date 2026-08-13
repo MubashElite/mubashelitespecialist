@@ -1029,7 +1029,7 @@ function Footer() {
         <div>
           <div className="text-sm font-semibold mb-3">Quick Links</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            {["about","services","portfolio","pricing","blog","contact"].map((l) => (
+            {["about","services","portfolio","blog","contact"].map((l) => (
               <li key={l}><button className="hover:text-foreground capitalize" onClick={() => scrollToId(l)}>{l}</button></li>
             ))}
           </ul>
