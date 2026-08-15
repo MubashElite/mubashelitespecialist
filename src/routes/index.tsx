@@ -109,7 +109,6 @@ function Home() {
       <Navbar />
       <Hero />
       <Metrics />
-      <Platforms />
       <About />
       <Authority />
       <Services />
@@ -251,25 +250,6 @@ function Metrics() {
                 <Counter value={s.v} suffix={s.s} />
               </div>
               <div className="mt-2 text-xs sm:text-sm text-muted-foreground">{s.l}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- PLATFORMS ---------- */
-function Platforms() {
-  const platforms = ["Shopify","Shopify Plus","Wix","Wix Studio","Google","Meta","Klaviyo","Mailchimp","Stripe","PayPal","OpenAI","Cloudflare"];
-  return (
-    <section className="py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground reveal">Trusted tools & platforms I build with</p>
-        <div className="mt-6 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 reveal">
-          {platforms.map((p) => (
-            <div key={p} className="glass rounded-xl px-4 py-3 text-center text-sm font-medium text-muted-foreground hover:text-foreground transition">
-              {p}
             </div>
           ))}
         </div>
