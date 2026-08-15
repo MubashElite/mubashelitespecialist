@@ -195,7 +195,7 @@
 
 @utility glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid var(--glass-border);
 }
 
@@ -216,10 +216,7 @@
 }
 
 @utility hero-bg {
-  background-image:
-    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-    var(--gradient-hero);
+  background-image: var(--gradient-hero);
 }
 
 
