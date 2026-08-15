@@ -88,12 +88,11 @@
   --glass-bg: color-mix(in oklab, white 78%, transparent);
   --glass-border: color-mix(in oklab, var(--navy) 10%, transparent);
 
-  /* Static premium aurora background */
+  /* Calm premium canvas — soft ivory, barely-there depth */
   --bg-canvas:
-    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab, oklch(0.78 0.08 68) 42%, transparent), transparent 62%),
-    radial-gradient(900px 560px at 92% 6%, color-mix(in oklab, oklch(0.74 0.06 40) 34%, transparent), transparent 60%),
-    radial-gradient(1000px 700px at 78% 102%, color-mix(in oklab, oklch(0.7 0.05 55) 30%, transparent), transparent 62%),
-    linear-gradient(180deg, oklch(0.995 0.004 80), oklch(0.958 0.012 72));
+    radial-gradient(1200px 700px at 15% -10%, color-mix(in oklab, oklch(0.93 0.016 72) 50%, transparent), transparent 65%),
+    radial-gradient(1000px 620px at 95% 4%, color-mix(in oklab, oklch(0.94 0.01 45) 40%, transparent), transparent 62%),
+    linear-gradient(180deg, oklch(0.99 0.004 80), oklch(0.972 0.007 72));
 
 
   --gradient-primary: linear-gradient(135deg, oklch(0.4 0.07 50), oklch(0.6 0.09 66));
@@ -107,7 +106,7 @@
 
 /* ---------- DARK (espresso / bronze) ---------- */
 .dark {
-  --background: oklch(0.17 0.018 55);
+  --background: oklch(0.2 0.012 52);
   --foreground: oklch(0.97 0.012 75);
   --card: oklch(0.225 0.024 50);
   --card-foreground: oklch(0.97 0.012 75);
@@ -141,19 +140,16 @@
 
   --glass-bg: color-mix(in oklab, oklch(0.245 0.026 50) 62%, transparent);
   --glass-border: color-mix(in oklab, oklch(0.9 0.04 75) 12%, transparent);
-  /* Static premium aurora background */
+  /* Calm premium canvas — muted graphite-espresso, no glare */
   --bg-canvas:
-    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab, oklch(0.5 0.08 58) 55%, transparent), transparent 62%),
-    radial-gradient(900px 560px at 92% 6%, color-mix(in oklab, oklch(0.55 0.09 70) 32%, transparent), transparent 60%),
-    radial-gradient(1000px 700px at 78% 102%, color-mix(in oklab, oklch(0.42 0.07 45) 45%, transparent), transparent 62%),
-    linear-gradient(165deg, oklch(0.145 0.016 45), oklch(0.19 0.022 52) 55%, oklch(0.14 0.014 40));
-
-
+    radial-gradient(1200px 700px at 15% -10%, color-mix(in oklab, oklch(0.31 0.02 55) 45%, transparent), transparent 66%),
+    radial-gradient(1000px 640px at 95% 6%, color-mix(in oklab, oklch(0.28 0.016 70) 38%, transparent), transparent 62%),
+    linear-gradient(180deg, oklch(0.215 0.013 52), oklch(0.185 0.011 48));
 
   --gradient-primary: linear-gradient(135deg, oklch(0.42 0.09 45), oklch(0.66 0.11 66));
-  --gradient-hero: radial-gradient(ellipse at 20% 10%, color-mix(in oklab, oklch(0.5 0.1 55) 40%, transparent), transparent 60%),
-                    radial-gradient(ellipse at 80% 90%, color-mix(in oklab, oklch(0.62 0.1 70) 22%, transparent), transparent 55%),
-                    linear-gradient(180deg, oklch(0.135 0.016 48), oklch(0.2 0.024 52));
+  --gradient-hero: radial-gradient(ellipse at 20% 10%, color-mix(in oklab, oklch(0.42 0.05 55) 30%, transparent), transparent 62%),
+                    radial-gradient(ellipse at 80% 90%, color-mix(in oklab, oklch(0.5 0.05 70) 16%, transparent), transparent 58%),
+                    linear-gradient(180deg, oklch(0.2 0.012 50), oklch(0.225 0.014 52));
   --gradient-text: linear-gradient(90deg, oklch(0.98 0.012 80), oklch(0.78 0.1 72));
   --gradient-portrait: conic-gradient(from 140deg, oklch(0.42 0.09 45), oklch(0.7 0.11 68), oklch(0.35 0.07 40), oklch(0.42 0.09 45));
 }
