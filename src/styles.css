@@ -177,22 +177,20 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-      repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-      repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-      var(--grid-tint);
+    background: var(--bg-canvas);
+    background-attachment: scroll;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
-  img { image-rendering: auto; }
+  img { image-rendering: auto; content-visibility: auto; }
 
-
-  /* Smooth, restrained theme transition */
-  body, header, section, footer, aside, nav, main, div, a, button, input, select, textarea, span, p, h1, h2, h3, h4, li {
-    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+  /* Smooth, restrained theme transition (scoped for performance) */
+  body, header, nav, section, footer, .glass, a, button, input, select, textarea {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
   @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
   }
+
 }
 
 @utility glass {
