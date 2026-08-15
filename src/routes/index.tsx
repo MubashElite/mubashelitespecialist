@@ -137,14 +137,15 @@ function Hero() {
   return (
     <section id="hero" className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <img src={heroBg} alt="" width={1920} height={1280} className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <img src={heroBg} alt="" width={1920} height={1280} fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 hero-bg" />
-        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-royal/30 blur-[120px] animate-float-slow" />
-        <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-cyan/20 blur-[120px] animate-float-fast" />
+        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-royal/25 blur-[100px]" />
+        <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-cyan/15 blur-[100px]" />
       </div>
 
       {/* Floating glass cards */}
-      <div className="absolute top-32 right-[8%] hidden lg:block animate-float-slow">
+      <div className="absolute top-32 right-[8%] hidden lg:block">
+
         <div className="glass rounded-2xl p-4 w-56 shadow-card">
           <div className="text-xs text-muted-foreground">Conversion Rate</div>
           <div className="mt-1 flex items-baseline gap-1">
