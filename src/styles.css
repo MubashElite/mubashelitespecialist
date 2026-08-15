@@ -88,13 +88,13 @@
   --glass-bg: color-mix(in oklab, white 78%, transparent);
   --glass-border: color-mix(in oklab, var(--navy) 10%, transparent);
 
-  /* Grid background system */
-  --grid-size: 64px;
-  --grid-line: color-mix(in oklab, oklch(0.42 0.06 58) 14%, transparent);
-  --grid-tint:
-    radial-gradient(ellipse 80% 60% at 15% 0%, color-mix(in oklab, oklch(0.75 0.06 65) 22%, transparent), transparent 60%),
-    radial-gradient(ellipse 70% 60% at 85% 100%, color-mix(in oklab, oklch(0.7 0.05 55) 18%, transparent), transparent 60%),
-    linear-gradient(180deg, oklch(0.99 0.005 80), oklch(0.955 0.012 72));
+  /* Static premium aurora background */
+  --bg-canvas:
+    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab, oklch(0.78 0.08 68) 42%, transparent), transparent 62%),
+    radial-gradient(900px 560px at 92% 6%, color-mix(in oklab, oklch(0.74 0.06 40) 34%, transparent), transparent 60%),
+    radial-gradient(1000px 700px at 78% 102%, color-mix(in oklab, oklch(0.7 0.05 55) 30%, transparent), transparent 62%),
+    linear-gradient(180deg, oklch(0.995 0.004 80), oklch(0.958 0.012 72));
+
 
   --gradient-primary: linear-gradient(135deg, oklch(0.4 0.07 50), oklch(0.6 0.09 66));
   --gradient-hero: radial-gradient(ellipse at 20% 10%, color-mix(in oklab, var(--royal) 10%, transparent), transparent 60%),
@@ -141,14 +141,13 @@
 
   --glass-bg: color-mix(in oklab, oklch(0.245 0.026 50) 62%, transparent);
   --glass-border: color-mix(in oklab, oklch(0.9 0.04 75) 12%, transparent);
+  /* Static premium aurora background */
+  --bg-canvas:
+    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab, oklch(0.5 0.08 58) 55%, transparent), transparent 62%),
+    radial-gradient(900px 560px at 92% 6%, color-mix(in oklab, oklch(0.55 0.09 70) 32%, transparent), transparent 60%),
+    radial-gradient(1000px 700px at 78% 102%, color-mix(in oklab, oklch(0.42 0.07 45) 45%, transparent), transparent 62%),
+    linear-gradient(165deg, oklch(0.145 0.016 45), oklch(0.19 0.022 52) 55%, oklch(0.14 0.014 40));
 
-  /* Grid background system */
-  --grid-size: 64px;
-  --grid-line: color-mix(in oklab, oklch(0.8 0.08 72) 34%, transparent);
-  --grid-tint:
-    radial-gradient(ellipse 80% 60% at 15% 0%, color-mix(in oklab, oklch(0.45 0.07 55) 45%, transparent), transparent 62%),
-    radial-gradient(ellipse 70% 60% at 85% 100%, color-mix(in oklab, oklch(0.4 0.06 62) 38%, transparent), transparent 60%),
-    linear-gradient(160deg, oklch(0.155 0.018 45), oklch(0.185 0.022 52) 55%, oklch(0.15 0.016 40));
 
 
   --gradient-primary: linear-gradient(135deg, oklch(0.42 0.09 45), oklch(0.66 0.11 66));
@@ -178,27 +177,25 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-      repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-      repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-      var(--grid-tint);
+    background: var(--bg-canvas);
+    background-attachment: scroll;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
-  img { image-rendering: auto; }
+  img { image-rendering: auto; content-visibility: auto; }
 
-
-  /* Smooth, restrained theme transition */
-  body, header, section, footer, aside, nav, main, div, a, button, input, select, textarea, span, p, h1, h2, h3, h4, li {
-    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+  /* Smooth, restrained theme transition (scoped for performance) */
+  body, header, nav, section, footer, .glass, a, button, input, select, textarea {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
   @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
   }
+
 }
 
 @utility glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid var(--glass-border);
 }
 
@@ -219,10 +216,7 @@
 }
 
 @utility hero-bg {
-  background-image:
-    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px var(--grid-size)),
-    var(--gradient-hero);
+  background-image: var(--gradient-hero);
 }
 
 
