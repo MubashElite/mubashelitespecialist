@@ -141,14 +141,13 @@
 
   --glass-bg: color-mix(in oklab, oklch(0.245 0.026 50) 62%, transparent);
   --glass-border: color-mix(in oklab, oklch(0.9 0.04 75) 12%, transparent);
+  /* Static premium aurora background */
+  --bg-canvas:
+    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab, oklch(0.5 0.08 58) 55%, transparent), transparent 62%),
+    radial-gradient(900px 560px at 92% 6%, color-mix(in oklab, oklch(0.55 0.09 70) 32%, transparent), transparent 60%),
+    radial-gradient(1000px 700px at 78% 102%, color-mix(in oklab, oklch(0.42 0.07 45) 45%, transparent), transparent 62%),
+    linear-gradient(165deg, oklch(0.145 0.016 45), oklch(0.19 0.022 52) 55%, oklch(0.14 0.014 40));
 
-  /* Grid background system */
-  --grid-size: 64px;
-  --grid-line: color-mix(in oklab, oklch(0.8 0.08 72) 34%, transparent);
-  --grid-tint:
-    radial-gradient(ellipse 80% 60% at 15% 0%, color-mix(in oklab, oklch(0.45 0.07 55) 45%, transparent), transparent 62%),
-    radial-gradient(ellipse 70% 60% at 85% 100%, color-mix(in oklab, oklch(0.4 0.06 62) 38%, transparent), transparent 60%),
-    linear-gradient(160deg, oklch(0.155 0.018 45), oklch(0.185 0.022 52) 55%, oklch(0.15 0.016 40));
 
 
   --gradient-primary: linear-gradient(135deg, oklch(0.42 0.09 45), oklch(0.66 0.11 66));
