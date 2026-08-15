@@ -159,7 +159,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-24 left-[6%] hidden lg:block animate-float-fast">
+      <div className="absolute bottom-24 left-[6%] hidden lg:block">
         <div className="glass rounded-2xl p-4 w-52 shadow-card">
           <div className="flex items-center gap-2">
             <Gauge className="h-4 w-4 text-cyan" />
