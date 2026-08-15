@@ -88,12 +88,11 @@
   --glass-bg: color-mix(in oklab, white 78%, transparent);
   --glass-border: color-mix(in oklab, var(--navy) 10%, transparent);
 
-  /* Static premium aurora background */
+  /* Calm premium canvas — soft ivory, barely-there depth */
   --bg-canvas:
-    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab, oklch(0.78 0.08 68) 42%, transparent), transparent 62%),
-    radial-gradient(900px 560px at 92% 6%, color-mix(in oklab, oklch(0.74 0.06 40) 34%, transparent), transparent 60%),
-    radial-gradient(1000px 700px at 78% 102%, color-mix(in oklab, oklch(0.7 0.05 55) 30%, transparent), transparent 62%),
-    linear-gradient(180deg, oklch(0.995 0.004 80), oklch(0.958 0.012 72));
+    radial-gradient(1200px 700px at 15% -10%, color-mix(in oklab, oklch(0.93 0.016 72) 50%, transparent), transparent 65%),
+    radial-gradient(1000px 620px at 95% 4%, color-mix(in oklab, oklch(0.94 0.01 45) 40%, transparent), transparent 62%),
+    linear-gradient(180deg, oklch(0.99 0.004 80), oklch(0.972 0.007 72));
 
 
   --gradient-primary: linear-gradient(135deg, oklch(0.4 0.07 50), oklch(0.6 0.09 66));
