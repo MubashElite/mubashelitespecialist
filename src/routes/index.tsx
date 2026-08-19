@@ -617,7 +617,7 @@ function CaseStudies() {
 /* ---------- AUTHORITY ---------- */
 function Authority() {
   const items = [
-    { i: Target, t: "Revenue-impacting Shopify focus", d: "I focus on the Shopify issues that actually move sales — not surface-level tweaks." },
+    { i: Target, t: "Revenue-impacting Shopify focus", d: "I focus on the Shopify issues that actually move sales not surface-level tweaks." },
     { i: ShoppingBag, t: "Shopify & dropshipping expertise", d: "I help both Shopify brands and dropshipping stores scale conversions." },
     { i: Wrench, t: "Hidden technical fixes", d: "I find and fix the technical problems quietly killing your store's sales." },
     { i: LineChart, t: "Performance over design-only", d: "My work is focused on performance and revenue, not just design changes." },
