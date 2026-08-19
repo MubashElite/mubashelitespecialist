@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { ChatWidget } from "@/components/site/ChatWidget";
+import { BuyerReviewFeature } from "@/components/site/BuyerReview";
+
 
 import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
