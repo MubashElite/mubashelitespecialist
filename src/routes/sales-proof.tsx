@@ -8,6 +8,8 @@ import {
 import { Navbar } from "@/components/site/Navbar";
 
 import { useReveal } from "@/components/site/useReveal";
+import { BuyerReviewFeature } from "@/components/site/BuyerReview";
+
 import port1 from "@/assets/port1.jpg.asset.json";
 import port2 from "@/assets/port2.jpg.asset.json";
 import port3 from "@/assets/port3.jpg.asset.json";
