@@ -334,7 +334,7 @@ function ServiceRow({ items }: { items: { i: any; t: string; d: string }[] }) {
 function Services() {
   const items = [
     { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-first storefronts built to turn visitors into buyers." },
-    { i: Code2, t: "Shopify Development", d: "Custom themes, sections, and apps — no workarounds, no hacks." },
+    { i: Code2, t: "Shopify Development", d: "Custom themes, sections, and apps no workarounds, no hacks." },
     { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JavaScript, and API integrations that off-the-shelf apps cannot handle." },
     { i: Gauge, t: "Speed Optimization", d: "Core Web Vitals improvements that reduce bounce and lift rankings." },
     { i: TrendingUp, t: "Conversion Rate Optimization", d: "Data-led testing and UX changes that directly increase revenue." },
