@@ -117,7 +117,7 @@ function Home() {
 
       <Process />
       <Diagnosis />
-      <Audit />
+      
       <PricingAnchor />
       <TrustStrip />
       <Testimonials />
