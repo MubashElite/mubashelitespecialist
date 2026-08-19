@@ -582,7 +582,11 @@ function CaseStudies() {
     <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Watch walkthroughs of actual Shopify and dropshipping store fixes SEO recovery, tracking repairs, and performance gains." />
-        <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
+        <div className="mt-12">
+          <BuyerReviewFeature />
+        </div>
+        <div className="mt-6 grid lg:grid-cols-2 gap-6 reveal">
+
           <Card s={featured} index={0} big />
           <div className="grid gap-6">
             {supporting.map((s, i) => <Card key={s.title} s={s} index={i + 1} />)}
