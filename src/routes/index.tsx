@@ -774,23 +774,6 @@ function FinalCTA() {
 }
 
 
-/* ---------- AUDIT ---------- */
-function Audit() {
-  return (
-    <section id="audit" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
-          eyebrow="AI Store Audit"
-          title={<>Get a <span className="gradient-text">free AI-powered audit</span> of any store</>}
-          subtitle="Paste any Shopify or eCommerce URL. The AI scores 25 categories, highlights weak spots and gives you a download-ready report. Then book me for the deep human audit."
-        />
-        <div className="mt-10 reveal">
-          <AuditTool />
-        </div>
-      </div>
-    </section>
-  );
-}
 
 
 /* ---------- TESTIMONIALS ---------- */
