@@ -203,7 +203,7 @@ function Hero() {
           Trapped Inside Your Shopify Store
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          A specialist-led optimization system for Shopify and dropshipping brands — engineered to eliminate the conversion, SEO, tracking, and performance issues quietly costing you sales.
+          A specialist-led optimization system for Shopify and dropshipping brands engineered to eliminate the conversion, SEO, tracking, and performance issues quietly costing you sales.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
