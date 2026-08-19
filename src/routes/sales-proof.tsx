@@ -8,6 +8,8 @@ import {
 import { Navbar } from "@/components/site/Navbar";
 
 import { useReveal } from "@/components/site/useReveal";
+import { BuyerReviewFeature } from "@/components/site/BuyerReview";
+
 import port1 from "@/assets/port1.jpg.asset.json";
 import port2 from "@/assets/port2.jpg.asset.json";
 import port3 from "@/assets/port3.jpg.asset.json";
@@ -529,7 +531,12 @@ function VideoProof() {
           description="Featured client work — click any case study to watch the walkthrough in fullscreen."
         />
 
-        <div className="mt-14 grid lg:grid-cols-2 gap-6">
+        <div className="mt-14">
+          <BuyerReviewFeature />
+        </div>
+
+        <div className="mt-6 grid lg:grid-cols-2 gap-6">
+
           <CaseStudyCard study={featured} featured onPlay={() => setActive(0)} />
           <div className="grid gap-6">
             {supporting.map((s, i) => (
