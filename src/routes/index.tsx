@@ -109,13 +109,13 @@ function Home() {
       <Navbar />
       <Hero />
       <Metrics />
+      <Portfolio />
+      <CaseStudies />
       <About />
       <Authority />
       <Services />
-      
+
       <Process />
-      <Portfolio />
-      <CaseStudies />
       <Diagnosis />
       <Audit />
       <PricingAnchor />
