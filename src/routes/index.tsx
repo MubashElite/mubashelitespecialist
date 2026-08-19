@@ -203,7 +203,7 @@ function Hero() {
           Trapped Inside Your Shopify Store
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          A specialist-led optimization system for Shopify and dropshipping brands — engineered to eliminate the conversion, SEO, tracking, and performance issues quietly costing you sales.
+          A specialist-led optimization system for Shopify and dropshipping brands engineered to eliminate the conversion, SEO, tracking, and performance issues quietly costing you sales.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <button onClick={() => scrollToId("diagnosis")} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
@@ -268,10 +268,10 @@ function About() {
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I am an eCommerce growth, conversion, and optimization specialist. My work spans Shopify, Wix, dropshipping, and direct-to-consumer brands — covering store conversion, technical performance, SEO, site speed, product and collection optimization, user experience, and the full customer journey.
+              I am an eCommerce growth, conversion, and optimization specialist. My work spans Shopify, Wix, dropshipping, and direct-to-consumer brands covering store conversion, technical performance, SEO, site speed, product and collection optimization, user experience, and the full customer journey.
             </p>
             <p>
-              I approach every eCommerce project by first understanding where performance is being lost. My process is methodical: audit the store, identify the bottlenecks slowing it down, prioritize the improvements with the greatest potential business impact, implement them, then measure and refine. I look beyond surface-level design to the complete customer journey — first impression, navigation, product presentation, trust, conversion friction, technical performance, SEO visibility, mobile experience, and checkout.
+              I approach every eCommerce project by first understanding where performance is being lost. My process is methodical: audit the store, identify the bottlenecks slowing it down, prioritize the improvements with the greatest potential business impact, implement them, then measure and refine. I look beyond surface-level design to the complete customer journey first impression, navigation, product presentation, trust, conversion friction, technical performance, SEO visibility, mobile experience, and checkout.
             </p>
             <p>
               I don't optimize for vanity metrics or make changes simply for the sake of change. I focus on practical improvements that create a clearer, faster, more trustworthy, and more conversion-focused customer experience.
@@ -334,7 +334,7 @@ function ServiceRow({ items }: { items: { i: any; t: string; d: string }[] }) {
 function Services() {
   const items = [
     { i: ShoppingBag, t: "Shopify Store Design", d: "Conversion-first storefronts built to turn visitors into buyers." },
-    { i: Code2, t: "Shopify Development", d: "Custom themes, sections, and apps — no workarounds, no hacks." },
+    { i: Code2, t: "Shopify Development", d: "Custom themes, sections, and apps no workarounds, no hacks." },
     { i: Wrench, t: "Shopify Custom Coding", d: "Liquid, JavaScript, and API integrations that off-the-shelf apps cannot handle." },
     { i: Gauge, t: "Speed Optimization", d: "Core Web Vitals improvements that reduce bounce and lift rankings." },
     { i: TrendingUp, t: "Conversion Rate Optimization", d: "Data-led testing and UX changes that directly increase revenue." },
@@ -581,7 +581,7 @@ function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Watch walkthroughs of actual Shopify and dropshipping store fixes — SEO recovery, tracking repairs, and performance gains." />
+        <SectionHeading eyebrow="Case Studies" title={<>Real Store Optimization <span className="gradient-text">Case Studies & Results</span></>} subtitle="Watch walkthroughs of actual Shopify and dropshipping store fixes SEO recovery, tracking repairs, and performance gains." />
         <div className="mt-12 grid lg:grid-cols-2 gap-6 reveal">
           <Card s={featured} index={0} big />
           <div className="grid gap-6">
@@ -617,7 +617,7 @@ function CaseStudies() {
 /* ---------- AUTHORITY ---------- */
 function Authority() {
   const items = [
-    { i: Target, t: "Revenue-impacting Shopify focus", d: "I focus on the Shopify issues that actually move sales — not surface-level tweaks." },
+    { i: Target, t: "Revenue-impacting Shopify focus", d: "I focus on the Shopify issues that actually move sales not surface-level tweaks." },
     { i: ShoppingBag, t: "Shopify & dropshipping expertise", d: "I help both Shopify brands and dropshipping stores scale conversions." },
     { i: Wrench, t: "Hidden technical fixes", d: "I find and fix the technical problems quietly killing your store's sales." },
     { i: LineChart, t: "Performance over design-only", d: "My work is focused on performance and revenue, not just design changes." },
