@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { ChatWidget } from "@/components/site/ChatWidget";
-import { AuditTool } from "@/components/site/AuditTool";
+
 import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import heroBg from "@/assets/hero-bg.jpg";
