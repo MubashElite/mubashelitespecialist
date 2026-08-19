@@ -268,13 +268,13 @@ function About() {
         <div className="mt-10 grid md:grid-cols-5 gap-8 items-start reveal">
           <div className="md:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I started as a store owner struggling with the same conversion, speed, and SEO issues that plague most Shopify businesses. Seven years and hundreds of projects later, I fix those problems at scale — for Shopify and Wix brands, dropshipping stores, and scaling eCommerce businesses.
+              I am an eCommerce growth, conversion, and optimization specialist. My work spans Shopify, Wix, dropshipping, and direct-to-consumer brands — covering store conversion, technical performance, SEO, site speed, product and collection optimization, user experience, and the full customer journey.
             </p>
             <p>
-              My process is built around revenue impact, not vanity metrics. I audit first, identify the highest-leverage fixes, and execute with clear timelines and measurable outcomes. No templates, no inflated retainers, no vague reports — just execution that moves the numbers.
+              I approach every eCommerce project by first understanding where performance is being lost. My process is methodical: audit the store, identify the bottlenecks slowing it down, prioritize the improvements with the greatest potential business impact, implement them, then measure and refine. I look beyond surface-level design to the complete customer journey — first impression, navigation, product presentation, trust, conversion friction, technical performance, SEO visibility, mobile experience, and checkout.
             </p>
             <p>
-              Clients tend to stay because the results compound. A speed fix this month becomes higher organic rankings next quarter and lower ad costs the one after. That is the system I build with every partner.
+              I don't optimize for vanity metrics or make changes simply for the sake of change. I focus on practical improvements that create a clearer, faster, more trustworthy, and more conversion-focused customer experience.
             </p>
           </div>
           <div className="md:col-span-2 space-y-3">
