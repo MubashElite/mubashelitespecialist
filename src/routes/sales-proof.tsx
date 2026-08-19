@@ -529,7 +529,12 @@ function VideoProof() {
           description="Featured client work — click any case study to watch the walkthrough in fullscreen."
         />
 
-        <div className="mt-14 grid lg:grid-cols-2 gap-6">
+        <div className="mt-14">
+          <BuyerReviewFeature />
+        </div>
+
+        <div className="mt-6 grid lg:grid-cols-2 gap-6">
+
           <CaseStudyCard study={featured} featured onPlay={() => setActive(0)} />
           <div className="grid gap-6">
             {supporting.map((s, i) => (
