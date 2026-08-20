@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Moon, Sun } from "lucide-react";
-import logoAsset from "@/assets/mubash-logo.png.asset.json";
-const logo = logoAsset.url;
+import logoAsset from "@/assets/mubash-logo.png";
+const logo = logoAsset;
 
 const NAV = [
   { id: "about", label: "About" },
