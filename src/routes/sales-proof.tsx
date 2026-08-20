@@ -10,14 +10,14 @@ import { Navbar } from "@/components/site/Navbar";
 import { useReveal } from "@/components/site/useReveal";
 import { BuyerReviewFeature } from "@/components/site/BuyerReview";
 
-import port1 from "@/assets/port1.jpg.asset.json";
-import port2 from "@/assets/port2.jpg.asset.json";
-import port3 from "@/assets/port3.jpg.asset.json";
-import port4 from "@/assets/port4.jpg.asset.json";
-import port5 from "@/assets/port5.jpg.asset.json";
-import port6 from "@/assets/port6.jpg.asset.json";
-import port7 from "@/assets/port7.jpg.asset.json";
-import port8 from "@/assets/port8.jpg.asset.json";
+import port1 from "@/assets/port1.jpg";
+import port2 from "@/assets/port2.jpg";
+import port3 from "@/assets/port3.jpg";
+import port4 from "@/assets/port4.jpg";
+import port5 from "@/assets/port5.jpg";
+import port6 from "@/assets/port6.jpg";
+import port7 from "@/assets/port7.jpg";
+import port8 from "@/assets/port8.jpg";
 
 const PAGE_URL = "https://mubashelitespecialist.lovable.app/sales-proof";
 const PAGE_TITLE = "Results & Proof | Mubash Elite Specialist";
@@ -46,21 +46,21 @@ export const Route = createFileRoute("/sales-proof")({
 const PERFORMANCE = [
   {
     name: "Skincare DTC — Shopify Plus",
-    image: port1.url,
+    image: port1,
     before: { speed: 38, lcp: "6.4s", cvr: "1.1%" },
     after: { speed: 96, lcp: "1.4s", cvr: "3.2%" },
     notes: "Theme rebuild, image pipeline, third-party script audit, critical CSS.",
   },
   {
     name: "Apparel Brand — Shopify 2.0",
-    image: port2.url,
+    image: port2,
     before: { speed: 44, lcp: "5.2s", cvr: "1.6%" },
     after: { speed: 98, lcp: "1.6s", cvr: "3.9%" },
     notes: "Section-based rebuild, deferred JS, WebP + AVIF, PDP CRO sprint.",
   },
   {
     name: "Wellness Store — Wix Studio",
-    image: port3.url,
+    image: port3,
     before: { speed: 41, lcp: "7.1s", cvr: "0.9%" },
     after: { speed: 92, lcp: "2.1s", cvr: "2.8%" },
     notes: "Wix Studio migration, media optimization, checkout friction removal.",
@@ -88,21 +88,21 @@ const SEO_FIXES = [
 const OPTIMIZATION = [
   {
     title: "Product page redesign",
-    image: port5.url,
+    image: port5,
     before: "Cluttered PDP, no trust signals, hidden reviews, weak CTA hierarchy.",
     after: "Sticky ATC, above-fold reviews, size guide modal, benefit-led copy.",
     result: "+62% conversion rate, +18% AOV",
   },
   {
     title: "Mobile checkout rebuild",
-    image: port6.url,
+    image: port6,
     before: "5-step form, no autofill, cart abandonment 78%.",
     after: "One-page express checkout, Shop Pay, Apple Pay, guest flow.",
     result: "-34% abandonment, +41% mobile revenue",
   },
   {
     title: "Homepage UX overhaul",
-    image: port7.url,
+    image: port7,
     before: "Generic hero, no clear value prop, 12s LCP, high bounce.",
     after: "Editorial hero, curated collections, 1.8s LCP, category shortcuts.",
     result: "-41% bounce, +2.4x pages/session",
@@ -291,10 +291,10 @@ function SeoProof() {
         </div>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           <div className="reveal glass rounded-2xl p-3 overflow-hidden">
-            <img src={port4.url} alt="Shopify analytics dashboard with +340% growth" loading="lazy" className="w-full h-auto rounded-xl block" />
+            <img src={port4} alt="Shopify analytics dashboard with +340% growth" loading="lazy" className="w-full h-auto rounded-xl block" />
           </div>
           <div className="reveal glass rounded-2xl p-3 overflow-hidden">
-            <img src={port8.url} alt="Shopify overview dashboard with sales and conversion metrics" loading="lazy" className="w-full h-auto rounded-xl block" />
+            <img src={port8} alt="Shopify overview dashboard with sales and conversion metrics" loading="lazy" className="w-full h-auto rounded-xl block" />
           </div>
         </div>
       </div>

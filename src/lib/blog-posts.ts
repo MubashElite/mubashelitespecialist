@@ -1,9 +1,9 @@
-import blog1 from "@/assets/blog1.jpg.asset.json";
-import blog2 from "@/assets/blog2.jpg.asset.json";
-import blog3 from "@/assets/blog3.jpg.asset.json";
-import blog4 from "@/assets/blog4.jpg.asset.json";
-import blog5 from "@/assets/blog5.jpg.asset.json";
-import blog6 from "@/assets/blog6.jpg.asset.json";
+import blog1 from "@/assets/blog1.jpg";
+import blog2 from "@/assets/blog2.jpg";
+import blog3 from "@/assets/blog3.jpg";
+import blog4 from "@/assets/blog4.jpg";
+import blog5 from "@/assets/blog5.jpg";
+import blog6 from "@/assets/blog6.jpg";
 
 export type BlogPost = {
   slug: string;
@@ -27,7 +27,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "App bloat and unoptimized themes silently kill conversion. Here's the audit I run on every new client store.",
     readTime: "6 min",
-    image: blog1.url,
+    image: blog1,
     publishedAt: "2026-05-14",
     intro:
       "A slow Shopify store isn't a design problem. It's a revenue problem. Every additional second of load time cuts conversions by 7% on average, and most stores I audit are shipping 4-8 second load times without realizing it. Here's exactly what's dragging you down and how to fix it in a weekend.",
@@ -71,7 +71,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Welcome, abandoned cart, browse abandonment, post-purchase. The exact setup I deploy to lift revenue 20%+.",
     readTime: "8 min",
-    image: blog2.url,
+    image: blog2,
     publishedAt: "2026-05-22",
     intro:
       "Klaviyo can drive 25-40% of your total store revenue if the automation stack is set up correctly. Most stores I audit are running only 2-3 flows and leaving 60% of email revenue on the table. Here's the exact stack I build for every DTC client.",
@@ -127,7 +127,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Wix isn't just for portfolios anymore. Here's where Wix Studio beats Shopify — and where it doesn't.",
     readTime: "5 min",
-    image: blog3.url,
+    image: blog3,
     publishedAt: "2026-06-01",
     intro:
       "Wix Studio has quietly become a legitimate competitor to Shopify for a specific type of merchant. It isn't right for everyone, but if you fit the profile, you'll ship faster, spend less, and get a better-looking storefront. Here's the honest breakdown.",
@@ -172,7 +172,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Three workflows I build for almost every client to claw back 10+ hours a week.",
     readTime: "7 min",
-    image: blog4.url,
+    image: blog4,
     publishedAt: "2026-06-10",
     intro:
       "You didn't start a store to spend Sundays updating spreadsheets. Here are the three AI-powered automations I build for nearly every client that give them their weekends back and reduce human error to near zero.",
@@ -216,7 +216,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Schema, canonicals, sitemaps and the Core Web Vitals reality check your dev team is avoiding.",
     readTime: "9 min",
-    image: blog5.url,
+    image: blog5,
     publishedAt: "2026-06-18",
     intro:
       "Shopify handles basic SEO for you. It does not handle the technical layer that separates stores ranking on page 1 from stores buried on page 5. Here's the 2026 checklist I run on every store to unlock organic traffic that most competitors are missing.",
@@ -265,7 +265,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "The framework I use to build single-product landing pages that don't waste ad spend.",
     readTime: "6 min",
-    image: blog6.url,
+    image: blog6,
     publishedAt: "2026-06-25",
     intro:
       "Most stores send paid traffic to a product page and wonder why CVR sits at 1.2%. A dedicated landing page purpose-built for your top ad creative routinely hits 4-6% CVR. Here's the framework I've refined across 40+ builds.",
