@@ -900,15 +900,33 @@ export function FAQ({ heading = true }: { heading?: boolean }) {
 
 /* ---------- CONTACT ---------- */
 export function Contact({ heading = true }: { heading?: boolean }) {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-  function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return;
-    const subject = encodeURIComponent(`New inquiry from ${form.name}`);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const send = useServerFn(sendContactMessage);
+
+  function mailtoFallback() {
+    const subject = encodeURIComponent(form.subject || `New inquiry from ${form.name}`);
     const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name}\n${form.email}`);
     window.location.href = `${EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
+  }
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.subject.trim() || !form.message.trim()) return;
+    setStatus("sending");
+    try {
+      const res = await send({ data: form });
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        return;
+      }
+      setStatus("error");
+      mailtoFallback();
+    } catch {
+      setStatus("error");
+      mailtoFallback();
+    }
   }
   return (
     <section id="contact" className={heading ? "py-20 sm:py-28" : "pb-20 pt-8"}>
