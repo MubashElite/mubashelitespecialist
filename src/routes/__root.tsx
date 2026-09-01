@@ -97,9 +97,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@shopifybash" },
       { name: "application-name", content: "Mubash Elite Specialist" },
       { name: "apple-mobile-web-app-title", content: "Mubash Elite Specialist" },
-      { title: "Lovable App" },
-      { property: "og:title", content: "Lovable App" },
-      { name: "twitter:title", content: "Lovable App" },
+      { title: "Mubash Elite Specialist | Shopify Optimization & eCommerce Growth" },
+      { property: "og:title", content: "Mubash Elite Specialist | Shopify Optimization & eCommerce Growth" },
+      { name: "twitter:title", content: "Mubash Elite Specialist | Shopify Optimization & eCommerce Growth" },
+
       { name: "description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
       { property: "og:description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
       { name: "twitter:description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
