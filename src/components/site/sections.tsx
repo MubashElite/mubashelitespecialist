@@ -978,7 +978,7 @@ export function Footer() {
     <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <div className="font-display font-bold text-lg">Mubash <span className="gradient-text">Elite Specialist</span></div>
+          <div className="font-display font-bold text-lg">Mubash <span className="gradient-text">Elite</span></div>
           <p className="mt-3 text-sm text-muted-foreground">Independent Shopify, Wix, SEO and AI growth partner for ambitious eCommerce brands.</p>
         </div>
         <div>
@@ -1008,7 +1008,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Mubash Elite Specialist. All rights reserved.
+        © {new Date().getFullYear()} Mubash Elite. All rights reserved.
       </div>
     </footer>
   );

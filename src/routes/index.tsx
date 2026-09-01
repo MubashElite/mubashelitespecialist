@@ -7,11 +7,11 @@ import {
 import { SITE_URL, OG_IMAGE } from "@/lib/seo";
 
 const HOME_TITLE =
-  "Shopify & Dropshipping Store Optimization Specialist | Mubash Elite Specialist";
+  "Shopify & Dropshipping Store Optimization Specialist | Mubash Elite";
 const HOME_DESCRIPTION =
   "I help Shopify and dropshipping store owners increase sales by fixing hidden conversion, SEO, tracking and performance issues that silently kill revenue.";
 const HOME_KEYWORDS =
-  "Shopify optimization specialist, dropshipping store optimization, Shopify conversion rate optimization, Shopify SEO expert, Shopify tracking fix, Shopify speed optimization, eCommerce revenue optimization, Shopify store audit, Mubash Elite Specialist";
+  "Shopify optimization specialist, dropshipping store optimization, Shopify conversion rate optimization, Shopify SEO expert, Shopify tracking fix, Shopify speed optimization, eCommerce revenue optimization, Shopify store audit, Mubash Elite";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Mubash Elite Specialist, Shopify, Wix, SEO & AI growth partner" },
+      { property: "og:image:alt", content: "Mubash Elite, Shopify, Wix, SEO & AI growth partner" },
       { name: "twitter:title", content: HOME_TITLE },
       { name: "twitter:description", content: HOME_DESCRIPTION },
       { name: "twitter:image", content: OG_IMAGE },

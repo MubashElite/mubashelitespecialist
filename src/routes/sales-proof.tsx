@@ -20,9 +20,9 @@ import port7 from "@/assets/port7.jpg";
 import port8 from "@/assets/port8.jpg";
 
 const PAGE_URL = "https://mubashelite.com/sales-proof";
-const PAGE_TITLE = "Results & Proof | Mubash Elite Specialist";
+const PAGE_TITLE = "Results & Proof | Mubash Elite";
 const PAGE_DESCRIPTION =
-  "Detailed proof of eCommerce optimization, technical SEO, performance improvements and Shopify/Wix projects delivered by Mubash Elite Specialist.";
+  "Detailed proof of eCommerce optimization, technical SEO, performance improvements and Shopify/Wix projects delivered by Mubash Elite.";
 const WHATSAPP = "https://wa.me/2347014449168?text=Hi%20Mubash%2C%20I%27d%20like%20to%20start%20a%20project.";
 
 export const Route = createFileRoute("/sales-proof")({
@@ -644,7 +644,7 @@ function SalesProofPage() {
 
       </main>
       <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Mubash Elite Specialist — All rights reserved.
+        © {new Date().getFullYear()} Mubash Elite — All rights reserved.
       </footer>
     </div>
   );

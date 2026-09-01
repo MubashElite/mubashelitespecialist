@@ -18,14 +18,14 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Article not found | Mubash Elite Specialist" },
+          { title: "Article not found | Mubash Elite" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
     const { post } = loaderData;
     const url = `${SITE}/blog/${post.slug}`;
-    const title = `${post.title} | Mubash Elite Specialist`;
+    const title = `${post.title} | Mubash Elite`;
     return {
       meta: [
         { title },
@@ -52,8 +52,8 @@ export const Route = createFileRoute("/blog/$slug")({
             description: post.excerpt,
             image: post.image,
             datePublished: post.publishedAt,
-            author: { "@type": "Person", name: "Mubash Elite Specialist", url: SITE },
-            publisher: { "@type": "Person", name: "Mubash Elite Specialist" },
+            author: { "@type": "Person", name: "Mubash Elite", url: SITE },
+            publisher: { "@type": "Person", name: "Mubash Elite" },
             mainEntityOfPage: url,
           }),
         },

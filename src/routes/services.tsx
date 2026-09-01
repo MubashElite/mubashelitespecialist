@@ -6,7 +6,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     pageHead({
       path: "/services",
-      title: "Shopify, Wix, SEO & CRO Services | Mubash Elite Specialist",
+      title: "Shopify, Wix, SEO & CRO Services | Mubash Elite",
       description:
         "18 specialist services across Shopify development, speed and conversion optimization, Wix Studio, technical SEO, email marketing and AI automation.",
       keywords: "Shopify development services, Shopify CRO, technical SEO services, Wix Studio developer",
