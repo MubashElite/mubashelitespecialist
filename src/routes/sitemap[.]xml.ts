@@ -1,7 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 
 const BASE_URL = "https://mubashelite.com";
-const ROUTES = ["/"];
+const ROUTES = [
+  "/",
+  "/about",
+  "/services",
+  "/portfolio",
+  "/case-studies",
+  "/process",
+  "/sales-proof",
+  "/blog",
+  "/faq",
+  "/contact",
+  ...BLOG_POSTS.map((p) => `/blog/${p.slug}`),
+];
+
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
