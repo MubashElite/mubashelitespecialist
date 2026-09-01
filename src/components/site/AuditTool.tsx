@@ -75,7 +75,7 @@ function downloadReport(r: Report) {
     `LONG-TERM RECOMMENDATIONS`,
     ...r.longTerm.map((s) => `» ${s}`),
     ``,
-    `For a complete professional audit, email mubashelitespecialist@gmail.com`,
+    `For a complete professional audit, email info@mubashelite.com`,
   ].join("\n");
   const blob = new Blob([lines], { type: "text/plain" });
   const a = document.createElement("a");
@@ -165,7 +165,7 @@ export function AuditTool() {
                 <button onClick={() => downloadReport(report)} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground/5 border border-border text-sm hover:bg-foreground/10 transition">
                   <Download className="h-4 w-4" /> Download report
                 </button>
-                <a href="mailto:mubashelitespecialist@gmail.com?subject=Request%20for%20Advanced%20Store%20Audit" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-primary text-white text-sm shadow-glow">
+                <a href="mailto:info@mubashelite.com?subject=Request%20for%20Advanced%20Store%20Audit" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg gradient-primary text-white text-sm shadow-glow">
                   Request a Complete Professional Audit
                 </a>
               </div>

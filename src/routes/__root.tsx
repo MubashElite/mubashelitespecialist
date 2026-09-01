@@ -72,7 +72,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_URL = "https://mubashelitespecialist.lovable.app";
+const SITE_URL = "https://mubashelite.com";
 const LOGO_URL = `${SITE_URL}/favicon.png`;
 const SOCIAL_IMAGE = `${SITE_URL}/favicon.png`;
 
@@ -143,7 +143,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: SITE_URL,
               image: SOCIAL_IMAGE,
               logo: LOGO_URL,
-              email: "mailto:mubashelitespecialist@gmail.com",
+              email: "mailto:info@mubashelite.com",
               telephone: "+1-754-250-4531",
               jobTitle:
                 "Shopify Expert, Wix Specialist, SEO Consultant & AI Automation Engineer",
@@ -179,7 +179,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               image: LOGO_URL,
               logo: LOGO_URL,
               priceRange: "$$-$$$",
-              email: "mailto:mubashelitespecialist@gmail.com",
+              email: "mailto:info@mubashelite.com",
               telephone: "+1-754-250-4531",
               areaServed: {
                 "@type": "AdministrativeArea",

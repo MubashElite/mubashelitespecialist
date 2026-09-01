@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = "https://mubashelitespecialist.lovable.app";
+const BASE_URL = "https://mubashelite.com";
 const ROUTES = ["/"];
 
 export const Route = createFileRoute("/sitemap.xml")({
