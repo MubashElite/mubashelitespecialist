@@ -496,7 +496,7 @@ export const HOME_CASE_STUDIES = [
     impact: "Reliable revenue tracking",
     tag: "Tracking & Attribution",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
-    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
+    poster: "https://res.cloudinary.com/rkyfvlbv/video/upload/so_0,w_1200,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
   },
   {
     title: "Shopify Store Performance Optimization",

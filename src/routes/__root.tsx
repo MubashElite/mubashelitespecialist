@@ -72,7 +72,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_URL = "https://mubashelitespecialist.lovable.app";
+const SITE_URL = "https://mubashelite.com";
 const LOGO_URL = `${SITE_URL}/favicon.png`;
 const SOCIAL_IMAGE = `${SITE_URL}/favicon.png`;
 
@@ -97,9 +97,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@shopifybash" },
       { name: "application-name", content: "Mubash Elite Specialist" },
       { name: "apple-mobile-web-app-title", content: "Mubash Elite Specialist" },
-      { title: "Lovable App" },
-      { property: "og:title", content: "Lovable App" },
-      { name: "twitter:title", content: "Lovable App" },
+      { title: "Mubash Elite Specialist | Shopify Optimization & eCommerce Growth" },
+      { property: "og:title", content: "Mubash Elite Specialist | Shopify Optimization & eCommerce Growth" },
+      { name: "twitter:title", content: "Mubash Elite Specialist | Shopify Optimization & eCommerce Growth" },
+
       { name: "description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
       { property: "og:description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
       { name: "twitter:description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
@@ -111,8 +112,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "shortcut icon", href: "/favicon.png" },
-      { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
-      { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" },
+
     ],
     scripts: [
       {
@@ -143,7 +146,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: SITE_URL,
               image: SOCIAL_IMAGE,
               logo: LOGO_URL,
-              email: "mailto:mubashelitespecialist@gmail.com",
+              email: "mailto:info@mubashelite.com",
               telephone: "+1-754-250-4531",
               jobTitle:
                 "Shopify Expert, Wix Specialist, SEO Consultant & AI Automation Engineer",
@@ -179,7 +182,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               image: LOGO_URL,
               logo: LOGO_URL,
               priceRange: "$$-$$$",
-              email: "mailto:mubashelitespecialist@gmail.com",
+              email: "mailto:info@mubashelite.com",
               telephone: "+1-754-250-4531",
               areaServed: {
                 "@type": "AdministrativeArea",

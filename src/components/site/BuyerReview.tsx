@@ -3,17 +3,12 @@ import { ShieldCheck, Quote } from "lucide-react";
 const CLOUD_NAME = "rkyfvlbv";
 const PUBLIC_ID = "WhatsApp_Video_2026-08-06_at_00.10.48_f0n2s4";
 
-/** Cloudinary auto-generated transcript for this asset (used as a caption track). */
-const TRANSCRIPT_URL = `https://res.cloudinary.com/${CLOUD_NAME}/raw/upload/${PUBLIC_ID}.transcript`;
-
 export const BUYER_REVIEW_POSTER = `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/so_2,w_720,q_auto,f_jpg/${PUBLIC_ID}.jpg`;
 
 export const BUYER_REVIEW_EMBED_URL =
   `https://player.cloudinary.com/embed/?cloud_name=${CLOUD_NAME}&public_id=${PUBLIC_ID}` +
-  `&player[fluid]=true&player[controls]=true&player[autoplay]=false&player[muted]=false&player[showJumpControls]=true&player[colors][accent]=%23b98a4a` +
-  `&source[textTracks][captions][label]=English` +
-  `&source[textTracks][captions][url]=${encodeURIComponent(TRANSCRIPT_URL)}` +
-  `&source[textTracks][captions][default]=true`;
+  `&player[fluid]=true&player[controls]=true&player[autoplay]=false&player[muted]=false&player[showJumpControls]=true&player[colors][accent]=%23b98a4a`;
+
 
 /** Responsive Cloudinary player, portrait 9:16 source, captions enabled where supported. */
 export function BuyerReviewPlayer({ className = "" }: { className?: string }) {

@@ -19,7 +19,7 @@ import port6 from "@/assets/port6.jpg";
 import port7 from "@/assets/port7.jpg";
 import port8 from "@/assets/port8.jpg";
 
-const PAGE_URL = "https://mubashelitespecialist.lovable.app/sales-proof";
+const PAGE_URL = "https://mubashelite.com/sales-proof";
 const PAGE_TITLE = "Results & Proof | Mubash Elite Specialist";
 const PAGE_DESCRIPTION =
   "Detailed proof of eCommerce optimization, technical SEO, performance improvements and Shopify/Wix projects delivered by Mubash Elite Specialist.";
@@ -411,7 +411,7 @@ const CASE_STUDIES = [
       "Problem: broken purchase tracking affecting analytics. Solution: rebuilt tracking structure across GA4 and ad pixels. Result: accurate sales tracking restored.",
     src: "https://res.cloudinary.com/rkyfvlbv/video/upload/v1783128148/update_sales_proof_gbloyp.webm",
     poster:
-      "https://res.cloudinary.com/rkyfvlbv/video/upload/so_2,w_1200,h_750,c_fill,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
+      "https://res.cloudinary.com/rkyfvlbv/video/upload/so_0,w_1200,q_auto,f_jpg/v1783128148/update_sales_proof_gbloyp.jpg",
     tag: "Tracking Fix",
     metrics: [
       { label: "Purchase tracking", value: "Fixed" },
