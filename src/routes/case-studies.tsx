@@ -6,7 +6,7 @@ export const Route = createFileRoute("/case-studies")({
   head: () =>
     pageHead({
       path: "/case-studies",
-      title: "Shopify Case Studies & Optimization Results | Mubash",
+      title: "Shopify Conversion Case Studies & Results | Mubash Elite",
       description:
         "Video walkthroughs of real Shopify and dropshipping store fixes: SEO recovery, conversion tracking repairs and performance optimization.",
       keywords: "Shopify case studies, store optimization results, Shopify SEO recovery",

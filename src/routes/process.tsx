@@ -6,7 +6,7 @@ export const Route = createFileRoute("/process")({
   head: () =>
     pageHead({
       path: "/process",
-      title: "My Process | From Store Audit to Launch and Growth",
+      title: "Shopify Optimization Process | Audit to Growth | Mubash Elite",
       description:
         "A proven nine-phase delivery system: discovery, planning, research, design, development, optimization, testing, launch and growth.",
       keywords: "Shopify project process, store audit process, eCommerce optimization workflow",

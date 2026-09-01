@@ -6,7 +6,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead({
       path: "/contact",
-      title: "Contact | Free Shopify Store Diagnosis",
+      title: "Contact | Free Shopify Store Diagnosis | Mubash Elite",
       description:
         "Request a free Shopify or dropshipping store diagnosis. Reach Mubash by email, WhatsApp or Fiverr and get a clear fix plan.",
       keywords: "contact Shopify expert, free Shopify store audit, hire Shopify specialist",

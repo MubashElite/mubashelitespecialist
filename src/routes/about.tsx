@@ -6,7 +6,7 @@ export const Route = createFileRoute("/about")({
   head: () =>
     pageHead({
       path: "/about",
-      title: "About Mubash | eCommerce Growth & Conversion Specialist",
+      title: "About Mubash Elite | Shopify Conversion & SEO Specialist",
       description:
         "Meet Mubash, an eCommerce growth, conversion and optimization specialist helping Shopify, Wix and dropshipping brands turn traffic into revenue.",
       keywords: "about Mubash, Shopify specialist, eCommerce conversion consultant",
