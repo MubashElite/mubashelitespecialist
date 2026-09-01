@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { sendContactMessage } from "@/lib/contact.functions";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
