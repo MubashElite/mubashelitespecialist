@@ -57,9 +57,9 @@ export function Navbar() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <nav className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all ${scrolled ? "glass shadow-card" : ""}`}>
             <Link to="/" className="flex items-center gap-2 group">
-              <img src={logo} alt="Mubash Elite Specialist logo" width={36} height={36} className="h-9 w-9" />
+              <img src={logo} alt="Mubash Elite logo" width={36} height={36} className="h-9 w-9" />
               <span className="font-display font-semibold text-sm sm:text-base hidden sm:inline">
-                Mubash <span className="text-muted-foreground">Elite Specialist</span>
+                Mubash <span className="text-muted-foreground">Elite</span>
               </span>
             </Link>
             <div className="hidden lg:flex items-center gap-1">

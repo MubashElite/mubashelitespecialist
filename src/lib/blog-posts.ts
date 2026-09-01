@@ -4,6 +4,8 @@ import blog3 from "@/assets/blog3.jpg";
 import blog4 from "@/assets/blog4.jpg";
 import blog5 from "@/assets/blog5.jpg";
 import blog6 from "@/assets/blog6.jpg";
+import blog7 from "@/assets/blog7.jpg";
+import blog8 from "@/assets/blog8.jpg";
 
 export type BlogPost = {
   slug: string;
@@ -310,6 +312,105 @@ export const BLOG_POSTS: BlogPost[] = [
     cta: {
       headline: "Need a landing page that converts your ad spend?",
       sub: "I design, write, and build fully-conversion-optimized landers in 7-10 days.",
+    },
+  },
+  {
+    slug: "dropshipping-store-scaling-playbook",
+    title: "The Dropshipping Store Playbook That Survives Past $50k/Month",
+    category: "Dropshipping",
+    excerpt:
+      "Most dropshipping stores stall because the storefront cannot carry the ad spend. Here is the structure that scales.",
+    readTime: "7 min",
+    image: blog7,
+    publishedAt: "2026-07-04",
+    intro:
+      "Winning products get stores to their first $10k. Store quality decides whether they ever see $50k. Almost every stalled dropshipping brand I audit has the same three structural problems, and none of them are the product.",
+    sections: [
+      {
+        heading: "Problem 1: The store looks like a dropshipping store",
+        body: [
+          "Generic theme, AliExpress photography, inflated compare-at prices, and a trust badge row nobody believes. Buyers detect this in under three seconds and bounce before they read a word of copy.",
+          "The fix is brand-level presentation: original or heavily edited product imagery, a consistent palette, real policy pages, and a founder story. Same product, double the conversion rate.",
+        ],
+      },
+      {
+        heading: "Problem 2: Checkout friction eating paid traffic",
+        body: [
+          "Slow mobile load, surprise shipping costs at the final step, no express wallets, and a five-field address form. Every one of those is a measurable drop-off point in your funnel report.",
+          "Enable Shop Pay and wallet buttons, show shipping cost expectations on the product page, and cut the checkout to the minimum fields your fulfilment actually needs.",
+        ],
+      },
+      {
+        heading: "Problem 3: No post-purchase engine",
+        body: [
+          "Dropshipping margins are thin, so the second order is where profit lives. Shipping-notification emails with high open rates, a review request timed to delivery, and a cross-sell flow turn one-time buyers into repeat revenue.",
+        ],
+      },
+      {
+        heading: "The scaling checklist",
+        body: [
+          "Sub-2.5s mobile LCP. Accurate server-side conversion tracking. One clear hero offer. Real reviews with photos. Transparent shipping times. A five-flow email stack. Get those right and ad spend compounds instead of leaking.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Presentation quality, not product choice, is what stalls most stores",
+      "Fix checkout friction before increasing ad spend",
+      "Server-side tracking protects the data your scaling decisions depend on",
+      "Post-purchase flows are where thin-margin dropshipping becomes profitable",
+    ],
+    cta: {
+      headline: "Scaling a dropshipping store that has plateaued?",
+      sub: "I audit the storefront, tracking and checkout, then ship the fixes that unlock the next tier of spend.",
+    },
+  },
+  {
+    slug: "shopify-conversion-rate-optimization-guide",
+    title: "Shopify Conversion Rate Optimization: The 12 Fixes That Move Revenue",
+    category: "CRO",
+    excerpt:
+      "A prioritized CRO checklist for Shopify stores, ordered by revenue impact rather than by how easy it is to ship.",
+    readTime: "8 min",
+    image: blog8,
+    publishedAt: "2026-07-12",
+    intro:
+      "Conversion rate optimization is not A/B testing button colours. It is removing the specific reasons a ready-to-buy visitor leaves without paying. These are the twelve fixes that produce the largest measured lifts across the Shopify stores I work on.",
+    sections: [
+      {
+        heading: "Product page: where most revenue is lost",
+        body: [
+          "Above-the-fold clarity on price, shipping and delivery window. Gallery images that answer scale, material and use case. Variant selection that never dead-ends on out-of-stock. Reviews visible without scrolling to the bottom.",
+          "A sticky add-to-cart on mobile alone routinely returns 8-15% more add-to-carts.",
+        ],
+      },
+      {
+        heading: "Cart and checkout",
+        body: [
+          "Show shipping thresholds with a progress indicator. Offer express wallets at the top of checkout. Never introduce a cost the buyer has not already seen. Every surprise at checkout is an abandoned cart.",
+        ],
+      },
+      {
+        heading: "Trust and objection handling",
+        body: [
+          "Returns policy in plain language near the buy button. Real customer photography. Delivery estimates by region. An FAQ block that answers the three questions your support inbox receives most.",
+        ],
+      },
+      {
+        heading: "Measure properly before you change anything",
+        body: [
+          "Broken or client-side-only tracking makes CRO guesswork. Verify GA4 and the Meta Conversions API report the same order counts as Shopify before you attribute any lift to your work.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Prioritize fixes by revenue impact, not by implementation effort",
+      "Sticky mobile add-to-cart and wallet checkout are the fastest wins",
+      "Surprise costs at checkout are the single biggest abandonment cause",
+      "Fix tracking accuracy first or you cannot prove any of it worked",
+    ],
+    cta: {
+      headline: "Want a prioritized CRO plan for your store?",
+      sub: "I deliver a ranked fix list with expected revenue impact, then implement it end to end.",
     },
   },
 ];

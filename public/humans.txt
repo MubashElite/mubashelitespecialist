@@ -1,12 +1,12 @@
 /* TEAM */
-Founder: Mubash Elite Specialist
+Founder: Mubash Elite
 Contact: mubashelitespecialist [at] gmail.com
 Fiverr: https://www.fiverr.com/shopifybash
 WhatsApp: https://wa.me/2347014449168
 Location: Worldwide (remote)
 
 /* SITE */
-Site: Mubash Elite Specialist — Shopify, Wix, SEO & AI Growth Partner
+Site: Mubash Elite — Shopify, Wix, SEO & AI Growth Partner
 Standards: HTML5, CSS3, JSON-LD, WCAG 2.1 AA
 Components: TanStack Start, React, Tailwind CSS
 Language: English

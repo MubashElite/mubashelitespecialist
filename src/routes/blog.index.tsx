@@ -6,10 +6,10 @@ export const Route = createFileRoute("/blog/")({
   head: () =>
     pageHead({
       path: "/blog",
-      title: "Shopify Growth & Optimization Insights | Mubash Blog",
+      title: "Shopify, SEO, CRO & Dropshipping Insights | Mubash Elite Blog",
       description:
-        "Practical articles on Shopify speed, conversion rate optimization, technical SEO, tracking and eCommerce growth.",
-      keywords: "Shopify blog, eCommerce optimization articles, Shopify SEO tips",
+        "Practical articles on Shopify speed, conversion rate optimization, technical SEO, dropshipping scaling and eCommerce growth.",
+      keywords: "Shopify blog, dropshipping tips, conversion rate optimization, Shopify SEO articles",
     }),
   component: BlogIndexPage,
 });

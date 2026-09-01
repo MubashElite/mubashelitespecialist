@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { sendContactMessage } from "@/lib/contact.functions";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
@@ -900,15 +902,33 @@ export function FAQ({ heading = true }: { heading?: boolean }) {
 
 /* ---------- CONTACT ---------- */
 export function Contact({ heading = true }: { heading?: boolean }) {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-  function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return;
-    const subject = encodeURIComponent(`New inquiry from ${form.name}`);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const send = useServerFn(sendContactMessage);
+
+  function mailtoFallback() {
+    const subject = encodeURIComponent(form.subject || `New inquiry from ${form.name}`);
     const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name}\n${form.email}`);
     window.location.href = `${EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
+  }
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.subject.trim() || !form.message.trim()) return;
+    setStatus("sending");
+    try {
+      const res = await send({ data: form });
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        return;
+      }
+      setStatus("error");
+      mailtoFallback();
+    } catch {
+      setStatus("error");
+      mailtoFallback();
+    }
   }
   return (
     <section id="contact" className={heading ? "py-20 sm:py-28" : "pb-20 pt-8"}>
@@ -948,12 +968,22 @@ export function Contact({ heading = true }: { heading?: boolean }) {
               <input id="ct-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required maxLength={120} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
             <div>
-              <label htmlFor="ct-msg" className="text-xs text-muted-foreground">What do you need?</label>
-              <textarea id="ct-msg" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={1500} rows={5} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
+              <label htmlFor="ct-subject" className="text-xs text-muted-foreground">Subject</label>
+              <input id="ct-subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} required maxLength={150} placeholder="Shopify speed &amp; conversion audit" className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
-            <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow">
-              {sent ? "Opening your email…" : "Send message"} <ArrowRight className="h-4 w-4" />
+            <div>
+              <label htmlFor="ct-msg" className="text-xs text-muted-foreground">What do you need?</label>
+              <textarea id="ct-msg" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={2000} rows={5} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
+            </div>
+            <button type="submit" disabled={status === "sending"} className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow disabled:opacity-60">
+              {status === "sending" ? "Sending…" : status === "sent" ? "Message sent" : "Send message"} <ArrowRight className="h-4 w-4" />
             </button>
+            {status === "sent" && (
+              <p className="text-xs text-emerald-500">Thanks. Your enquiry has been delivered to {EMAIL_ADDRESS}. I usually reply within a few hours.</p>
+            )}
+            {status === "error" && (
+              <p className="text-xs text-muted-foreground">Direct sending is unavailable right now, so I opened your email app addressed to {EMAIL_ADDRESS}.</p>
+            )}
           </form>
         </div>
       </div>
@@ -978,7 +1008,7 @@ export function Footer() {
     <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <div className="font-display font-bold text-lg">Mubash <span className="gradient-text">Elite Specialist</span></div>
+          <div className="font-display font-bold text-lg">Mubash <span className="gradient-text">Elite</span></div>
           <p className="mt-3 text-sm text-muted-foreground">Independent Shopify, Wix, SEO and AI growth partner for ambitious eCommerce brands.</p>
         </div>
         <div>
@@ -1008,7 +1038,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Mubash Elite Specialist. All rights reserved.
+        © {new Date().getFullYear()} Mubash Elite. All rights reserved.
       </div>
     </footer>
   );

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/faq")({
   head: () => {
     const head = pageHead({
       path: "/faq",
-      title: "FAQ | Working With Mubash Elite Specialist",
+      title: "FAQ | Working With Mubash Elite",
       description:
         "Answers on turnaround times, Shopify Plus work, pricing models, taking over existing stores and the satisfaction guarantee.",
       keywords: "Shopify freelancer FAQ, Shopify pricing questions",
