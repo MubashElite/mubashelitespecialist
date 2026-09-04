@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShopifyEcommerceRouteImport } from './routes/shopify-ecommerce'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SalesProofRouteImport } from './routes/sales-proof'
 import { Route as ProcessRouteImport } from './routes/process'
@@ -27,6 +28,11 @@ import { Route as ApiPublicAuditRouteImport } from './routes/api/public/audit'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopifyEcommerceRoute = ShopifyEcommerceRouteImport.update({
+  id: '/shopify-ecommerce',
+  path: '/shopify-ecommerce',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/process': typeof ProcessRoute
   '/sales-proof': typeof SalesProofRoute
   '/services': typeof ServicesRoute
+  '/shopify-ecommerce': typeof ShopifyEcommerceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   '/process': typeof ProcessRoute
   '/sales-proof': typeof SalesProofRoute
   '/services': typeof ServicesRoute
+  '/shopify-ecommerce': typeof ShopifyEcommerceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   '/process': typeof ProcessRoute
   '/sales-proof': typeof SalesProofRoute
   '/services': typeof ServicesRoute
+  '/shopify-ecommerce': typeof ShopifyEcommerceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | '/process'
     | '/sales-proof'
     | '/services'
+    | '/shopify-ecommerce'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/blog/'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/process'
     | '/sales-proof'
     | '/services'
+    | '/shopify-ecommerce'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/blog'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/process'
     | '/sales-proof'
     | '/services'
+    | '/shopify-ecommerce'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/blog/'
@@ -205,6 +217,7 @@ export interface RootRouteChildren {
   ProcessRoute: typeof ProcessRoute
   SalesProofRoute: typeof SalesProofRoute
   ServicesRoute: typeof ServicesRoute
+  ShopifyEcommerceRoute: typeof ShopifyEcommerceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -219,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shopify-ecommerce': {
+      id: '/shopify-ecommerce'
+      path: '/shopify-ecommerce'
+      fullPath: '/shopify-ecommerce'
+      preLoaderRoute: typeof ShopifyEcommerceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -325,6 +345,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProcessRoute: ProcessRoute,
   SalesProofRoute: SalesProofRoute,
   ServicesRoute: ServicesRoute,
+  ShopifyEcommerceRoute: ShopifyEcommerceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
