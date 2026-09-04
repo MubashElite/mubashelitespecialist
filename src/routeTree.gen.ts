@@ -9,12 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SocialMediaMarketingRouteImport } from './routes/social-media-marketing'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShopifyEcommerceRouteImport } from './routes/shopify-ecommerce'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SalesProofRouteImport } from './routes/sales-proof'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EmailMarketingRouteImport } from './routes/email-marketing'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as AboutRouteImport } from './routes/about'
@@ -24,9 +27,19 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiPublicChatRouteImport } from './routes/api/public/chat'
 import { Route as ApiPublicAuditRouteImport } from './routes/api/public/audit'
 
+const SocialMediaMarketingRoute = SocialMediaMarketingRouteImport.update({
+  id: '/social-media-marketing',
+  path: '/social-media-marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopifyEcommerceRoute = ShopifyEcommerceRouteImport.update({
+  id: '/shopify-ecommerce',
+  path: '/shopify-ecommerce',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -52,6 +65,11 @@ const PortfolioRoute = PortfolioRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmailMarketingRoute = EmailMarketingRouteImport.update({
+  id: '/email-marketing',
+  path: '/email-marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -100,12 +118,15 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/email-marketing': typeof EmailMarketingRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
   '/process': typeof ProcessRoute
   '/sales-proof': typeof SalesProofRoute
   '/services': typeof ServicesRoute
+  '/shopify-ecommerce': typeof ShopifyEcommerceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/social-media-marketing': typeof SocialMediaMarketingRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/audit': typeof ApiPublicAuditRoute
@@ -116,12 +137,15 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/email-marketing': typeof EmailMarketingRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
   '/process': typeof ProcessRoute
   '/sales-proof': typeof SalesProofRoute
   '/services': typeof ServicesRoute
+  '/shopify-ecommerce': typeof ShopifyEcommerceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/social-media-marketing': typeof SocialMediaMarketingRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
   '/api/public/audit': typeof ApiPublicAuditRoute
@@ -133,12 +157,15 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/email-marketing': typeof EmailMarketingRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
   '/process': typeof ProcessRoute
   '/sales-proof': typeof SalesProofRoute
   '/services': typeof ServicesRoute
+  '/shopify-ecommerce': typeof ShopifyEcommerceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/social-media-marketing': typeof SocialMediaMarketingRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/audit': typeof ApiPublicAuditRoute
@@ -151,12 +178,15 @@ export interface FileRouteTypes {
     | '/about'
     | '/case-studies'
     | '/contact'
+    | '/email-marketing'
     | '/faq'
     | '/portfolio'
     | '/process'
     | '/sales-proof'
     | '/services'
+    | '/shopify-ecommerce'
     | '/sitemap.xml'
+    | '/social-media-marketing'
     | '/blog/$slug'
     | '/blog/'
     | '/api/public/audit'
@@ -167,12 +197,15 @@ export interface FileRouteTypes {
     | '/about'
     | '/case-studies'
     | '/contact'
+    | '/email-marketing'
     | '/faq'
     | '/portfolio'
     | '/process'
     | '/sales-proof'
     | '/services'
+    | '/shopify-ecommerce'
     | '/sitemap.xml'
+    | '/social-media-marketing'
     | '/blog/$slug'
     | '/blog'
     | '/api/public/audit'
@@ -183,12 +216,15 @@ export interface FileRouteTypes {
     | '/about'
     | '/case-studies'
     | '/contact'
+    | '/email-marketing'
     | '/faq'
     | '/portfolio'
     | '/process'
     | '/sales-proof'
     | '/services'
+    | '/shopify-ecommerce'
     | '/sitemap.xml'
+    | '/social-media-marketing'
     | '/blog/$slug'
     | '/blog/'
     | '/api/public/audit'
@@ -200,12 +236,15 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
+  EmailMarketingRoute: typeof EmailMarketingRoute
   FaqRoute: typeof FaqRoute
   PortfolioRoute: typeof PortfolioRoute
   ProcessRoute: typeof ProcessRoute
   SalesProofRoute: typeof SalesProofRoute
   ServicesRoute: typeof ServicesRoute
+  ShopifyEcommerceRoute: typeof ShopifyEcommerceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SocialMediaMarketingRoute: typeof SocialMediaMarketingRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicAuditRoute: typeof ApiPublicAuditRoute
@@ -214,11 +253,25 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/social-media-marketing': {
+      id: '/social-media-marketing'
+      path: '/social-media-marketing'
+      fullPath: '/social-media-marketing'
+      preLoaderRoute: typeof SocialMediaMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shopify-ecommerce': {
+      id: '/shopify-ecommerce'
+      path: '/shopify-ecommerce'
+      fullPath: '/shopify-ecommerce'
+      preLoaderRoute: typeof ShopifyEcommerceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -254,6 +307,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/email-marketing': {
+      id: '/email-marketing'
+      path: '/email-marketing'
+      fullPath: '/email-marketing'
+      preLoaderRoute: typeof EmailMarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -320,12 +380,15 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
+  EmailMarketingRoute: EmailMarketingRoute,
   FaqRoute: FaqRoute,
   PortfolioRoute: PortfolioRoute,
   ProcessRoute: ProcessRoute,
   SalesProofRoute: SalesProofRoute,
   ServicesRoute: ServicesRoute,
+  ShopifyEcommerceRoute: ShopifyEcommerceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SocialMediaMarketingRoute: SocialMediaMarketingRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicAuditRoute: ApiPublicAuditRoute,
