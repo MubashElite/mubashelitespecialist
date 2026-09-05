@@ -22,11 +22,17 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
 
     const scan = () => {
       const root: ParentNode = ref.current ?? document;
-      root.querySelectorAll(".reveal:not(.in-view)").forEach((n) => io.observe(n));
+      root.querySelectorAll(".reveal:not(.in-view)").forEach((n) => {
+        // Anything already scrolled past should simply be visible.
+        if (n.getBoundingClientRect().bottom < 0) {
+          n.classList.add("in-view");
+          return;
+        }
+        io.observe(n);
+      });
     };
 
     scan();
-    document.documentElement.dataset.revealReady = String(Number(document.documentElement.dataset.revealReady ?? 0) + 1);
     const mo = new MutationObserver(scan);
     mo.observe(document.body, { childList: true, subtree: true });
 
