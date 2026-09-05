@@ -995,7 +995,10 @@ export function Contact({ heading = true }: { heading?: boolean }) {
 export const NAV_LINKS = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/shopify-ecommerce", label: "Shopify & E-commerce" },
+  { to: "/social-media-marketing", label: "Social Media Marketing" },
+  { to: "/email-marketing", label: "Email Marketing" },
+  { to: "/portfolio", label: "Projects" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/process", label: "Process" },
   { to: "/blog", label: "Blog" },
