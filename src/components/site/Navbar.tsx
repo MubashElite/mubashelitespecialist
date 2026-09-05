@@ -1,12 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
 import logo from "@/assets/mubash-logo.png";
+
+const SERVICE_LINKS = [
+  { to: "/services", label: "All Services" },
+  { to: "/shopify-ecommerce", label: "Shopify & E-commerce" },
+  { to: "/social-media-marketing", label: "Social Media Marketing" },
+  { to: "/email-marketing", label: "Email Marketing" },
+] as const;
 
 const NAV = [
   { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/portfolio", label: "Projects" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
@@ -17,6 +23,8 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -28,6 +36,14 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setServicesOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
   useEffect(() => {
@@ -48,6 +64,9 @@ export function Navbar() {
     });
   };
 
+  const linkCls =
+    "px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-foreground/5";
+
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-[60] h-0.5 bg-transparent">
@@ -62,18 +81,49 @@ export function Navbar() {
                 Mubash <span className="text-muted-foreground">Elite</span>
               </span>
             </Link>
+
             <div className="hidden lg:flex items-center gap-1">
+              <Link to="/about" activeProps={{ className: "text-foreground bg-foreground/5" }} className={linkCls}>
+                About
+              </Link>
+
+              <div className="relative" ref={dropRef}>
+                <button
+                  onClick={() => setServicesOpen((v) => !v)}
+                  aria-expanded={servicesOpen}
+                  aria-haspopup="true"
+                  className={`${linkCls} inline-flex items-center gap-1`}
+                >
+                  Services <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {servicesOpen && (
+                  <div className="absolute left-0 mt-2 w-64 glass rounded-2xl p-2 shadow-card animate-fade-up">
+                    {SERVICE_LINKS.map((s) => (
+                      <Link
+                        key={s.to}
+                        to={s.to}
+                        onClick={() => setServicesOpen(false)}
+                        className="block rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition"
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {NAV.map((n) => (
                 <Link
                   key={n.to}
                   to={n.to}
                   activeProps={{ className: "text-foreground bg-foreground/5" }}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-foreground/5"
+                  className={linkCls}
                 >
                   {n.label}
                 </Link>
               ))}
             </div>
+
             <div className="flex items-center gap-2">
               <button
                 aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
@@ -88,7 +138,7 @@ export function Navbar() {
                 to="/contact"
                 className="hidden sm:inline-flex items-center justify-center rounded-lg gradient-primary text-white px-4 py-2 text-sm font-medium shadow-glow hover:opacity-95 transition"
               >
-                Book a call
+                Work With Me
               </Link>
               <button
                 aria-label="Menu"
@@ -99,15 +149,21 @@ export function Navbar() {
               </button>
             </div>
           </nav>
+
           {open && (
-            <div className="lg:hidden mt-2 glass rounded-2xl p-2 animate-fade-up">
+            <div className="lg:hidden mt-2 glass rounded-2xl p-2 animate-fade-up max-h-[75vh] overflow-y-auto">
+              <Link to="/about" onClick={() => setOpen(false)} className="block w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 text-sm">
+                About
+              </Link>
+              <div className="px-4 pt-3 pb-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Services</div>
+              {SERVICE_LINKS.map((s) => (
+                <Link key={s.to} to={s.to} onClick={() => setOpen(false)} className="block w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 text-sm">
+                  {s.label}
+                </Link>
+              ))}
+              <div className="my-1 h-px bg-border" />
               {NAV.map((n) => (
-                <Link
-                  key={n.to}
-                  to={n.to}
-                  onClick={() => setOpen(false)}
-                  className="block w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 text-sm"
-                >
+                <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 text-sm">
                   {n.label}
                 </Link>
               ))}
@@ -116,7 +172,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="mt-1 block w-full text-center px-4 py-3 rounded-xl gradient-primary text-white text-sm font-medium"
               >
-                Book a call
+                Work With Me
               </Link>
             </div>
           )}

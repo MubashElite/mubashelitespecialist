@@ -1,15 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { SiteShell, PageHeader, ServicesGrid, Process, PricingAnchor, FinalCTA } from "@/components/site/sections";
+import { SiteShell, PageHeader, Process, PricingAnchor, TrustStrip } from "@/components/site/sections";
+import { ServiceCategoryDetail, Platforms, PageCTA } from "@/components/site/service-pages";
 
 export const Route = createFileRoute("/services")({
   head: () =>
     pageHead({
       path: "/services",
-      title: "Shopify, Wix, SEO & CRO Services | Mubash Elite",
+      title: "E-commerce, Shopify, Social & Email Services | Mubash Elite",
       description:
-        "18 specialist services across Shopify development, speed and conversion optimization, Wix Studio, technical SEO, email marketing and AI automation.",
-      keywords: "Shopify development services, Shopify CRO, technical SEO services, Wix Studio developer",
+        "Shopify and e-commerce optimization, digital marketing, social media marketing and Klaviyo email automation, organized into clear service categories with defined outcomes.",
+      keywords:
+        "Shopify services, ecommerce optimization services, conversion rate optimization, social media marketing services, email marketing services, Klaviyo consultant",
     }),
   component: ServicesPage,
 });
@@ -19,13 +21,18 @@ function ServicesPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Services"
-        title={<>Full-Service Shopify <span className="gradient-text">Optimization</span></>}
-        subtitle="Everything needed to build, fix and scale a high-performing eCommerce store."
+        title={<>Services Built Around <span className="gradient-text">Revenue Outcomes</span></>}
+        subtitle="Four connected areas: the store that converts, the traffic that reaches it, the social presence that earns attention, and the email that keeps customers returning."
       />
-      <ServicesGrid />
+      <ServiceCategoryDetail />
+      <Platforms heading={false} />
       <Process heading={false} />
       <PricingAnchor />
-      <FinalCTA />
+      <TrustStrip />
+      <PageCTA
+        title="Not sure which service you need?"
+        subtitle="Send your store URL. I'll review it and recommend the work most likely to increase revenue first."
+      />
     </SiteShell>
   );
 }
