@@ -14,7 +14,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -80px 0px" },
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" },
     );
     el.querySelectorAll(".reveal").forEach((n) => io.observe(n));
     return () => io.disconnect();
