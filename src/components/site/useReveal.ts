@@ -26,6 +26,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
     };
 
     scan();
+    document.documentElement.dataset.revealReady = String(Number(document.documentElement.dataset.revealReady ?? 0) + 1);
     const mo = new MutationObserver(scan);
     mo.observe(document.body, { childList: true, subtree: true });
 
