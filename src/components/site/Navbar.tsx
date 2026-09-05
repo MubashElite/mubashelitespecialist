@@ -11,7 +11,6 @@ const SERVICE_LINKS = [
 ] as const;
 
 const NAV = [
-  { to: "/about", label: "About" },
   { to: "/portfolio", label: "Projects" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/blog", label: "Blog" },
