@@ -15,7 +15,7 @@ const PLATFORMS: Platform[] = [
   { name: "Shopify", slug: "shopify", color: "95BF47" },
   { name: "WordPress", slug: "wordpress", color: "21759B" },
   { name: "WooCommerce", slug: "woocommerce", color: "96588A" },
-  { name: "Klaviyo", slug: "klaviyo", color: "1B1B1B" },
+  { name: "Klaviyo", slug: "", color: "000000" },
   { name: "Google Analytics", slug: "googleanalytics", color: "E37400" },
   { name: "Google", slug: "google", color: "4285F4" },
   { name: "Meta", slug: "meta", color: "0467DF" },
@@ -27,7 +27,7 @@ const PLATFORMS: Platform[] = [
 ];
 
 function PlatformLogo({ p }: { p: Platform }) {
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState(!p.slug);
   return (
     <div className="glass rounded-2xl h-24 px-4 flex flex-col items-center justify-center gap-2 hover:shadow-glow hover:-translate-y-1 transition-all duration-300">
       {failed ? (
