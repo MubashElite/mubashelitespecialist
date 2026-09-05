@@ -1,17 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  SiteShell, Hero, Metrics, Portfolio, CaseStudies, About, Services, Process,
-  Authority, Diagnosis, PricingAnchor, TrustStrip, Testimonials, Blog, FAQ,
-  Contact, FinalCTA, FAQ_ITEMS,
+  SiteShell, Hero, Metrics, Portfolio, CaseStudies, About,
+  Authority, TrustStrip, Testimonials, Blog, FinalCTA, FAQ_ITEMS,
 } from "@/components/site/sections";
+import { Platforms, ServiceCategoriesGrid } from "@/components/site/service-pages";
 import { SITE_URL, OG_IMAGE } from "@/lib/seo";
 
 const HOME_TITLE =
-  "Shopify & Dropshipping Store Optimization Specialist | Mubash Elite";
+  "Shopify Consultant & E-commerce Growth Specialist | Mubash Elite";
 const HOME_DESCRIPTION =
-  "I help Shopify and dropshipping store owners increase sales by fixing hidden conversion, SEO, tracking and performance issues that silently kill revenue.";
+  "Shopify optimization, conversion rate optimization, social media marketing and Klaviyo email automation for e-commerce brands that want more revenue from the traffic they already have.";
 const HOME_KEYWORDS =
-  "Shopify optimization specialist, dropshipping store optimization, Shopify conversion rate optimization, Shopify SEO expert, Shopify tracking fix, Shopify speed optimization, eCommerce revenue optimization, Shopify store audit, Mubash Elite";
+  "Shopify expert, Shopify consultant, Shopify store optimization, ecommerce optimization, conversion rate optimization, social media marketing, Facebook marketing, Instagram marketing, email marketing, Klaviyo, ecommerce consultant";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Mubash Elite, Shopify, Wix, SEO & AI growth partner" },
+      { property: "og:image:alt", content: "Mubash Elite, Shopify and e-commerce growth specialist" },
       { name: "twitter:title", content: HOME_TITLE },
       { name: "twitter:description", content: HOME_DESCRIPTION },
       { name: "twitter:image", content: OG_IMAGE },
@@ -55,19 +55,15 @@ function HomePage() {
     <SiteShell>
       <Hero />
       <Metrics />
+      <ServiceCategoriesGrid />
+      <Platforms />
       <Portfolio />
       <CaseStudies />
       <About />
-      <Services />
-      <Process />
       <Authority />
-      <Diagnosis />
-      <PricingAnchor />
       <TrustStrip />
       <Testimonials />
       <Blog />
-      <FAQ />
-      <Contact />
       <FinalCTA />
     </SiteShell>
   );

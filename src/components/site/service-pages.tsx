@@ -6,6 +6,7 @@ import {
   Target, Wrench, MousePointerClick, MessageSquare,
 } from "lucide-react";
 import { SectionHeading } from "@/components/site/sections";
+import { useReveal } from "@/components/site/useReveal";
 
 /* ---------------- PLATFORM LOGO SHOWCASE ---------------- */
 type Platform = { name: string; slug: string; color: string };
@@ -14,7 +15,7 @@ const PLATFORMS: Platform[] = [
   { name: "Shopify", slug: "shopify", color: "95BF47" },
   { name: "WordPress", slug: "wordpress", color: "21759B" },
   { name: "WooCommerce", slug: "woocommerce", color: "96588A" },
-  { name: "Klaviyo", slug: "klaviyo", color: "1B1B1B" },
+  { name: "Klaviyo", slug: "", color: "000000" },
   { name: "Google Analytics", slug: "googleanalytics", color: "E37400" },
   { name: "Google", slug: "google", color: "4285F4" },
   { name: "Meta", slug: "meta", color: "0467DF" },
@@ -26,7 +27,7 @@ const PLATFORMS: Platform[] = [
 ];
 
 function PlatformLogo({ p }: { p: Platform }) {
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState(!p.slug);
   return (
     <div className="glass rounded-2xl h-24 px-4 flex flex-col items-center justify-center gap-2 hover:shadow-glow hover:-translate-y-1 transition-all duration-300">
       {failed ? (
@@ -51,8 +52,9 @@ function PlatformLogo({ p }: { p: Platform }) {
 }
 
 export function Platforms({ heading = true }: { heading?: boolean }) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section id="platforms" className={heading ? "py-20 sm:py-24" : "pb-16 pt-6"}>
+    <section ref={ref} id="platforms" className={heading ? "py-20 sm:py-24" : "pb-16 pt-6"}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {heading && (
           <SectionHeading
@@ -152,8 +154,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
 ];
 
 export function ServiceCategoriesGrid() {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="py-20 sm:py-24">
+    <section ref={ref} className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="What I Do"
@@ -187,8 +190,9 @@ export function ServiceCategoriesGrid() {
 }
 
 export function ServiceCategoryDetail() {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="pb-20 pt-6">
+    <section ref={ref} className="pb-20 pt-6">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 space-y-16">
         {SERVICE_CATEGORIES.map((c) => (
           <div key={c.slug} className="reveal">
@@ -223,8 +227,9 @@ export function ValuePillars({ eyebrow, title, subtitle, items }: {
   eyebrow: string; title: React.ReactNode; subtitle?: string;
   items: { icon: any; t: string; d: string }[];
 }) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="py-16 sm:py-20">
+    <section ref={ref} className="py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
@@ -244,8 +249,9 @@ export function ValuePillars({ eyebrow, title, subtitle, items }: {
 }
 
 export function JourneyStrip({ steps, caption }: { steps: string[]; caption?: string }) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="py-12">
+    <section ref={ref} className="py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="glass rounded-3xl p-8 reveal">
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
@@ -267,8 +273,9 @@ export function DeliverablesList({ eyebrow, title, groups }: {
   eyebrow: string; title: React.ReactNode;
   groups: { heading: string; items: string[] }[];
 }) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="py-16 sm:py-20">
+    <section ref={ref} className="py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow={eyebrow} title={title} />
         <div className="mt-12 grid md:grid-cols-3 gap-5 reveal">
@@ -319,8 +326,9 @@ export const EMAIL_PILLARS = [
 ];
 
 export function PageCTA({ title, subtitle }: { title: string; subtitle: string }) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="py-20">
+    <section ref={ref} className="py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="relative glass rounded-3xl p-10 sm:p-14 text-center overflow-hidden reveal">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-royal/25 via-transparent to-cyan/15" />

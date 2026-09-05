@@ -47,13 +47,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
 }
 
 /* ---------- SHARED ---------- */
-export function SectionHeading({ eyebrow, title, subtitle, align = "center" }: { eyebrow: string; title: ReactNode; subtitle?: string; align?: "center" | "left" }) {
+export function SectionHeading({ eyebrow, title, subtitle, align = "center", as = "h2" }: { eyebrow: string; title: ReactNode; subtitle?: string; align?: "center" | "left"; as?: "h1" | "h2" }) {
+  const Heading = as;
   return (
     <div className={`reveal ${align === "center" ? "text-center" : "text-left"}`}>
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs uppercase tracking-wider text-muted-foreground">
         {eyebrow}
       </div>
-      <h2 className={`mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold ${align === "center" ? "max-w-3xl mx-auto" : ""}`}>{title}</h2>
+      <Heading className={`mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold ${align === "center" ? "max-w-3xl mx-auto" : ""}`}>{title}</Heading>
       {subtitle && <p className={`mt-4 text-muted-foreground ${align === "center" ? "max-w-2xl mx-auto" : ""}`}>{subtitle}</p>}
     </div>
   );
@@ -68,7 +69,7 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; titl
           <span className="mx-2">/</span>
           <span className="text-foreground">{eyebrow}</span>
         </nav>
-        <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
+        <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} as="h1" />
       </div>
     </section>
   );
@@ -131,20 +132,20 @@ export function Hero() {
 
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs sm:text-sm animate-fade-up">
           <Sparkles className="h-3.5 w-3.5 text-cyan" />
-          <span className="text-muted-foreground">Shopify &amp; Dropshipping Optimization Specialist · Now booking</span>
+          <span className="text-muted-foreground">Shopify &amp; E-commerce Growth Specialist · Now booking</span>
         </div>
         <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.05s" }}>
-          Unlock the <span className="gradient-text">Hidden Revenue</span> Trapped Inside Your Shopify Store
+          More Revenue From the <span className="gradient-text">Traffic You Already Have</span>
         </h1>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.12s" }}>
-          A specialist-led optimization system for Shopify and dropshipping brands engineered to eliminate the conversion, SEO, tracking, and performance issues quietly costing you sales.
+          I help Shopify and e-commerce brands convert more of their existing visitors through store optimization, conversion work, social media marketing and email automation.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow hover:opacity-95 transition">
-            Get Free Store Diagnosis <ArrowRight className="h-4 w-4" />
+            Work With Me <ArrowRight className="h-4 w-4" />
           </Link>
-          <Link to="/case-studies" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-foreground/10 transition font-medium">
-            View Case Studies
+          <Link to="/services" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass hover:bg-foreground/10 transition font-medium">
+            Explore My Services
           </Link>
         </div>
         <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground animate-fade-up" style={{ animationDelay: "0.28s" }}>
@@ -995,7 +996,10 @@ export function Contact({ heading = true }: { heading?: boolean }) {
 export const NAV_LINKS = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/shopify-ecommerce", label: "Shopify & E-commerce" },
+  { to: "/social-media-marketing", label: "Social Media Marketing" },
+  { to: "/email-marketing", label: "Email Marketing" },
+  { to: "/portfolio", label: "Projects" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/process", label: "Process" },
   { to: "/blog", label: "Blog" },
