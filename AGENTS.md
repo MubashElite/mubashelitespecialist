@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project design rules
+
+- Use Instrument Serif for headings and Manrope for body copy because the brand is an editorial commerce specialist portfolio.
+- Keep the homepage concise and image-led with asymmetric composition because immediate visual trust matters more than exhaustive copy.
+- Use Deep Navy, Charcoal, Champagne, Warm White, and Soft Grey as the brand palette because these are the approved identity colours.
