@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  SiteShell, Hero, Metrics, Portfolio, CaseStudies, About,
-  Authority, TrustStrip, Testimonials, Blog, FinalCTA, FAQ_ITEMS,
-} from "@/components/site/sections";
-import { Platforms, ServiceCategoriesGrid } from "@/components/site/service-pages";
+import { SiteShell } from "@/components/site/sections";
+import { HomeEditorial } from "@/components/site/HomeEditorial";
 import { SITE_URL, OG_IMAGE } from "@/lib/seo";
 
 const HOME_TITLE =
@@ -32,20 +29,6 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/` }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQ_ITEMS.map((item) => ({
-            "@type": "Question",
-            name: item.q,
-            acceptedAnswer: { "@type": "Answer", text: item.a },
-          })),
-        }),
-      },
-    ],
   }),
   component: HomePage,
 });
@@ -53,18 +36,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <SiteShell>
-      <Hero />
-      <Metrics />
-      <ServiceCategoriesGrid />
-      <Platforms />
-      <Portfolio />
-      <CaseStudies />
-      <About />
-      <Authority />
-      <TrustStrip />
-      <Testimonials />
-      <Blog />
-      <FinalCTA />
+      <HomeEditorial />
     </SiteShell>
   );
 }
