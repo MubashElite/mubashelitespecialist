@@ -64,7 +64,7 @@ export function Navbar() {
   };
 
   const linkCls =
-    "px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-foreground/5";
+    "px-3 py-2 text-xs font-semibold uppercase text-muted-foreground hover:text-foreground transition-colors";
 
   return (
     <>
@@ -73,10 +73,10 @@ export function Navbar() {
       </div>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <nav className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all ${scrolled ? "glass shadow-card" : ""}`}>
+          <nav className={`flex items-center justify-between border-b px-1 py-3 transition-all ${scrolled ? "border-border bg-background/90 px-4 shadow-card backdrop-blur-xl" : "border-transparent"}`}>
             <Link to="/" className="flex items-center gap-2 group">
               <img src={logo} alt="Mubash Elite logo" width={36} height={36} className="h-9 w-9" />
-              <span className="font-display font-semibold text-sm sm:text-base hidden sm:inline">
+              <span className="font-display text-lg font-medium hidden sm:inline">
                 Mubash <span className="text-muted-foreground">Elite</span>
               </span>
             </Link>
@@ -91,7 +91,7 @@ export function Navbar() {
                   onClick={() => setServicesOpen((v) => !v)}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
-                  className={`${linkCls} inline-flex items-center gap-1`}
+                    className={`${linkCls} inline-flex items-center gap-1 bg-transparent`}
                 >
                   Services <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -135,13 +135,13 @@ export function Navbar() {
 
               <Link
                 to="/contact"
-                className="hidden sm:inline-flex items-center justify-center rounded-lg gradient-primary text-white px-4 py-2 text-sm font-medium shadow-glow hover:opacity-95 transition"
+                  className="hidden sm:inline-flex items-center justify-center border border-primary bg-primary px-4 py-2 text-xs font-semibold uppercase text-primary-foreground transition hover:bg-primary/90"
               >
                 Work With Me
               </Link>
               <button
                 aria-label="Menu"
-                className="lg:hidden h-9 w-9 grid place-items-center rounded-lg hover:bg-foreground/5"
+                className="lg:hidden h-9 w-9 grid place-items-center border border-border hover:bg-foreground/5"
                 onClick={() => setOpen((v) => !v)}
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
