@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import portrait from "@/assets/portrait-cutout.png";
 import shopifyProof from "@/assets/port7.jpg";
@@ -29,7 +30,7 @@ const servicePaths = [
 
 const platforms = ["Shopify", "Klaviyo", "Meta", "Google", "Wix Studio"];
 
-function EditorialLink({ to, children }: { to: "/portfolio" | "/services" | "/about" | "/contact" | "/shopify-ecommerce"; children: React.ReactNode }) {
+function EditorialLink({ to, children }: { to: "/portfolio" | "/services" | "/about" | "/contact" | "/shopify-ecommerce"; children: ReactNode }) {
   return (
     <Link to={to} className="group inline-flex items-center gap-3 text-sm font-semibold text-foreground">
       <span>{children}</span>

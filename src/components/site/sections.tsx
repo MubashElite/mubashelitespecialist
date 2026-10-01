@@ -33,14 +33,14 @@ export const FAQ_ITEMS = [
 ];
 
 /* ---------- SHELL ---------- */
-export function SiteShell({ children }: { children: ReactNode }) {
+export function SiteShell({ children, showChat = true }: { children: ReactNode; showChat?: boolean }) {
   const ref = useReveal<HTMLDivElement>();
   return (
     <div ref={ref} className="min-h-screen hero-bg text-foreground overflow-x-hidden">
       <Navbar />
       {children}
       <Footer />
-      <ChatWidget />
+      {showChat && <ChatWidget />}
       <BackToTop />
     </div>
   );

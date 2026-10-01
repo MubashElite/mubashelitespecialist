@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <SiteShell>
+    <SiteShell showChat={false}>
       <HomeEditorial />
     </SiteShell>
   );
