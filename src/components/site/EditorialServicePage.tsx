@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type RoutePath = "/contact" | "/services" | "/shopify-ecommerce" | "/social-media-marketing" | "/email-marketing";
+type RoutePath = "/contact" | "/portfolio" | "/services" | "/shopify-ecommerce" | "/social-media-marketing" | "/email-marketing";
 
 type Focus = {
   title: string;
