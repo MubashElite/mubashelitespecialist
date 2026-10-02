@@ -33,7 +33,7 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       return { ok: false as const, reason: "unconfigured" as const };
     }
 
-    const from = process.env["CONTACT_FROM_EMAIL"] ?? "Mubash Elite <onboarding@resend.dev>";
+    const from = process.env["CONTACT_FROM_EMAIL"] ?? "Mubash Elite <website@mubashelite.com>";
 
     try {
       const res = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
