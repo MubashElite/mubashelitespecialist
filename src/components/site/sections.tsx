@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { sendContactMessage } from "@/lib/contact.functions";
+import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
@@ -907,12 +908,6 @@ export function Contact({ heading = true }: { heading?: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const send = useServerFn(sendContactMessage);
 
-  function mailtoFallback() {
-    const subject = encodeURIComponent(form.subject || `New inquiry from ${form.name}`);
-    const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name}\n${form.email}`);
-    window.location.href = `${EMAIL}?subject=${subject}&body=${body}`;
-  }
-
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.subject.trim() || !form.message.trim()) return;
@@ -925,10 +920,8 @@ export function Contact({ heading = true }: { heading?: boolean }) {
         return;
       }
       setStatus("error");
-      mailtoFallback();
     } catch {
       setStatus("error");
-      mailtoFallback();
     }
   }
   return (
@@ -976,14 +969,14 @@ export function Contact({ heading = true }: { heading?: boolean }) {
               <label htmlFor="ct-msg" className="text-xs text-muted-foreground">What do you need?</label>
               <textarea id="ct-msg" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required maxLength={2000} rows={5} className="mt-1 w-full bg-background/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
             </div>
-            <button type="submit" disabled={status === "sending"} className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl gradient-primary text-white font-medium shadow-glow disabled:opacity-60">
-              {status === "sending" ? "Sending…" : status === "sent" ? "Message sent" : "Send message"} <ArrowRight className="h-4 w-4" />
-            </button>
+            <Button type="submit" disabled={status === "sending"} className="h-12 w-full rounded-none">
+              {status === "sending" ? "Sending..." : status === "sent" ? "Message sent" : "Send message"} <ArrowRight className="h-4 w-4" />
+            </Button>
             {status === "sent" && (
               <p className="text-xs text-emerald-500">Thanks. Your enquiry has been delivered to {EMAIL_ADDRESS}. I usually reply within a few hours.</p>
             )}
             {status === "error" && (
-              <p className="text-xs text-muted-foreground">Direct sending is unavailable right now, so I opened your email app addressed to {EMAIL_ADDRESS}.</p>
+              <p className="text-xs text-destructive">Your message could not be sent. Please try again or email {EMAIL_ADDRESS} directly.</p>
             )}
           </form>
         </div>
