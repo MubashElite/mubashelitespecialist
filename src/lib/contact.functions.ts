@@ -28,13 +28,19 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       return { ok: false as const, reason: "unconfigured" as const };
     }
 
+    const lovableApiKey = process.env["LOVABLE_API_KEY"];
+    if (!lovableApiKey) {
+      return { ok: false as const, reason: "unconfigured" as const };
+    }
+
     const from = process.env["CONTACT_FROM_EMAIL"] ?? "Mubash Elite <onboarding@resend.dev>";
 
     try {
-      const res = await fetch("https://api.resend.com/emails", {
+      const res = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${lovableApiKey}`,
+          "X-Connection-Api-Key": apiKey,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -54,7 +60,7 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       });
 
       if (!res.ok) {
-        console.error("Resend error", res.status, await res.text());
+        console.error("Email provider request failed", res.status, await res.text());
         return { ok: false as const, reason: "failed" as const };
       }
       return { ok: true as const };

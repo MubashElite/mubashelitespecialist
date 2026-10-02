@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { SiteShell, PageHeader, TrustStrip, FAQ } from "@/components/site/sections";
-import { ValuePillars, JourneyStrip, DeliverablesList, PageCTA, EMAIL_PILLARS } from "@/components/site/service-pages";
+import { SiteShell } from "@/components/site/sections";
+import { EditorialServicePage } from "@/components/site/EditorialServicePage";
+import emailImage from "@/assets/blog6.jpg";
 
 export const Route = createFileRoute("/email-marketing")({
   head: () =>
@@ -19,35 +20,32 @@ export const Route = createFileRoute("/email-marketing")({
 function EmailPage() {
   return (
     <SiteShell>
-      <PageHeader
-        eyebrow="Email Marketing"
-        title={<>Revenue That Runs <span className="gradient-text">While You Sleep</span></>}
-        subtitle="Klaviyo flows and lifecycle automation that capture leads, recover carts and keep customers buying long after their first order."
-      />
-      <ValuePillars
-        eyebrow="Capabilities"
-        title={<>Email Built Around <span className="gradient-text">the Customer Lifecycle</span></>}
-        subtitle="Each flow has one job, one trigger and one measurable outcome."
-        items={EMAIL_PILLARS}
-      />
-      <JourneyStrip
-        steps={["Visitor", "Lead", "Customer", "Returning Customer"]}
-        caption="Popups capture the visitor, the welcome series converts the lead, cart and post-purchase flows keep them coming back."
-      />
-      <DeliverablesList
-        eyebrow="What's Included"
-        title={<>Flows, Forms and <span className="gradient-text">Reporting</span></>}
-        groups={[
-          { heading: "Setup", items: ["Klaviyo account configuration", "Shopify integration and data sync", "List and segment architecture", "Branded email templates"] },
-          { heading: "Automations", items: ["Welcome series", "Abandoned cart and browse abandonment", "Post-purchase and review requests", "Win-back and retention flows"] },
-          { heading: "Capture & Measure", items: ["Popup and signup form setup", "Segmentation rules", "Flow-level revenue reporting", "Ongoing testing and refinement"] },
+      <EditorialServicePage
+        eyebrow="Klaviyo email marketing"
+        title="Keep the value"
+        italicTitle="after the visit."
+        description="Lifecycle email systems that welcome, recover, retain and reconnect without losing the voice of your brand."
+        image={emailImage}
+        imageAlt="Email marketing and customer retention planning"
+        trustLine="Every flow has a clear trigger, a clear purpose and a place in the customer journey."
+        statement="Retention begins with relevance."
+        focus={[
+          { title: "Welcome & Capture", description: "Forms and welcome journeys that turn interest into a useful customer relationship." },
+          { title: "Cart Recovery", description: "Timely, persuasive sequences for shoppers who showed intent but did not complete checkout." },
+          { title: "Retention", description: "Post-purchase, replenishment and win-back flows designed for the next valuable action." },
         ]}
-      />
-      <FAQ />
-      <TrustStrip />
-      <PageCTA
-        title="Turn your email list into a revenue channel"
-        subtitle="Share your current setup and I'll show you which flows are missing and what they are likely leaving behind."
+        capabilities={[
+          { title: "Foundation", items: ["Klaviyo setup", "Shopify integration", "List and segment structure", "Branded templates"] },
+          { title: "Automation", items: ["Welcome series", "Cart and browse recovery", "Post-purchase journeys", "Win-back flows"] },
+          { title: "Refinement", items: ["Signup forms", "Message sequencing", "Flow reporting", "Testing priorities"] },
+        ]}
+        process={["Map the lifecycle", "Set the priority flows", "Write and build", "Review and improve"]}
+        related={[
+          { label: "Shopify & E-commerce", to: "/shopify-ecommerce" },
+          { label: "Social Media", to: "/social-media-marketing" },
+        ]}
+        ctaTitle="Make more of the customers you already earned."
+        ctaText="Share your current email setup. I will identify the lifecycle gaps worth fixing first."
       />
     </SiteShell>
   );

@@ -48,7 +48,7 @@ export function HomeEditorial() {
           <div className="relative z-10 lg:pb-10">
             <div className="mb-8 flex items-center gap-3 text-[11px] font-semibold uppercase text-primary">
               <span className="h-px w-10 bg-primary" />
-              Shopify growth specialist
+              Independent Shopify specialist · Direct collaboration
             </div>
             <h1 className="max-w-3xl font-display text-[3.6rem] font-medium leading-[0.92] sm:text-7xl lg:text-[6.8rem]">
               Building
@@ -56,7 +56,7 @@ export function HomeEditorial() {
               <span className="block">flagships.</span>
             </h1>
             <p className="mt-8 max-w-md text-base leading-7 text-muted-foreground sm:text-lg">
-              Shopify stores shaped for buying confidence, clean journeys and sustainable growth.
+              Shopify optimization, CRO, store audits, social strategy and email journeys shaped around confident buying.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-12 rounded-none px-6">

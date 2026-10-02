@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { SiteShell, PageHeader, TrustStrip, Testimonials } from "@/components/site/sections";
-import { ValuePillars, JourneyStrip, DeliverablesList, PageCTA, SOCIAL_PILLARS } from "@/components/site/service-pages";
+import { SiteShell } from "@/components/site/sections";
+import { EditorialServicePage } from "@/components/site/EditorialServicePage";
+import socialImage from "@/assets/blog2.jpg";
 
 export const Route = createFileRoute("/social-media-marketing")({
   head: () =>
@@ -19,35 +20,32 @@ export const Route = createFileRoute("/social-media-marketing")({
 function SocialPage() {
   return (
     <SiteShell>
-      <PageHeader
+      <EditorialServicePage
         eyebrow="Social Media Marketing"
-        title={<>Social Media as an <span className="gradient-text">Acquisition Channel</span></>}
-        subtitle="Facebook and Instagram treated as part of your sales system: attract the right audience, earn their attention, then send them somewhere built to convert."
-      />
-      <ValuePillars
-        eyebrow="Approach"
-        title={<>Strategy First, <span className="gradient-text">Content Second</span></>}
-        subtitle="Posting is the output. The work that makes it profitable happens before anything is published."
-        items={SOCIAL_PILLARS}
-      />
-      <JourneyStrip
-        steps={["Audience & offer", "Channel strategy", "Content system", "Engagement", "Traffic to conversion"]}
-        caption="Social activity is planned backwards from the sale, not forwards from the calendar."
-      />
-      <DeliverablesList
-        eyebrow="What's Included"
-        title={<>A Complete Social <span className="gradient-text">Growth System</span></>}
-        groups={[
-          { heading: "Strategy", items: ["Audience and positioning research", "Channel and platform strategy", "Offer and messaging direction", "Competitor review"] },
-          { heading: "Content & Management", items: ["Content pillars and formats", "Publishing structure and cadence", "Profile and bio optimization", "Ongoing page management"] },
-          { heading: "Growth & Conversion", items: ["Audience growth plan", "Engagement and community handling", "Traffic routing to key pages", "Performance review and iteration"] },
+        title="Attention with"
+        italicTitle="commercial direction."
+        description="Social strategy and content systems that move the right audience from discovery to product consideration."
+        image={socialImage}
+        imageAlt="Social media campaign planning for an e-commerce brand"
+        trustLine="The channel plan starts with the customer and the offer, never the posting calendar."
+        statement="Presence is useful. Intent is better."
+        focus={[
+          { title: "Channel Strategy", description: "Clear roles for Instagram and Facebook based on audience, offer and buying journey." },
+          { title: "Content Direction", description: "Repeatable themes and formats that make the brand useful, credible and memorable." },
+          { title: "Conversion Path", description: "Profiles, messages and landing journeys designed to move attention toward action." },
         ]}
-      />
-      <Testimonials />
-      <TrustStrip />
-      <PageCTA
-        title="Make social media pay for itself"
-        subtitle="Tell me about your brand and audience, and I'll outline the channel strategy I would run first."
+        capabilities={[
+          { title: "Positioning", items: ["Audience definition", "Channel priorities", "Offer and message direction", "Competitor review"] },
+          { title: "Content", items: ["Content pillars", "Format and cadence planning", "Profile optimization", "Publishing direction"] },
+          { title: "Growth", items: ["Audience quality", "Engagement strategy", "Traffic routing", "Performance review"] },
+        ]}
+        process={["Define the audience", "Shape the message", "Build the system", "Review the signal"]}
+        related={[
+          { label: "Shopify & E-commerce", to: "/shopify-ecommerce" },
+          { label: "Email Marketing", to: "/email-marketing" },
+        ]}
+        ctaTitle="Give every post a reason to exist."
+        ctaText="Share your brand, audience and current channels. I will shape the clearest route forward."
       />
     </SiteShell>
   );
