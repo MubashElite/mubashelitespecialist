@@ -1,4 +1,4 @@
-export const SITE_URL = "https://mubashelitespecialist.lovable.app";
+export const SITE_URL = "https://mubashelite.com";
 export const OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1782785202870-WhatsApp_Image_2026-06-29_at_15.06.21.webp";
 

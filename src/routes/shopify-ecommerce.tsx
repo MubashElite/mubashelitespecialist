@@ -5,15 +5,34 @@ import { EditorialServicePage } from "@/components/site/EditorialServicePage";
 import shopifyImage from "@/assets/port8.jpg";
 
 export const Route = createFileRoute("/shopify-ecommerce")({
-  head: () =>
-    pageHead({
+  head: () => {
+    const base = pageHead({
       path: "/shopify-ecommerce",
-      title: "Shopify Store Optimization, CRO & Audits | Mubash Elite",
+      title: "Shopify Expert Near You, Worldwide | Store Optimization & CRO",
       description:
-        "Shopify store optimization, conversion rate optimization and expert store audits for stronger product pages, faster journeys and more confident buying.",
+        "Remote Shopify expert for store owners in the US, UK, Canada, Australia, Europe and Africa. Shopify store audits, CRO, speed and product page optimization.",
       keywords:
-        "Shopify optimization, Shopify store optimization, Shopify conversion rate optimization, Shopify CRO, Shopify store audit, Shopify SEO audit, Shopify speed optimization, product page optimization",
-    }),
+        "Shopify expert near me, Shopify consultant near me, hire Shopify expert, remote Shopify developer, Shopify store optimization, Shopify conversion rate optimization, Shopify CRO, Shopify store audit, Shopify SEO audit, Shopify speed optimization, product page optimization",
+    });
+    return {
+      ...base,
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Shopify Store Optimization, CRO & Audits",
+            serviceType: "Shopify optimization",
+            url: "https://mubashelite.com/shopify-ecommerce",
+            provider: { "@id": "https://mubashelite.com/#business" },
+            areaServed: ["Worldwide", "United States", "United Kingdom", "Canada", "Australia", "European Union", "Nigeria"],
+            availableChannel: { "@type": "ServiceChannel", serviceUrl: "https://mubashelite.com/contact", availableLanguage: "English" },
+          }),
+        },
+      ],
+    };
+  },
   component: ShopifyPage,
 });
 
