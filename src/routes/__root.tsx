@@ -73,7 +73,7 @@ const ErrorComponent: ErrorRouteComponent = ({ error, reset }) => {
   );
 };
 
-const SITE_URL = "https://mubashelite.com";
+const SITE_URL = "https://mubashelitespecialist.lovable.app";
 const LOGO_URL = `${SITE_URL}/favicon.png`;
 const SOCIAL_IMAGE = `${SITE_URL}/favicon.png`;
 
@@ -90,6 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "referrer", content: "strict-origin-when-cross-origin" },
       { name: "format-detection", content: "telephone=no" },
+      { name: "google-site-verification", content: "dYbGGzikwkRGp-m23-3S8npLv952zYiU3uWBlwf6wJA" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Mubash Elite" },
       { property: "og:locale", content: "en_US" },
