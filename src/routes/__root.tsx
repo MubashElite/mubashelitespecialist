@@ -105,8 +105,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
       { property: "og:description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
       { name: "twitter:description", content: "Builds premium, enterprise-level personal portfolio websites for brands, showcasing expertise in Shopify, Wix, and eCommerce growth." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1783039581323-ChatGPT_Image_Jun_23,_2026,_11_48_29_AM.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/rb0zggpZa0hb5EOjUYl7sodNSUh2/social-images/social-1783039581323-ChatGPT_Image_Jun_23,_2026,_11_48_29_AM.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
