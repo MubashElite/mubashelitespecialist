@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 
-const BASE_URL = "https://mubashelite.com";
+const BASE_URL = "https://mubashelitespecialist.lovable.app";
 const ROUTES = [
   "/",
   "/about",

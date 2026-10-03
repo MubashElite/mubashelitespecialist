@@ -18,7 +18,7 @@ import { BLOG_POSTS } from "@/lib/blog-posts";
 import heroBg from "@/assets/hero-bg.jpg";
 import portraitCutout from "@/assets/portrait-cutout.png";
 
-export const SITE_URL = "https://mubashelite.com";
+export const SITE_URL = "https://mubashelitespecialist.lovable.app";
 export const EMAIL_ADDRESS = "info@mubashelite.com";
 export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
 export const WHATSAPP = "https://wa.me/2347014449168";

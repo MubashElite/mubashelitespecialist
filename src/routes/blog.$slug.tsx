@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Check, Mail, MessageSquare, ExternalLink, Calend
 import { Navbar } from "@/components/site/Navbar";
 import { BLOG_POSTS, getPostBySlug, type BlogPost } from "@/lib/blog-posts";
 
-const SITE = "https://mubashelite.com";
+const SITE = "https://mubashelitespecialist.lovable.app";
 const EMAIL = "mailto:info@mubashelite.com";
 const WHATSAPP = "https://wa.me/2347014449168";
 const FIVERR = "https://www.fiverr.com/shopifybash";

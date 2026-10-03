@@ -14,5 +14,5 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-Host: https://mubashelite.com
-Sitemap: https://mubashelite.com/sitemap.xml
+Host: https://mubashelitespecialist.lovable.app
+Sitemap: https://mubashelitespecialist.lovable.app/sitemap.xml
