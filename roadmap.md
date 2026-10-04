@@ -6,3 +6,4 @@
 - [x] Rewrite Services, Shopify & E-commerce, Social Media Marketing, and Email Marketing pages in the premium editorial style.
 - [x] Verify metadata, contact delivery states, navigation, and mobile layouts.
 - [x] Verify the final production build after the framework compatibility correction.
+- [ ] Add restrained, meaningful icons across every user-facing page and verify desktop/mobile layouts.
