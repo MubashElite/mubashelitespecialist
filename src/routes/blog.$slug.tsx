@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Check, Mail, MessageSquare, ExternalLink, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenText, Check, FileSearch, Lightbulb, Mail, MessageSquare, ExternalLink, Calendar, Clock } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { BLOG_POSTS, getPostBySlug, type BlogPost } from "@/lib/blog-posts";
 
@@ -69,6 +69,7 @@ function PostNotFound() {
     <div className="min-h-screen">
       <Navbar />
       <div className="max-w-3xl mx-auto px-6 py-32 text-center">
+        <FileSearch className="mx-auto mb-5 h-9 w-9 text-primary" aria-hidden="true" />
         <h1 className="text-4xl font-display font-bold">Article not found</h1>
         <p className="mt-3 text-muted-foreground">The post you're looking for doesn't exist or has been moved.</p>
         <Link to="/" className="mt-8 inline-flex items-center gap-2 text-cyan font-medium">
@@ -125,7 +126,7 @@ function BlogPostPage() {
 
           {post.sections.map((s) => (
             <section key={s.heading} className="mt-12">
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold">{s.heading}</h2>
+              <h2 className="flex items-center gap-3 text-2xl sm:text-3xl font-display font-semibold"><BookOpenText className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />{s.heading}</h2>
               <div className="mt-4 space-y-4">
                 {s.body.map((para, i) => (
                   <p key={i} className="text-base leading-relaxed text-muted-foreground">{para}</p>
@@ -136,7 +137,7 @@ function BlogPostPage() {
 
           {/* Key takeaways */}
           <div className="mt-14 glass rounded-2xl p-6 sm:p-8 border border-cyan/10">
-            <h3 className="text-xl font-display font-semibold">Key takeaways</h3>
+            <h3 className="flex items-center gap-3 text-xl font-display font-semibold"><Lightbulb className="h-5 w-5 text-primary" aria-hidden="true" />Key takeaways</h3>
             <ul className="mt-4 space-y-3">
               {post.keyTakeaways.map((k) => (
                 <li key={k} className="flex gap-3 text-sm sm:text-base">
@@ -171,7 +172,7 @@ function BlogPostPage() {
       {/* Related */}
       <section className="py-16 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-display font-semibold">Keep reading</h2>
+          <h2 className="flex items-center gap-3 text-2xl sm:text-3xl font-display font-semibold"><BookOpenText className="h-5 w-5 text-primary" aria-hidden="true" />Keep reading</h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {related.map((p) => (
               <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="glass rounded-2xl overflow-hidden group hover:shadow-glow transition flex flex-col">

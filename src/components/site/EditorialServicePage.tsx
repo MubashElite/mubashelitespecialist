@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, CircleDollarSign, Layers3, RefreshCw, Search, Target, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type RoutePath = "/contact" | "/portfolio" | "/services" | "/shopify-ecommerce" | "/social-media-marketing" | "/email-marketing";
@@ -50,6 +50,9 @@ export function EditorialServicePage({
   ctaTitle: string;
   ctaText: string;
 }) {
+  const focusIcons = [Search, Target, CircleDollarSign];
+  const capabilityIcons = [Layers3, Wrench, RefreshCw];
+  const processIcons = [Search, Target, Wrench, RefreshCw];
   return (
     <main>
       <section className="border-b border-border pt-28 sm:pt-36">
@@ -94,7 +97,10 @@ export function EditorialServicePage({
           <div className="border-t border-border">
             {focus.map((item, index) => (
               <article key={item.title} className="grid gap-3 border-b border-border py-7 sm:grid-cols-[46px_0.85fr_1.15fr] sm:items-start sm:px-3">
-                <span className="text-xs text-primary">{String(index + 1).padStart(2, "0")}</span>
+                <span className="flex items-center gap-2 text-xs text-primary">
+                  {(() => { const Icon = focusIcons[index % focusIcons.length]; return <Icon className="h-4 w-4" aria-hidden="true" />; })()}
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h3 className="font-display text-2xl font-medium">{item.title}</h3>
                 <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
               </article>
@@ -110,8 +116,11 @@ export function EditorialServicePage({
             <h2 className="mt-5 font-display text-4xl font-medium sm:text-6xl">Clear work. Commercial purpose.</h2>
           </div>
           <div className="mt-12 grid border-l border-t border-border md:grid-cols-3">
-            {capabilities.map((group) => (
+            {capabilities.map((group, index) => {
+              const Icon = capabilityIcons[index % capabilityIcons.length];
+              return (
               <article key={group.title} className="border-b border-r border-border p-6 sm:p-8">
+                <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                 <h3 className="font-display text-2xl font-medium">{group.title}</h3>
                 <ul className="mt-6 space-y-3">
                   {group.items.map((item) => (
@@ -122,7 +131,8 @@ export function EditorialServicePage({
                   ))}
                 </ul>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -131,12 +141,15 @@ export function EditorialServicePage({
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <p className="text-[11px] font-semibold uppercase text-primary">Working method</p>
           <ol className="mt-8 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, index) => (
+            {process.map((step, index) => {
+              const Icon = processIcons[index % processIcons.length];
+              return (
               <li key={step} className="border-b border-r border-border p-6">
-                <span className="text-xs text-primary">{String(index + 1).padStart(2, "0")}</span>
+                <span className="flex items-center justify-between text-xs text-primary"><span>{String(index + 1).padStart(2, "0")}</span><Icon className="h-4 w-4" aria-hidden="true" /></span>
                 <p className="mt-7 font-display text-2xl">{step}</p>
               </li>
-            ))}
+              );
+            })}
           </ol>
           {related.length > 0 && (
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">

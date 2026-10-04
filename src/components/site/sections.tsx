@@ -7,7 +7,9 @@ import {
   ArrowRight, ExternalLink, Mail, MessageSquare, ShoppingBag, Code2, Gauge,
   TrendingUp, Globe, Search, Mailbox, Bot, Wrench, ArrowLeftRight, Palette,
   ChevronLeft, ChevronRight, Check, Star, ArrowUp, Quote, Sparkles,
-  Play, X, Zap, Target, LineChart,
+  Play, X, Zap, Target, LineChart, Home, UserRound, BriefcaseBusiness,
+  Workflow, BookOpenText, CircleHelp, FolderKanban, Clapperboard,
+  type LucideIcon,
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { ChatWidget } from "@/components/site/ChatWidget";
@@ -48,11 +50,12 @@ export function SiteShell({ children, showChat = true }: { children: ReactNode; 
 }
 
 /* ---------- SHARED ---------- */
-export function SectionHeading({ eyebrow, title, subtitle, align = "center", as = "h2" }: { eyebrow: string; title: ReactNode; subtitle?: string; align?: "center" | "left"; as?: "h1" | "h2" }) {
+export function SectionHeading({ eyebrow, title, subtitle, align = "center", as = "h2", icon: Icon }: { eyebrow: string; title: ReactNode; subtitle?: string; align?: "center" | "left"; as?: "h1" | "h2"; icon?: LucideIcon }) {
   const Heading = as;
   return (
     <div className={`reveal ${align === "center" ? "text-center" : "text-left"}`}>
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs uppercase tracking-wider text-muted-foreground">
+        {Icon && <Icon className="h-3.5 w-3.5 text-primary" aria-hidden="true" />}
         {eyebrow}
       </div>
       <Heading className={`mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold ${align === "center" ? "max-w-3xl mx-auto" : ""}`}>{title}</Heading>
@@ -62,15 +65,26 @@ export function SectionHeading({ eyebrow, title, subtitle, align = "center", as 
 }
 
 export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: ReactNode; subtitle?: string }) {
+  const iconByPage: Record<string, LucideIcon> = {
+    About: UserRound,
+    Portfolio: FolderKanban,
+    Process: Workflow,
+    Contact: MessageSquare,
+    "Case Studies": Clapperboard,
+    Blog: BookOpenText,
+    FAQ: CircleHelp,
+    Services: BriefcaseBusiness,
+  };
+  const PageIcon = iconByPage[eyebrow] ?? Sparkles;
   return (
     <section className="pt-32 sm:pt-40 pb-4">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
         <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">Home</Link>
+          <Link to="/" className="inline-flex items-center gap-1.5 hover:text-foreground"><Home className="h-3.5 w-3.5 text-primary" aria-hidden="true" /> Home</Link>
           <span className="mx-2">/</span>
           <span className="text-foreground">{eyebrow}</span>
         </nav>
-        <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} as="h1" />
+        <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} as="h1" icon={PageIcon} />
       </div>
     </section>
   );
@@ -886,7 +900,7 @@ export function FAQ({ heading = true }: { heading?: boolean }) {
           {FAQ_ITEMS.map((it, i) => (
             <div key={i} className="glass rounded-2xl overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i} className="w-full flex items-center justify-between p-5 text-left">
-                <span className="font-medium">{it.q}</span>
+                <span className="flex items-start gap-3 font-medium"><CircleHelp className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />{it.q}</span>
                 <span className={`h-6 w-6 grid place-items-center rounded-full bg-foreground/5 transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
               </button>
               <div className={`grid transition-all duration-300 ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
@@ -1012,25 +1026,25 @@ export function Footer() {
           <div className="text-sm font-semibold mb-3">Quick Links</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             {NAV_LINKS.map((l) => (
-              <li key={l.to}><Link to={l.to} className="hover:text-foreground">{l.label}</Link></li>
+              <li key={l.to}><Link to={l.to} className="inline-flex items-center gap-2 hover:text-foreground"><ArrowRight className="h-3 w-3 text-primary" aria-hidden="true" />{l.label}</Link></li>
             ))}
           </ul>
         </div>
         <div>
           <div className="text-sm font-semibold mb-3">Results</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/sales-proof" className="hover:text-foreground">Sales Proof</Link></li>
-            <li><Link to="/case-studies" className="hover:text-foreground">Video Case Studies</Link></li>
-            <li><Link to="/portfolio" className="hover:text-foreground">Store Portfolio</Link></li>
-            <li><Link to="/blog" className="hover:text-foreground">Insights</Link></li>
+            <li><Link to="/sales-proof" className="inline-flex items-center gap-2 hover:text-foreground"><TrendingUp className="h-3.5 w-3.5 text-primary" aria-hidden="true" />Sales Proof</Link></li>
+            <li><Link to="/case-studies" className="inline-flex items-center gap-2 hover:text-foreground"><Clapperboard className="h-3.5 w-3.5 text-primary" aria-hidden="true" />Video Case Studies</Link></li>
+            <li><Link to="/portfolio" className="inline-flex items-center gap-2 hover:text-foreground"><FolderKanban className="h-3.5 w-3.5 text-primary" aria-hidden="true" />Store Portfolio</Link></li>
+            <li><Link to="/blog" className="inline-flex items-center gap-2 hover:text-foreground"><BookOpenText className="h-3.5 w-3.5 text-primary" aria-hidden="true" />Insights</Link></li>
           </ul>
         </div>
         <div>
           <div className="text-sm font-semibold mb-3">Connect</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href={EMAIL} className="hover:text-foreground">{EMAIL_ADDRESS}</a></li>
-            <li><a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">WhatsApp</a></li>
-            <li><a href={FIVERR} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Fiverr</a></li>
+            <li><a href={EMAIL} className="inline-flex items-center gap-2 hover:text-foreground"><Mail className="h-3.5 w-3.5 text-primary" aria-hidden="true" />{EMAIL_ADDRESS}</a></li>
+            <li><a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-foreground"><MessageSquare className="h-3.5 w-3.5 text-primary" aria-hidden="true" />WhatsApp</a></li>
+            <li><a href={FIVERR} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-foreground"><ExternalLink className="h-3.5 w-3.5 text-primary" aria-hidden="true" />Fiverr</a></li>
           </ul>
         </div>
       </div>
