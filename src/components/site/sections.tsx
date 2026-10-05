@@ -18,7 +18,7 @@ import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import heroBg from "@/assets/hero-bg.jpg";
-import profilePortrait from "@/assets/mubash-profile.webp.asset.json";
+import profilePortrait from "@/assets/mubash-profile.jpg";
 
 export const SITE_URL = "https://mubashelitespecialist.lovable.app";
 export const EMAIL_ADDRESS = "info@mubashelite.com";
@@ -131,7 +131,7 @@ export function Hero() {
           <div className="relative w-full h-full rounded-full overflow-hidden" style={{ background: "var(--gradient-portrait)" }}>
             <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/25" />
             <img
-              src={profilePortrait.url}
+              src={profilePortrait}
               alt="Portrait of Mubash, Shopify optimization specialist"
               width={352}
               height={352}
@@ -229,7 +229,7 @@ export function About({ heading = true }: { heading?: boolean }) {
           </div>
           <div className="md:col-span-2 space-y-3">
             <img
-              src={profilePortrait.url}
+              src={profilePortrait}
               alt="Mubash, Shopify and e-commerce specialist, wearing a navy suit"
               width={900}
               height={1200}

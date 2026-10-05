@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, ExternalLink, MailCheck, SearchCheck, ShoppingBag, Sparkles, Target, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import portrait from "@/assets/mubash-profile.webp.asset.json";
+import portrait from "@/assets/mubash-profile.jpg";
 import shopifyProof from "@/assets/port7.jpg";
 import growthProof from "@/assets/port8.jpg";
 import storefrontProof from "@/assets/blog3.jpg";
@@ -152,7 +152,7 @@ export function HomeEditorial() {
       <section className="border-b border-border py-20 sm:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div className="relative mx-auto h-[420px] w-full max-w-md overflow-hidden border border-border bg-secondary sm:h-[540px]">
-            <img src={portrait.url} alt="Mubash, Shopify and e-commerce specialist, wearing a navy suit" width={900} height={1200} loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
+            <img src={portrait} alt="Mubash, Shopify and e-commerce specialist, wearing a navy suit" width={900} height={1200} loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
           </div>
           <div className="lg:pl-10">
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase text-primary"><UserRound className="h-4 w-4" aria-hidden="true" />Independent specialist</p>
