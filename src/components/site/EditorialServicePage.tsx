@@ -121,7 +121,7 @@ export function EditorialServicePage({
               return (
               <article key={group.title} className="border-b border-r border-border p-6 sm:p-8">
                 <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                <h3 className="font-display text-2xl font-medium">{group.title}</h3>
+                <h3 className="mt-4 font-display text-2xl font-medium">{group.title}</h3>
                 <ul className="mt-6 space-y-3">
                   {group.items.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
