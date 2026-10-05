@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, ExternalLink, MailCheck, SearchCheck, ShoppingBag, Sparkles, Target, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import portrait from "@/assets/mubash-profile.webp.asset.json";
+import portrait from "@/assets/mubash-profile.jpg";
 import shopifyProof from "@/assets/port7.jpg";
 import growthProof from "@/assets/port8.jpg";
 import storefrontProof from "@/assets/blog3.jpg";

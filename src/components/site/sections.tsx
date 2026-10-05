@@ -18,7 +18,7 @@ import { Counter } from "@/components/site/Counter";
 import { useReveal } from "@/components/site/useReveal";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import heroBg from "@/assets/hero-bg.jpg";
-import profilePortrait from "@/assets/mubash-profile.webp.asset.json";
+import profilePortrait from "@/assets/mubash-profile.jpg";
 
 export const SITE_URL = "https://mubashelitespecialist.lovable.app";
 export const EMAIL_ADDRESS = "info@mubashelite.com";
