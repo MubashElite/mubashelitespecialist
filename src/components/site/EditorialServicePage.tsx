@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, CircleDollarSign, Layers3, RefreshCw, Search, Target, Wrench } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Check, CircleDollarSign, Layers3, Mail, RefreshCw, Search, Share2, ShoppingBag, Target, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type RoutePath = "/contact" | "/portfolio" | "/services" | "/shopify-ecommerce" | "/social-media-marketing" | "/email-marketing";
@@ -53,6 +53,13 @@ export function EditorialServicePage({
   const focusIcons = [Search, Target, CircleDollarSign];
   const capabilityIcons = [Layers3, Wrench, RefreshCw];
   const processIcons = [Search, Target, Wrench, RefreshCw];
+  const HeroIcon = eyebrow.toLowerCase().includes("shopify")
+    ? ShoppingBag
+    : eyebrow.toLowerCase().includes("social")
+      ? Share2
+      : eyebrow.toLowerCase().includes("email") || eyebrow.toLowerCase().includes("klaviyo")
+        ? Mail
+        : BriefcaseBusiness;
   return (
     <main>
       <section className="border-b border-border pt-28 sm:pt-36">
@@ -60,6 +67,7 @@ export function EditorialServicePage({
           <div>
             <div className="flex items-center gap-3 text-[11px] font-semibold uppercase text-primary">
               <span className="h-px w-10 bg-primary" />
+              <HeroIcon className="h-4 w-4 shrink-0" aria-hidden="true" />
               {eyebrow}
             </div>
             <h1 className="mt-8 max-w-3xl font-display text-5xl font-medium leading-[0.96] sm:text-7xl lg:text-[5.5rem]">
